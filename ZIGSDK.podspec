@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
   spec.description  = "This SDK includes ticket validation, toll validation, and user notifications with various functionalities for ticket management."
   spec.homepage     = "https://github.com/KamaleshG615/ZIGSDK"
   spec.license      = { :type => 'MIT', :file => 'LICENSE' }
-  spec.author             = { "Kamalesh" => "kamalesh@zed.digital" }
+  spec.author             = { "ZED DIGITAL" => "kamalesh@zed.digital" }
   spec.source       = { :git => "https://github.com/KamaleshG615/ZIGSDK.git", :tag => spec.version }
   spec.ios.deployment_target = '13.0'
   spec.source_files = 'MainClasses/**/*.swift'
