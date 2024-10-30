@@ -9,7 +9,7 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => 'MIT', :file => 'LICENSE' }
   spec.author             = { "Kamalesh" => "kamalesh@zed.digital" }
   spec.source       = { :git => "https://github.com/KamaleshG615/ZIGSDK.git", :tag => spec.version }
-  spec.ios.deployment_target = '12.0'
+  spec.ios.deployment_target = '13.0'
   spec.source_files = 'MainClasses/**/*.swift'
   spec.resources     = [
     "ZIGSDK", "Resource/Assets.xcassets",
