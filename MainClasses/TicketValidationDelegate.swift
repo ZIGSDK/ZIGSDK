@@ -12,3 +12,12 @@ public protocol TicketValidationDelegate {
     func GetTicket(completion: @escaping(Bool,[[String: Any]])->Void)
     func ActivateTicket(ticketId : Int,completion: @escaping(Bool,[[String: Any]]) -> Void)
 }
+
+
+
+
+
+
+     
+
+

@@ -42,7 +42,7 @@ class ReduceWalletAmount: UIViewController {
         WalletViewModel.sharedInstance.walletBalanceCheck(clientId: MqttValidationData.userid, userId: ReduceWalletAmount.userId) { response, success in
             if success{
                 self.hideLoader()
-                print("ReduceWalletAmount.debitAmount====>",ReduceWalletAmount.debitAmount)
+               // print("ReduceWalletAmount.debitAmount====>",ReduceWalletAmount.debitAmount)
                 self.walletTotalAmount.text = "$ \(response?.walletBalanceAmount ?? 0.0)"
                 self.totalAmount.text = "$ \(ReduceWalletAmount.debitAmount)"
             }

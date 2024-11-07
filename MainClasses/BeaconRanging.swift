@@ -68,155 +68,164 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
     internal func ZIGSDKInit(authKey : String, enableLog : Bool = false,completion: @escaping (Bool, String?) -> Void) {
         let startTime = DispatchTime.now()
         if isReachable(){
-            SDKViewModel.sharedInstance.configApi(authKey: authKey) { response, success in
-                if success{
-                    let endTime = DispatchTime.now()
-                    let responseTimeNanos = endTime.uptimeNanoseconds - startTime.uptimeNanoseconds
-                    let responseMilleSeconds = responseTimeNanos / 1_000_000
-                    let responseSeconds = Double(responseTimeNanos) / 1_000_000_000
-                    benchMarkData.cofigApiResponseTime = Int(responseMilleSeconds)
-                    userDetails.clientId = response?.clientId ?? 0
-                    userDetails.clientName = response?.clientName ?? ""
-                    userDetails.AuthKey = authKey
-                    sdkLog.shared.printLog(message: "ZEDSDK initialized successfully")
-                    if response?.message != "Invalid Token"{
-                        QmVhdm9uUmFuZ2luZw.slowLaneBeacon = response?.SlowLaneMajor ?? 0
-                        QmVhdm9uUmFuZ2luZw.fastLaneBeacon = response?.FastLaneMajor ?? 0
-                        if response?.LimitStatus ?? false{
-                            if response?.validationLimit ?? 0 != 0{
-                                // beacon details
-                                TicketMethods.sharedInstance.deleteAllTickets { success, responce in
-                                    if success{
-                                        TicketMethods.sharedInstance.GetTicket { success, responsevalue in
-                                            if success{
-                                                QmVhdm9uUmFuZ2luZw.locationManager.startUpdatingLocation()
-                                                QmVhdm9uUmFuZ2luZw.locationManager.showsBackgroundLocationIndicator = true
-                                                QmVhdm9uUmFuZ2luZw.locationManager.allowsBackgroundLocationUpdates = true
-                                                QmVhdm9uUmFuZ2luZw.locationManager.pausesLocationUpdatesAutomatically = false
-                                                QmVhdm9uUmFuZ2luZw.locationManager.requestAlwaysAuthorization()
-                                                QmVhdm9uUmFuZ2luZw.logEnable = enableLog
-                                                QmVhdm9uUmFuZ2luZw.userLimitBool = response?.LimitStatus ?? false
-                                                QmVhdm9uUmFuZ2luZw.limited = response?.validationLimit ?? 0
-                                                QmVhdm9uUmFuZ2luZw.beaconStatus = response?.ibeacon_Status ?? 0
-                                                QmVhdm9uUmFuZ2luZw.beverageMajor = response?.Beveragemajor ?? 0
-                                                
-                                                //Mqtt Details
-                                                MqttValidationData.userName = response?.mqttUserName ?? ""
-                                                MqttValidationData.password = response?.mqttPassword ?? ""
-                                                MqttValidationData.userid = response?.clientId ?? 0
-                                                MqttValidationData.mqttHostUrl = response?.MqttUrl ?? ""
-                                                MqttValidationData.mqttPort = response?.mqttPortNumber ?? 1833
-                                                MqttValidationData.personalUserName = response?.clientName ?? ""
-                                                MqttValidationData.distance = response?.distance ?? ""
-                                                MqttValidationData.txPower = response?.tx_power ?? ""
-                                                MqttValidationData.uuid = response?.beaconUuid ?? ""
-                                                
-                                                //Features Status.
-                                                featureStatus.beverageValidation = response?.Beveragestatus ?? false
-                                                featureStatus.tollValidation = response?.Tollstatus ?? false
-                                                featureStatus.WalletEnableStatus = response?.WalletEnableStatus ?? false
-                                                featureStatus.TicketValidationStatus = response?.TicketValidationStatus ?? false
-                                                
-                                                // userdetails
-                                                
-                                                
-                                                if featureStatus.TicketValidationStatus || featureStatus.beverageValidation || featureStatus.tollValidation{
-                                                    let tollArray = response?.tollBeaconList ?? []
-                                                    if tollArray.count > 0 {
-                                                        QmVhdm9uUmFuZ2luZw.iBeaconList.removeAll()
-                                                        for tollData in tollArray {
-                                                            QmVhdm9uUmFuZ2luZw.iBeaconList.append(IBeaconToll(name: tollData.name ?? "", laneType: tollData.laneType ?? "", major: tollData.major ?? 0, minor: tollData.minor ?? 0, deviceID: tollData.deviceID ?? "", mqttMac: tollData.mqttMac ?? "", validationFeetiOS: Double(tollData.validationFeetiOS ?? Int(0.0)), MeasureValueiOS: tollData.MeasureValueiOS ?? 0, beaconA_ID: tollData.deviceID ?? ""))
-                                                        }
-                                                        guard CLLocationManager.isRangingAvailable() else {
-                                                            sdkLog.shared.printLog(message: "Beacon ranging is not available.")
-                                                            return
-                                                        }
-                                                        self.mqttManager = CocoaMQTTManager.shared
-                                                        self.startScanning()
-                                                        completion(success,"Your Ticket Feature has been Enabled")
-                                                    }
-                                                    else {
-                                                        completion(false,"MAC address was not found, please contact admin to add MAC address with error code 1001")
-                                                        sdkLog.shared.printLog(message: "MAC address was not found, please contact admin to add MAC address with error code 1001")
-                                                    }
+                 SDKViewModel.sharedInstance.configApi(authKey: authKey) { [self] response, success in
+                    if success{
+                        let endTime = DispatchTime.now()
+                        let responseTimeNanos = endTime.uptimeNanoseconds - startTime.uptimeNanoseconds
+                        let responseMilleSeconds = responseTimeNanos / 1_000_000
+                        let responseSeconds = Double(responseTimeNanos) / 1_000_000_000
+                        benchMarkData.cofigApiResponseTime = Int(responseMilleSeconds)
+                        userDetails.clientId = response?.clientId ?? 0
+                        userDetails.clientName = response?.clientName ?? ""
+                        userDetails.AuthKey = authKey
+                        
+                        userDetails.UserId = UserDefaults.standard.integer(forKey: "userId")
+                        userDetails.userName = UserDefaults.standard.string(forKey: "UserName") ?? ""
+                        userDetails.emailId = UserDefaults.standard.string(forKey: "UserEmailID") ?? ""
+                        sdkLog.shared.printLog(message: "ZEDSDK initialized successfully")
+                        if response?.message != "Invalid Token"{
+                            QmVhdm9uUmFuZ2luZw.slowLaneBeacon = response?.SlowLaneMajor ?? 0
+                            QmVhdm9uUmFuZ2luZw.fastLaneBeacon = response?.FastLaneMajor ?? 0
+                            if response?.LimitStatus ?? false{
+                                if response?.validationLimit ?? 0 != 0{
+                                    // beacon details
+                                    TicketMethods.sharedInstance.deleteAllTickets { success, responce in
+                                        if success{
+                                            TicketMethods.sharedInstance.GetTicket { success, responsevalue in
+                                                if success{
+                                                    
                                                 }
-                                                else if featureStatus.WalletEnableStatus{
-                                                    completion(true,"Your Wallet Feature has been Enabled")
-                                                }
-                                                else{
-                                                    completion(false,"All features are Blocked Contact Admin")
-                                                }
-                                            }
-                                            else{
-                                                QmVhdm9uUmFuZ2luZw.userLimitBool = false
-                                                completion(success,"Your limit has been exceeded. Please contact the admin")
-                                                PresenterImpl().showAlert(title: "Your limit has been exceeded. Please contact the admin")
                                             }
                                         }
                                     }
-                                    else{
-                                        completion(false, "Something went wrong")
-                                    }
+                                    QmVhdm9uUmFuZ2luZw.locationManager.delegate = self
+                                    QmVhdm9uUmFuZ2luZw.locationManager.requestWhenInUseAuthorization()
+                                    QmVhdm9uUmFuZ2luZw.locationManager.allowsBackgroundLocationUpdates = true
+                                    QmVhdm9uUmFuZ2luZw.locationManager.showsBackgroundLocationIndicator = true
+                                    QmVhdm9uUmFuZ2luZw.locationManager.pausesLocationUpdatesAutomatically = false
+                                    QmVhdm9uUmFuZ2luZw.locationManager = CLLocationManager()
+                                    QmVhdm9uUmFuZ2luZw.locationManager.delegate = self
+                                    QmVhdm9uUmFuZ2luZw.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                                    QmVhdm9uUmFuZ2luZw.locationManager.startUpdatingLocation()
                                     
+                                    QmVhdm9uUmFuZ2luZw.logEnable = enableLog
+                                    QmVhdm9uUmFuZ2luZw.userLimitBool = response?.LimitStatus ?? false
+                                    QmVhdm9uUmFuZ2luZw.limited = response?.validationLimit ?? 0
+                                    QmVhdm9uUmFuZ2luZw.beaconStatus = response?.ibeacon_Status ?? 0
+                                    QmVhdm9uUmFuZ2luZw.beverageMajor = response?.Beveragemajor ?? 0
+                                    
+                                    //Mqtt Details
+                                    MqttValidationData.userName = response?.mqttUserName ?? ""
+                                    MqttValidationData.password = response?.mqttPassword ?? ""
+                                    MqttValidationData.userid = response?.clientId ?? 0
+                                    MqttValidationData.mqttHostUrl = response?.MqttUrl ?? ""
+                                    MqttValidationData.mqttPort = response?.mqttPortNumber ?? 1833
+                                    MqttValidationData.personalUserName = response?.clientName ?? ""
+                                    MqttValidationData.distance = response?.distance ?? ""
+                                    MqttValidationData.txPower = response?.tx_power ?? ""
+                                    MqttValidationData.uuid = response?.beaconUuid ?? ""
+                                    
+                                    //Features Status.
+                                    featureStatus.beverageValidation = response?.Beveragestatus ?? false
+                                    featureStatus.tollValidation = response?.Tollstatus ?? false
+                                    featureStatus.WalletEnableStatus = response?.WalletEnableStatus ?? false
+                                    featureStatus.TicketValidationStatus = response?.TicketValidationStatus ?? false
+                                    
+                                    // userdetails
+                                    
+                                    
+                                    if featureStatus.TicketValidationStatus || featureStatus.beverageValidation || featureStatus.tollValidation{
+                                        let tollArray = response?.tollBeaconList ?? []
+                                        if tollArray.count > 0 {
+                                            QmVhdm9uUmFuZ2luZw.iBeaconList.removeAll()
+                                            for tollData in tollArray {
+                                                QmVhdm9uUmFuZ2luZw.iBeaconList.append(IBeaconToll(name: tollData.name ?? "", laneType: tollData.laneType ?? "", major: tollData.major ?? 0, minor: tollData.minor ?? 0, deviceID: tollData.deviceID ?? "", mqttMac: tollData.mqttMac ?? "", validationFeetiOS: Double(tollData.validationFeetiOS ?? Int(0.0)), MeasureValueiOS: tollData.MeasureValueiOS ?? 0, beaconA_ID: tollData.deviceID ?? ""))
+                                            }
+                                            guard CLLocationManager.isRangingAvailable() else {
+                                                sdkLog.shared.printLog(message: "ZIGSDK - Beacon ranging is not available.")
+                                                return
+                                            }
+                                            self.mqttManager = CocoaMQTTManager.shared
+                                            self.startScanning()
+
+                                            completion(success,"ZIGSDK - Your Ticket Feature has been Enabled")
+                                        }
+                                        else {
+                                            completion(false,"ZIGSDK - MAC address was not found, please contact admin")
+                                        }
+                                    }
+                                    else if featureStatus.WalletEnableStatus{
+                                        completion(true,"ZIGSDK - Your Wallet Feature has been Enabled")
+                                    }
+                                    else{
+                                        completion(false,"ZIGSDK - All features are Blocked Contact Admin")
+                                    }
+                                }
+                                else{
+                                    QmVhdm9uUmFuZ2luZw.userLimitBool = false
+                                    completion(false,"ZIGSDK - Your limit has been expried. Please contact the admin")
                                 }
                             }
                             else{
                                 QmVhdm9uUmFuZ2luZw.userLimitBool = false
-                                completion(success,"Your limit has been exceeded. Please contact the admin")
-                                PresenterImpl().showAlert(title: "Your limit has been exceeded. Please contact the admin")
+                                completion(false,"ZIGSDK - Your limit has been expried. Please contact the admin")
                             }
                         }
                         else{
-                            QmVhdm9uUmFuZ2luZw.userLimitBool = false
-                            completion(success,"Your limit has been exceeded. Please contact the admin")
-                            PresenterImpl().showAlert(title: "Your limit has been exceeded. Please contact the admin")
+                            completion(false,"ZIGSDK - Security key is invalid or unauthorized, please contact admin")
                         }
                     }
                     else{
                         completion(success,"Security key is invalid or unauthorized, please contact admin")
-                        PresenterImpl().showAlert(title: "Security key is invalid or unauthorized, please contact admin")
                     }
                 }
-                else{
-                    print("API Failed======>")
-                    let endTime = DispatchTime.now()
-                    let responseTimeNanos = endTime.uptimeNanoseconds - startTime.uptimeNanoseconds
-                    let responseMilleSeconds = responseTimeNanos / 1_000_000
-                    let responseSeconds = Double(responseTimeNanos) / 1_000_000_000
-                    benchMarkData.cofigApiResponseTime = Int(responseMilleSeconds)
-                    sdkLog.shared.printLog(message: "Security key is invalid or unauthorized, please contact admin")
-                    completion(success,"Security key is invalid or unauthorized, please contact admin")
-                    PresenterImpl().showAlert(title: "Security key is invalid or unauthorized, please contact admin")
-                }
-            }
         }
         else{
-            completion(false,"No internet Connection!")
+            completion(false,"ZIGSDK - No internet Connection!")
         }
     }
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        print("Stop Scanning----->")
         self.stopSendingOutData()
     }
     func startScanning(){
+        // Request permission based on your app's needs
+        QmVhdm9uUmFuZ2luZw.locationManager.requestWhenInUseAuthorization()
+        QmVhdm9uUmFuZ2luZw.locationManager.allowsBackgroundLocationUpdates = true
+        QmVhdm9uUmFuZ2luZw.locationManager.showsBackgroundLocationIndicator = true
+        QmVhdm9uUmFuZ2luZw.locationManager.pausesLocationUpdatesAutomatically = false
+        QmVhdm9uUmFuZ2luZw.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        QmVhdm9uUmFuZ2luZw.locationManager.requestAlwaysAuthorization()
+        
+        // Start updating location
+        QmVhdm9uUmFuZ2luZw.locationManager.startUpdatingLocation()
         let clientIdentifiler = "Validationbeacon"
-        print("MqttValidationData.uuid---->",MqttValidationData.uuid)
-        let uuid = UUID(uuidString:MqttValidationData.uuid)!
+       // print("MqttValidationData.uuid---->",MqttValidationData.uuid)
+        let uuid = UUID(uuidString: "88b78a0c-34ae-44d0-b30c-84153fec0f9a")!
         self.beaconRegion = CLBeaconRegion(proximityUUID: uuid, identifier: clientIdentifiler)
         QmVhdm9uUmFuZ2luZw.locationManager.startRangingBeacons(in: self.beaconRegion)
     }
-    public static func stopRangingBeacons() {
+    public func stopRangingBeacons() {
+        stopFunction()
+    }
+
+    private func stopFunction() {
         let clientIdentifier = "Validationbeacon"
         guard let uuid = UUID(uuidString: MqttValidationData.uuid) else {
-            print("Invalid UUID string")
+            print("Invalid UUID")
             return
         }
+        
         let beaconRegion = CLBeaconRegion(uuid: uuid, identifier: clientIdentifier)
         QmVhdm9uUmFuZ2luZw.locationManager.stopRangingBeacons(in: beaconRegion)
+        QmVhdm9uUmFuZ2luZw.locationManager.stopMonitoring(for: beaconRegion)
+      //  print("Stopped ranging and monitoring beacons for region:", beaconRegion)
     }
-    internal func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
+     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         let loc = manager.location?.coordinate
         currentlat = loc?.latitude ?? 0.0
         currentLong = loc?.longitude ?? 0.0
+        print(currentlat,currentLong)
         sdkLog.shared.printLog(message: "Scan found nearby devices")
         print("BeaconData====>",beacons)
         if beacons.count > 0{
@@ -235,7 +244,7 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
         else{
             QmVhdm9uUmFuZ2luZw.beaconCheck = false
             QmVhdm9uUmFuZ2luZw.beaconBool = false
-            sdkLog.shared.printLog(message: "Scan failed to find nearby devices ")
+            sdkLog.shared.printLog(message: "ZIGSDK - Scan failed to find nearby devices ")
         }
     }
     private func updateDistance(_ distance: CLProximity,locationCo:CLLocationCoordinate2D,RssiValue:Int,Meterint:Double,major:Int,Minor:Int,proximityVle : Int,uuid : String) {
@@ -280,13 +289,13 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                             backup.removeAll()
                         }
                     } else {
-                        print("rssiValues is empty, nothing to process")
+                        
                     }
                 }
                 self.rssiValues.append(beaconInfo)
             }
             else {
-                print("toll1233: no rssi")
+                
             }
         }
         else {
@@ -294,39 +303,30 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
             case .unknown:
                 QmVhdm9uUmFuZ2luZw.beaconCheck = false
                 QmVhdm9uUmFuZ2luZw.beaconBool = false
-                print("BeconFounding-unknown=====>",QmVhdm9uUmFuZ2luZw.beaconCheck)
             case .far:
                 QmVhdm9uUmFuZ2luZw.beaconCheck = true
-                print("BeconFounding-Far=====>",QmVhdm9uUmFuZ2luZw.beaconCheck)
                 if QmVhdm9uUmFuZ2luZw.beaconStatus == 3{
-                    print("BeaconList=====>",QmVhdm9uUmFuZ2luZw.iBeaconList)
                     for list in QmVhdm9uUmFuZ2luZw.iBeaconList{
                         if major == 102 && Minor == list.minor{
-                            print("Beverage Validation",major,Minor,QmVhdm9uUmFuZ2luZw.beaconStatus)
                             beaconLogData.macaddress = list.mqttMac
                         }
                         else if major == list.major && Minor == list.minor{
-                            print("TicketValidation=====>far1=======>",major,Minor,QmVhdm9uUmFuZ2luZw.beaconStatus)
                             beaconLogData.macaddress = list.mqttMac
                             ticketCounter()
                         }
                         else{
-                            print("TicketValidation=====>far109=======>",major,Minor,QmVhdm9uUmFuZ2luZw.beaconStatus)
                         }
                     }
                 }
             case .near:
                 QmVhdm9uUmFuZ2luZw.beaconCheck = true
-                print("BeconFounding-Near=====>",QmVhdm9uUmFuZ2luZw.beaconCheck)
                 if QmVhdm9uUmFuZ2luZw.beaconStatus == 2 {
                     for list in QmVhdm9uUmFuZ2luZw.iBeaconList{
                         if major == 102{
-                            print("Beverage Validation",major,Minor,QmVhdm9uUmFuZ2luZw.beaconStatus)
                             beaconLogData.macaddress = list.mqttMac
                         }
                         else if major == 100{
                             if major == list.major && Minor == list.minor{
-                                print("TicketValidation=====>Near=======>",major,Minor,QmVhdm9uUmFuZ2luZw.beaconStatus)
                                 beaconLogData.macaddress = list.mqttMac
                                 ticketCounter()
                             }
@@ -335,16 +335,13 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                 }
             case .immediate:
                 QmVhdm9uUmFuZ2luZw.beaconCheck = true
-                print("BeconFounding-Immediate=====>",QmVhdm9uUmFuZ2luZw.beaconCheck)
                 if QmVhdm9uUmFuZ2luZw.beaconStatus == 1{
                     for list in QmVhdm9uUmFuZ2luZw.iBeaconList{
                         if major == 102{
-                            print("Beverage Validation",major,Minor,QmVhdm9uUmFuZ2luZw.beaconStatus)
                             beaconLogData.macaddress = list.mqttMac
                         }
                         else if major == 100{
                             if major == list.major && Minor == list.minor{
-                                print("TicketValidation=====>immediate=======>",major,Minor,QmVhdm9uUmFuZ2luZw.beaconStatus)
                                 beaconLogData.macaddress = list.mqttMac
                                 ticketCounter()
                             }
@@ -463,7 +460,6 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
         validateTicketCount = validateTicket.count
         newTicketCount = newTicket.count
         realmTotal = TicketRealm.count
-        print("TicketValidation=====>far3=======>",QmVhdm9uUmFuZ2luZw.beaconStatus,activeTicketCount,validateTicketCount,newTicketCount)
         QmVhdm9uUmFuZ2luZw.mqttValidationStart = 0
         QmVhdm9uUmFuZ2luZw.mqttValidationEnd = 0
         QmVhdm9uUmFuZ2luZw.mqttValidationStart = Date().inMiliSeconds()
@@ -475,13 +471,11 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
             TicketVerityAuto()
         }
         else if activeTicketCount == 0 && validateTicketCount == 0 && newTicketCount == 0 {
-            print("Illegal Data=====>")
             if QmVhdm9uUmFuZ2luZw.illegalCheck == 0 {
                 QmVhdm9uUmFuZ2luZw.illegalCheck += 1
                 validationflag = "Illegal"
                 QmVhdm9uUmFuZ2luZw.beaconCheck = true
                 QmVhdm9uUmFuZ2luZw.beaconBool = true
-                print("Illegal Data1=====>")
                 TicketIllegal()
             }
             else{
@@ -491,7 +485,6 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
         }
         else{
             validationflag = "Validate"
-            print("Validation1--->")
             QmVhdm9uUmFuZ2luZw.beaconCheck = true
             QmVhdm9uUmFuZ2luZw.beaconBool = true
             TicketValidation()
@@ -500,7 +493,6 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
     func TicketIllegal(){
         if isReachable(){
             if validationflag == "Illegal" {
-                print("Illegal Data2=====>")
                 QmVhdm9uUmFuZ2luZw.checkbattery()
                 self.inOutConfigList.removeAll()
                 let date = GetcurrentDate(dateformat: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
@@ -526,7 +518,6 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                 let message = CocoaMQTTMessage(topic:"\(beaconLogData.macaddress)/nfc" , string: dataString)
                 CocoaMQTTManager.shared.publish(message: message) { success, ackMessage, id in
                     if success {
-                        print("Illegal Data3=====>")
                         let jsonObject: [String: Any] = [
                             "TicketId" : "Illegal",
                             "Message" : "Successfully validate a Illegal Entry"
@@ -536,10 +527,10 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                         QmVhdm9uUmFuZ2luZw.totalValidationtime = QmVhdm9uUmFuZ2luZw.mqttValidationEnd - QmVhdm9uUmFuZ2luZw.mqttValidationStart
                         TicketViewModel.sharedInstance.ValidateTicket(ConfigList: self.inOutConfigList) { response, success in
                             if success{
-                                print("ZIG-SDK-Illigal-Sended====>")
+                                
                             }
                             else{
-                                print("ZIG-SDK-Illigal-Not-Sended====>")
+                                
                             }
                         }
                         
@@ -564,7 +555,7 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                                     self.startScanning()
                                 }
                                 else {
-                                    QmVhdm9uUmFuZ2luZw.stopRangingBeacons()
+                                    self.stopRangingBeacons()
                                     QmVhdm9uUmFuZ2luZw.beaconBool = false
                                     QmVhdm9uUmFuZ2luZw.timer?.invalidate()
                                     QmVhdm9uUmFuZ2luZw.timer = nil
@@ -657,18 +648,17 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                                 
                                 TicketViewModel.sharedInstance.ValidateTicket(ConfigList: self.inOutConfigList) { response, success in
                                     if success{
-                                        print("ZIG-SDK-OUT-Data=====>")
                                         self.startSendingOutDataEvery30Seconds { success, message in
                                             if success{
-                                                print("ZIG-SDK-OUT-Sended---->",message)
+                                                
                                             }
                                             else{
-                                                print("ZIG-SDK-OUT-Not-Sended---->",message)
+                                                
                                             }
                                         }
                                     }
                                     else{
-                                        print("IN-Not-Data-Sended---->", response as Any)
+                                        
                                     }
                                 }
                                 
@@ -695,7 +685,7 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                                                 }
                                                 else {
                                                     DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-                                                        QmVhdm9uUmFuZ2luZw.stopRangingBeacons()
+                                                        self.stopRangingBeacons()
                                                         QmVhdm9uUmFuZ2luZw.beaconBool = false
                                                         QmVhdm9uUmFuZ2luZw.timer?.invalidate()
                                                         QmVhdm9uUmFuZ2luZw.timer = nil
@@ -705,12 +695,11 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                                                 }
                                             }
                                             else{
-                                                print("QR code failed")
+                                               
                                             }
                                         }
                                     }
                                     else{
-                                        print("Limit Api failed")
                                     }
                                 }
                                 
@@ -793,18 +782,14 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                                 
                                 TicketViewModel.sharedInstance.ValidateTicket(ConfigList: self.inOutConfigList) { response, success in
                                     if success{
-                                        print("ZIG-SDK-OUT-Data=====>")
                                         self.startSendingOutDataEvery30Seconds { success, message in
                                             if success{
-                                                print("ZIG-SDK-OUT-Sended---->",message)
                                             }
                                             else{
-                                                print("ZIG-SDK-OUT-Not-Sended---->",message)
                                             }
                                         }
                                     }
                                     else{
-                                        print("IN-Not-Data-Sended---->", response as Any)
                                     }
                                 }
                                 SDKViewModel.sharedInstance.limitchange(count: ticketCount, userid: userDetails.UserId, typeValidate: "Ticket", ticketID: "\(ticketId)", ValidationMode: QmVhdm9uUmFuZ2luZw.validationMode, BatteryHealth: "\(benchMarkData.batteryPercent)", MobileModel: "\(benchMarkData.phoneModel)", TypeMobile: "iOS", ConfigAPITime: benchMarkData.cofigApiResponseTime, ValidationDistance: beaconLogData.validationFeetDistance, ibeaconStatus: "3", ConfigForegroundFeet: beaconLogData.beaconValidationFeet, TimeTaken: QmVhdm9uUmFuZ2luZw.totalValidationtime, clientId: userDetails.clientId, UserName: userDetails.userName) { response, success in
@@ -829,7 +814,7 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                                                 else {
                                                     DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
                                                         QmVhdm9uUmFuZ2luZw.beaconBool = false
-                                                        QmVhdm9uUmFuZ2luZw.stopRangingBeacons()
+                                                        self.stopRangingBeacons()
                                                         QmVhdm9uUmFuZ2luZw.timer?.invalidate()
                                                         QmVhdm9uUmFuZ2luZw.timer = nil
                                                         QmVhdm9uUmFuZ2luZw.userLimitBool = false
@@ -838,13 +823,13 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                                                 }
                                             }
                                             else{
-                                                print("QR code failed")
+                                                
                                             }
                                         }
                                         
                                     }
                                     else{
-                                        print("Limit api Failed")
+                                        
                                     }
                                 }
                             }
@@ -893,10 +878,10 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
             }
             TicketViewModel.sharedInstance.ValidateTicket(ConfigList: self.inOutConfigList) { response, success in
                 if success{
-                    print("IN-Data-Sended---->", response as Any)
+                    
                 }
                 else{
-                    print("IN-Not-Data-Sended---->", response as Any)
+                    
                 }
             }
         }
@@ -911,7 +896,7 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "QRGenerator", bundle: Bundle(for: QRpresenter.self))
             guard let loginViewController = storyboard.instantiateViewController(withIdentifier: "QRViewController") as? QRViewController else {
-                print("Failed to instantiate QRViewController")
+               
                 return
             }
             loginViewController.modalPresentationStyle = .fullScreen
@@ -922,7 +907,7 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                 rootViewController.present(loginViewController, animated: true, completion: nil)
             } else {
                 completion(false)
-                print("RootViewController not found")
+               
             }
         }
     }
@@ -933,7 +918,7 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
             benchMarkData.batteryPercent = Int(batteryLevel * 100)
             self.batteryPercentage = Int(batteryLevel * 100)
         } else {
-            print("Unable to determine battery level.")
+            
         }
     }
     func GetcurrentDate(dateformat:String)-> String{

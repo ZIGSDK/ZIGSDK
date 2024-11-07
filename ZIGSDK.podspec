@@ -5,10 +5,10 @@ Pod::Spec.new do |spec|
   spec.version      = "1.0.3"
   spec.summary      = "ZIG SDK for ticket validation"
   spec.description  = "This SDK includes ticket validation, toll validation, and user notifications with various functionalities for ticket management."
-  spec.homepage     = "https://github.com/KamaleshG615/ZIGSDK"
+  spec.homepage     = "https://github.com/ZIGSDK/ZIGSDK"
   spec.license      = { :type => 'MIT', :file => 'LICENSE' }
   spec.author             = { "ZED DIGITAL" => "kamalesh@zed.digital" }
-  spec.source       = { :git => "https://github.com/KamaleshG615/ZIGSDK.git", :tag => spec.version }
+  spec.source       = { :git => "https://github.com/ZIGSDK/ZIGSDK.git", :tag => spec.version }
   spec.ios.deployment_target = '13.0'
   spec.source_files = 'MainClasses/**/*.swift'
   spec.resources     = [

@@ -15,15 +15,12 @@ class TicketMethod: NSObject{
     
     func buyTicket(agencyId: Int, completion: @escaping (_ response: BuyTicket?, _ success: Bool) -> Void) {
         let urlString = "\(apiBaseUrl.baseURL)api/v2/Getfares?agencyId=\(agencyId)"
-        print("BuyTicketURL====>",urlString)
         guard let url = URL(string: urlString) else {
-            print("Invalid URL.")
             completion(nil, false)
             return
         }
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
-                print("Network Error: \(error.localizedDescription)")
                 DispatchQueue.main.async {
                     completion(nil, false)
                 }
@@ -31,7 +28,6 @@ class TicketMethod: NSObject{
             }
             
             guard let data = data else {
-                print("No data received.")
                 DispatchQueue.main.async {
                     completion(nil, false)
                 }
@@ -44,7 +40,6 @@ class TicketMethod: NSObject{
                     completion(json, true)
                 }
             } catch let decodingError {
-                print("Decoding Error: \(decodingError.localizedDescription)")
                 DispatchQueue.main.async {
                     completion(nil, false)
                 }

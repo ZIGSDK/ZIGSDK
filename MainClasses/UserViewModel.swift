@@ -29,7 +29,6 @@ class UserMethod {
             let jsonData = try JSONSerialization.data(withJSONObject: parametersValue, options: [])
             request.httpBody = jsonData
         } catch {
-            print("Error serializing JSON: \(error.localizedDescription)")
             completion(nil, false)
             return
         }
@@ -52,7 +51,6 @@ class UserMethod {
                     completion(jsonResponse, true)
                 }
             } catch {
-                print("Error decoding JSON response: \(error.localizedDescription)")
                 DispatchQueue.main.async {
                     completion(nil, false)
                 }

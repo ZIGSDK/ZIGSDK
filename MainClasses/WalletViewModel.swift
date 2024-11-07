@@ -16,13 +16,11 @@ class WalletViewModel : NSObject{
     func walletBalanceCheck(clientId: Int, userId: Int, completion: @escaping (_ response: walletBalance?, _ success: Bool) -> Void) {
             let urlString = "\(apiBaseUrl.baseURL)api/Wallet_Sdk/GetWallet?userId=\(userId)&clientId=\(clientId)"
             guard let url = URL(string: urlString) else {
-                print("Invalid URL.")
                 completion(nil, false)
                 return
             }
             let task = URLSession.shared.dataTask(with: url) { data, response, error in
                 if let error = error {
-                    print("Network Error: \(error.localizedDescription)")
                     DispatchQueue.main.async {
                         completion(nil, false)
                     }
@@ -30,7 +28,6 @@ class WalletViewModel : NSObject{
                 }
                 
                 guard let data = data else {
-                    print("No data received.")
                     DispatchQueue.main.async {
                         completion(nil, false)
                     }
@@ -43,7 +40,6 @@ class WalletViewModel : NSObject{
                         completion(json, true)
                     }
                 } catch let decodingError {
-                    print("Decoding Error: \(decodingError.localizedDescription)")
                     DispatchQueue.main.async {
                         completion(nil, false)
                     }

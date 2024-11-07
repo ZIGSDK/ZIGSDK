@@ -16,7 +16,6 @@ class SDKViewModel : NSObject{
     func configApi(authKey: String, completion: @escaping (_ response: configData?, _ success: Bool) -> Void) {
         let urlString = "\(apiBaseUrl.baseURL)api/Auth"
         guard let url = URL(string: urlString) else {
-            print("Invalid URL.")
             completion(nil, false)
             return
         }
@@ -29,14 +28,12 @@ class SDKViewModel : NSObject{
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
         } catch let error {
-            print("Error serializing JSON: \(error.localizedDescription)")
             completion(nil, false)
             return
         }
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
-                print("Network Error: \(error.localizedDescription)")
                 DispatchQueue.main.async {
                     completion(nil, false)
                 }
@@ -44,7 +41,6 @@ class SDKViewModel : NSObject{
             }
 
             guard let data = data else {
-                print("No data received.")
                 DispatchQueue.main.async {
                     completion(nil, false)
                 }
@@ -58,7 +54,6 @@ class SDKViewModel : NSObject{
                     completion(json, true)
                 }
             } catch let decodingError {
-                print("Decoding Error: \(decodingError.localizedDescription)")
                 DispatchQueue.main.async {
                     completion(nil, false)
                 }
@@ -105,9 +100,6 @@ class SDKViewModel : NSObject{
             "userid": userid,
             "username": UserName
         ]
-        print("URLData=====>",url)
-        print("Parameter===>",parameters)
-
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: parameters, options: [])
             var request = URLRequest(url: url)
@@ -122,7 +114,6 @@ class SDKViewModel : NSObject{
                 }
                 do {
                     let decodedResponse = try JSONDecoder().decode(validationLimit.self, from: data)
-                    print("ZIG-SDK====>",decodedResponse)
                     completion(decodedResponse, true)
                 } catch {
                     completion(nil, false)

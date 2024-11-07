@@ -47,7 +47,7 @@ public class ZIGSDK {
         QRGenerationImpl.QRgeneration(ticketStatus : ticketStatus,ticketId : ticketId,expiryDate : expiryDate,totalCount : totalCount,startColorHex : startColorHex,endColorHex : endColorHex,textColorHex : textColorHex, agencyName: agencyName)
     }
     
-    public func sendRequest(title: String = "", subtitle: String = "", backgroundColors: String = "", messageSendToDevice : String = "",imageResourceId : String = "",titleTextColor: String = "",subtitleTextColor: String = "", completion: @escaping (Bool, String?) -> Void){
+    public func sendRequest(title: String = "", subtitle: String = "", backgroundColors: String = "", messageSendToDevice : String,imageResourceId : String = "",titleTextColor: String = "",subtitleTextColor: String = "", completion: @escaping (Bool, String?) -> Void){
         stopRequestImpl.StopRequest(title: title, subtitle: subtitle, backroundColor: backgroundColors,message:messageSendToDevice,imgURL : imageResourceId,titleTextColor: titleTextColor,subtitleTextColor: subtitleTextColor){ success, message in
             completion(success, message)
         }

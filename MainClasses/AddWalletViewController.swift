@@ -62,7 +62,7 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
            let creditAmount = Double(amountText) {
             AddWalletViewController.creditAmount = creditAmount
         } else {
-            print("Failed to convert the string to a Double")
+           // print("Failed to convert the string to a Double")
         }
         if AddWalletViewController.creditAmount > 0{
             WalletViewModel.sharedInstance.walletPaymentMethod(clientName: MqttValidationData.userName, clientId: MqttValidationData.userid, userId: AddWalletViewController.userID, userName: AddWalletViewController.userName, creditAmount: AddWalletViewController.creditAmount, debitAmount: 0.0, purpose: "Wallet Recharge", walletBool: true) { response, success in

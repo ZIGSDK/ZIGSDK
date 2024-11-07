@@ -65,9 +65,7 @@ class StopViewController: UIViewController,CLLocationManagerDelegate,UNUserNotif
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         SetupUI()
-        print("BeconFounding=====>",QmVhdm9uUmFuZ2luZw.beaconCheck)
         if QmVhdm9uUmFuZ2luZw.beaconCheck{
-            print("BeconFounding=====>",QmVhdm9uUmFuZ2luZw.beaconCheck)
             SoSandStopFeature()
         }
         else{
@@ -158,7 +156,7 @@ class StopViewController: UIViewController,CLLocationManagerDelegate,UNUserNotif
                             if response?.Message == "OK" && response?.LimitStatus ?? false {
                             }
                             else {
-                                QmVhdm9uUmFuZ2luZw.stopRangingBeacons()
+                                self.stopRangingBeacons()
                                 QmVhdm9uUmFuZ2luZw.beaconBool = false
                                 QmVhdm9uUmFuZ2luZw.userLimitBool = false
                                 QmVhdm9uUmFuZ2luZw.timer?.invalidate()
@@ -184,6 +182,20 @@ class StopViewController: UIViewController,CLLocationManagerDelegate,UNUserNotif
                 self.failureHandler?(false,"Stop request not Send to beacon..because due to network error")
             }
         }
+    }
+    public func stopRangingBeacons() {
+        stopFunction()
+    }
+
+    private func stopFunction() {
+        let clientIdentifier = "Validationbeacon"
+        guard let uuid = UUID(uuidString: MqttValidationData.uuid) else {
+            return
+        }
+        
+        let beaconRegion = CLBeaconRegion(uuid: uuid, identifier: clientIdentifier)
+        locationManager.stopRangingBeacons(in: beaconRegion)
+        locationManager.stopMonitoring(for: beaconRegion)
     }
     func dismissViewController() {
         dismiss(animated: true, completion: nil)

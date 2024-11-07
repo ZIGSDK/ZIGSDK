@@ -37,7 +37,6 @@ class SOSViewController: UIViewController,CLLocationManagerDelegate,AVSpeechSynt
         super.viewDidLoad()
         SetupUI()
         if QmVhdm9uUmFuZ2luZw.beaconCheck{
-            print("BeconFounding=====>",QmVhdm9uUmFuZ2luZw.beaconCheck)
             SoSandStopFeature()
         }
         else{
@@ -122,7 +121,7 @@ class SOSViewController: UIViewController,CLLocationManagerDelegate,AVSpeechSynt
                                 if response?.Message == "OK" && response?.LimitStatus == true && response?.BalanceLimit ?? 0 > 0 {
                                 }
                                 else {
-                                    QmVhdm9uUmFuZ2luZw.stopRangingBeacons()
+                                    self.stopRangingBeacons()
                                 }
                             }
                         }
@@ -144,6 +143,20 @@ class SOSViewController: UIViewController,CLLocationManagerDelegate,AVSpeechSynt
                 self.dismissViewController()
             }
         }
+    }
+    public func stopRangingBeacons() {
+        stopFunction()
+    }
+
+    private func stopFunction() {
+        let clientIdentifier = "Validationbeacon"
+        guard let uuid = UUID(uuidString: MqttValidationData.uuid) else {
+            return
+        }
+        
+        let beaconRegion = CLBeaconRegion(uuid: uuid, identifier: clientIdentifier)
+        locationManager.stopRangingBeacons(in: beaconRegion)
+        locationManager.stopMonitoring(for: beaconRegion)
     }
     func dismissViewController() {
         dismiss(animated: true, completion: nil)

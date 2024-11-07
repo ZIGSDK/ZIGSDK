@@ -25,11 +25,13 @@ class TicketMethods : TicketValidationDelegate{
     
     public func addTickets(TotalAmount: Double, TicketDetails: [[String: Any]], completion: @escaping(Bool,String) -> Void){
         if isReachable(){
+            userDetails.UserId = UserDefaults.standard.integer(forKey: "userId")
+            userDetails.userName = UserDefaults.standard.string(forKey: "UserName") ?? ""
+            userDetails.emailId = UserDefaults.standard.string(forKey: "UserEmailID") ?? ""
             let agencyid = userDetails.clientId
             let userId = UserDefaults.standard.integer(forKey: "userId")
             let authKey = UserDefaults.standard.string(forKey: "AuthKey")
             let username = UserDefaults.standard.string(forKey: "UserEmailID")
-            print("ZIG-SDK-ADDTicket======>",TicketDetails)
             if TicketDetails.count > 0{
                 var fareID = 0
                 var routeName = ""
@@ -47,7 +49,7 @@ class TicketMethods : TicketValidationDelegate{
                     TicketListData.append(TicketList(FromAddress: FromAddress, DestinationAddress: DestinationAddress, Amount: amount, Fareid: fareID, RouteId: routeName))
                 }
                 
-                TicketViewModel.sharedInstance.zigAddTicket(agencyid: agencyid, TotalAmount: TotalAmount, UserID: userId, TicketList: TicketListData, DestinationAddress: destinationAddress1, Token: authKey ?? "", FromAddress: fromaddress1, Message: "Ticket Take in IOS App",transactionID: transactionId, UserName:username ?? "") { response, success in
+                TicketViewModel.sharedInstance.zigAddTicket(agencyid: userDetails.clientId, TotalAmount: TotalAmount, UserID: userId, TicketList: TicketListData, DestinationAddress: destinationAddress1, Token: authKey ?? "", FromAddress: fromaddress1, Message: "Ticket Take in IOS App",transactionID: transactionId, UserName:username ?? "") { response, success in
                     if success{
                         if response?.Message ?? "" == "Ok"{
                             self.GetTicket { success, Message in
@@ -60,7 +62,7 @@ class TicketMethods : TicketValidationDelegate{
                             }
                         }
                         else{
-                            completion(false,"Issue on add Ticket")
+                            completion(false,"ZIGSDK - \(response?.Message ?? "")")
                         }
                     }
                     else{
@@ -69,6 +71,9 @@ class TicketMethods : TicketValidationDelegate{
                     
                 }
             }
+            else{
+                completion(false,"Invalid FareList")
+            }
         }
         else{
             completion(false,"No Internet Connection")
@@ -76,6 +81,9 @@ class TicketMethods : TicketValidationDelegate{
     }
     func GetTicket(completion: @escaping (Bool, [[String: Any]]) -> Void) {
         var userId = userDetails.UserId
+        userDetails.UserId = UserDefaults.standard.integer(forKey: "userId")
+        userDetails.userName = UserDefaults.standard.string(forKey: "UserName") ?? ""
+        userDetails.emailId = UserDefaults.standard.string(forKey: "UserEmailID") ?? ""
         if isReachable(){
             TicketViewModel.sharedInstance.ZigGetTicket(userId: userId, agencyId: userDetails.clientId) { response, success in
                 if success {
@@ -84,12 +92,10 @@ class TicketMethods : TicketValidationDelegate{
                             self.DeleteRealm(agencyId: userDetails.clientId) { success, message in
                                 if success && message == "Realm Deleteed Successfully" {
                                     let ticketDetails = response?.Tickets ?? []
-                                    print("ZIG-SDK-TicketDetails=====>", ticketDetails.count)
                                     
                                     var ticketsArray: [[String: Any]] = []
                                     
                                     for ticket in ticketDetails {
-                                        print("ZIG-SDK-TicketDetails=====>", ticketDetails.count)
                                         
                                         // Initialize ticket variables
                                         let TransactionDate = ticket.TransactionDate ?? ""
@@ -187,7 +193,7 @@ class TicketMethods : TicketValidationDelegate{
                                 }
                             }
                         } else {
-                            completion(false, [])
+                            completion(false, [["Message": "ZIGSDK - \(response?.Message ?? "")"]])
                         }
                     } catch {
                         completion(false, [])
@@ -234,20 +240,25 @@ class TicketMethods : TicketValidationDelegate{
         return String(uniqueID)
     }
     func ActivateTicket(ticketId: Int, completion: @escaping (Bool, [[String : Any]]) -> Void) {
+        userDetails.UserId = UserDefaults.standard.integer(forKey: "userId")
+        userDetails.userName = UserDefaults.standard.string(forKey: "UserName") ?? ""
+        userDetails.emailId = UserDefaults.standard.string(forKey: "UserEmailID") ?? ""
         if isReachable(){
             let userId = UserDefaults.standard.integer(forKey: "userId")
             TicketViewModel.sharedInstance.ZigActivate(TicketId: ticketId, userId: userId) { response, success in
                 if success{
-                    self.GetTicket { success, responsedata in
-                        if success{
-                            completion(true, responsedata)
+                    if response?.Message == "Ok"{
+                        self.GetTicket { success, responsedata in
+                            if success{
+                                completion(true, responsedata)
+                            }
+                            else{
+                                completion(false,responsedata)
+                            }
                         }
-                        else{
-                            let jsonObject: [String: Any] = [
-                                "Message" : "Issue on Ticket Activation",
-                            ]
-                            completion(false,[jsonObject])
-                        }
+                    }
+                    else{
+                        completion(false, [["Message": "ZIGSDK - \(response?.Message ?? "")"]])
                     }
                 }
                 else{

@@ -28,7 +28,6 @@ class BuyTicketViewController: UIViewController, UITableViewDelegate, UITableVie
         if let productCount = BuyTicketViewController.productData?.list.count {
             counterValues = Array(repeating: 0, count: productCount)
         }
-        print("ZIG-SDK===>", BuyTicketViewController.productData as Any)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -103,8 +102,7 @@ class BuyTicketViewController: UIViewController, UITableViewDelegate, UITableVie
 
     @IBAction func purchaseAction(_ sender: Any) {
       //  AddTicketClasee().addTicketMethod(TicketObject: selectedProducts, TotalTicketCost: <#T##String#>, completion: <#T##(Bool, String) -> Void#>)
-        print("Selected Products: \(selectedProducts)")
-        print("Total Ticket Cost: \(totalTicketCost)")
+        
     }
 
     
@@ -120,7 +118,6 @@ class BuyTicketViewController: UIViewController, UITableViewDelegate, UITableVie
                     completion(image)
                 }
             } else {
-                print("Error loading image: \(error?.localizedDescription ?? "Unknown error")")
                 DispatchQueue.main.async {
                     completion(nil)
                 }
