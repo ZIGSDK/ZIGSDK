@@ -2,7 +2,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "ZIGSDK"
-  spec.version      = "1.0.3"
+  spec.version      = "1.0.4"
   spec.summary      = "ZIG SDK for ticket validation"
   spec.description  = "This SDK includes ticket validation, toll validation, and user notifications with various functionalities for ticket management."
   spec.homepage     = "https://github.com/ZIGSDK/ZIGSDK"
