@@ -56,52 +56,60 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
     }
     
     @IBAction func payAction(_ sender: Any) {
-        self.showLoader()
-        AddWalletViewController.creditAmount = 0.0
-        if let amountText = amountField.text?.replacingOccurrences(of: "$", with: "").trimmingCharacters(in: .whitespaces),
-           let creditAmount = Double(amountText) {
-            AddWalletViewController.creditAmount = creditAmount
-        } else {
-           // print("Failed to convert the string to a Double")
-        }
-        if AddWalletViewController.creditAmount > 0{
-            WalletViewModel.sharedInstance.walletPaymentMethod(clientName: MqttValidationData.userName, clientId: MqttValidationData.userid, userId: AddWalletViewController.userID, userName: AddWalletViewController.userName, creditAmount: AddWalletViewController.creditAmount, debitAmount: 0.0, purpose: "Wallet Recharge", walletBool: true) { response, success in
-                if success{
-                    if response?.WalletEnableStatus ?? false {
-                        self.hideLoader()
-                        self.dismiss(animated: true)
-                        let jsonObject: [String: Any] = [
-                            "Message" : "\(response?.Message ?? "")",
-                            "userId" : "\(response?.userId ?? 0)",
-                            "userName" : "\(response?.userName ?? "")",
-                            "BalanceAmount" : "\(response?.walletBalanceAmount ?? 0.0)"
-                        ]
-                        Trigger().scheduleNotification(title: "ZIG SuperWallet", body: "Congratulations! Your wallet has been credited with $\(AddWalletViewController.creditAmount).")
-                        self.successHandler?(response?.WalletEnableStatus ?? false,jsonObject)
+        if isReachable(){
+            self.showLoader()
+            AddWalletViewController.creditAmount = 0.0
+            if let amountText = amountField.text?.replacingOccurrences(of: "$", with: "").trimmingCharacters(in: .whitespaces),
+               let creditAmount = Double(amountText) {
+                AddWalletViewController.creditAmount = creditAmount
+            } else {
+                // print("Failed to convert the string to a Double")
+            }
+            if AddWalletViewController.creditAmount > 0{
+                WalletViewModel.sharedInstance.walletPaymentMethod(clientName: MqttValidationData.userName, clientId: MqttValidationData.userid, userId: AddWalletViewController.userID, userName: AddWalletViewController.userName, creditAmount: AddWalletViewController.creditAmount, debitAmount: 0.0, purpose: "Wallet Recharge", walletBool: true) { response, success in
+                    if success{
+                        if response?.WalletEnableStatus ?? false {
+                            self.hideLoader()
+                            self.dismiss(animated: true)
+                            let jsonObject: [String: Any] = [
+                                "Message" : "\(response?.Message ?? "")",
+                                "userId" : "\(response?.userId ?? 0)",
+                                "userName" : "\(response?.userName ?? "")",
+                                "BalanceAmount" : "\(response?.walletBalanceAmount ?? 0.0)"
+                            ]
+                            Trigger().scheduleNotification(title: "ZIG SuperWallet", body: "Congratulations! Your wallet has been credited with $\(AddWalletViewController.creditAmount).")
+                            self.successHandler?(response?.WalletEnableStatus ?? false,jsonObject)
+                        }
+                        else
+                        {
+                            self.hideLoader()
+                            self.dismiss(animated: true)
+                            let jsonObject: [String: Any] = [
+                                "Message" : "\(response?.Message ?? "")",
+                            ]
+                            self.successHandler?(response?.WalletEnableStatus ?? false,jsonObject)
+                        }
                     }
-                    else
-                    {
+                    else{
                         self.hideLoader()
-                        self.dismiss(animated: true)
                         let jsonObject: [String: Any] = [
-                            "Message" : "\(response?.Message ?? "")",
+                            "Message" : "\(response?.Message ?? "")"
                         ]
-                        self.successHandler?(response?.WalletEnableStatus ?? false,jsonObject)
+                        self.failureHandler?(success,jsonObject)
                     }
                 }
-                else{
-                    self.hideLoader()
-                    let jsonObject: [String: Any] = [
-                        "Message" : "\(response?.Message ?? "")"
-                    ]
-                    self.failureHandler?(success,jsonObject)
-                }
+            }
+            else{
+                self.hideLoader()
+                let toast = ToastView(message: "Enter your amount")
+                toast.showToast(inView: self.view)
             }
         }
         else{
-            self.hideLoader()
-            let toast = ToastView(message: "Enter your amount")
-            toast.showToast(inView: self.view)
+            let jsonObject: [String: Any] = [
+                "Message" : "ZIGSDK-No internet connection"
+            ]
+            self.failureHandler?(false,jsonObject)
         }
     }
     

@@ -34,64 +34,80 @@ class ReduceWalletAmount: UIViewController {
         setUpUI()
     }
     func setUpUI(){
-        overrideUserInterfaceStyle = .light
-        self.showLoader()
-        cancelButton.layer.cornerRadius = 10
-        buyButton.layer.cornerRadius = 10
-        ReduceWalletAmount.setBrandColour = ReduceWalletAmount.setBrandColour.isEmpty ? "#E00F12" : ReduceWalletAmount.setBrandColour
-        WalletViewModel.sharedInstance.walletBalanceCheck(clientId: MqttValidationData.userid, userId: ReduceWalletAmount.userId) { response, success in
-            if success{
-                self.hideLoader()
-               // print("ReduceWalletAmount.debitAmount====>",ReduceWalletAmount.debitAmount)
-                self.walletTotalAmount.text = "$ \(response?.walletBalanceAmount ?? 0.0)"
-                self.totalAmount.text = "$ \(ReduceWalletAmount.debitAmount)"
-            }
-            else{
-                self.hideLoader()
-                let jsonObject: [String: Any] = [
-                    "Message" : "\(response?.Message ?? "")"
+        if isReachable(){
+            overrideUserInterfaceStyle = .light
+            self.showLoader()
+            cancelButton.layer.cornerRadius = 10
+            buyButton.layer.cornerRadius = 10
+            ReduceWalletAmount.setBrandColour = ReduceWalletAmount.setBrandColour.isEmpty ? "#E00F12" : ReduceWalletAmount.setBrandColour
+            WalletViewModel.sharedInstance.walletBalanceCheck(clientId: MqttValidationData.userid, userId: ReduceWalletAmount.userId) { response, success in
+                if success{
+                    self.hideLoader()
+                    // print("ReduceWalletAmount.debitAmount====>",ReduceWalletAmount.debitAmount)
+                    self.walletTotalAmount.text = "$ \(response?.walletBalanceAmount ?? 0.0)"
+                    self.totalAmount.text = "$ \(ReduceWalletAmount.debitAmount)"
+                }
+                else{
+                    self.hideLoader()
+                    let jsonObject: [String: Any] = [
+                        "Message" : "\(response?.Message ?? "")"
                     ]
-                self.failureHandler?(success,jsonObject)
+                    self.failureHandler?(success,jsonObject)
+                }
             }
+            buyButton.backgroundColor = UIColor(hex: ReduceWalletAmount.setBrandColour)
         }
-        buyButton.backgroundColor = UIColor(hex: ReduceWalletAmount.setBrandColour)
+        else{
+            let jsonObject: [String: Any] = [
+                "Message" : "ZIGSDK - No internet connection)"
+            ]
+            self.failureHandler?(false,jsonObject)
+        }
     }
     @IBAction func buyAction(_ sender: Any) {
-        self.showLoader()
-        buyButton.isEnabled = false
-        WalletViewModel.sharedInstance.walletPaymentMethod(clientName: MqttValidationData.userName, clientId: MqttValidationData.userid, userId: ReduceWalletAmount.userId, userName: ReduceWalletAmount.userName, creditAmount: 0.0, debitAmount: ReduceWalletAmount.debitAmount, purpose: ReduceWalletAmount.purpose, walletBool: false) { response, success in
-            if success{
-                self.buyButton.isEnabled = true
-                if response?.WalletEnableStatus ?? false {
-                    let jsonObject: [String: Any] = [
-                        "Message" : "\(response?.Message ?? "")",
-                        "userId" : "\(response?.userId ?? 0)",
-                        "userName" : "\(response?.userName ?? "")",
-                        "BalanceAmount" : "\(response?.walletBalanceAmount ?? 0.0)"
-                    ]
-                    Trigger().scheduleNotification(title: "ZIG SuperWallet", body: "Your recent transaction has been processed. $\(ReduceWalletAmount.debitAmount) has been debited from your wallet.")
-                    self.successHandler?(response?.WalletEnableStatus ?? false,jsonObject)
-                    self.dismiss(animated: true)
+        if isReachable(){
+            self.showLoader()
+            buyButton.isEnabled = false
+            WalletViewModel.sharedInstance.walletPaymentMethod(clientName: MqttValidationData.userName, clientId: MqttValidationData.userid, userId: ReduceWalletAmount.userId, userName: ReduceWalletAmount.userName, creditAmount: 0.0, debitAmount: ReduceWalletAmount.debitAmount, purpose: ReduceWalletAmount.purpose, walletBool: false) { response, success in
+                if success{
+                    self.buyButton.isEnabled = true
+                    if response?.WalletEnableStatus ?? false {
+                        let jsonObject: [String: Any] = [
+                            "Message" : "\(response?.Message ?? "")",
+                            "userId" : "\(response?.userId ?? 0)",
+                            "userName" : "\(response?.userName ?? "")",
+                            "BalanceAmount" : "\(response?.walletBalanceAmount ?? 0.0)"
+                        ]
+                        Trigger().scheduleNotification(title: "ZIG SuperWallet", body: "Your recent transaction has been processed. $\(ReduceWalletAmount.debitAmount) has been debited from your wallet.")
+                        self.successHandler?(response?.WalletEnableStatus ?? false,jsonObject)
+                        self.dismiss(animated: true)
+                    }
+                    else{
+                        self.hideLoader()
+                        self.buyButton.isEnabled = true
+                        self.dismiss(animated: true)
+                        let jsonObject: [String: Any] = [
+                            "Message" : "\(response?.Message ?? "")",
+                        ]
+                        self.successHandler?(response?.WalletEnableStatus ?? false,jsonObject)
+                    }
                 }
                 else{
                     self.hideLoader()
                     self.buyButton.isEnabled = true
-                    self.dismiss(animated: true)
                     let jsonObject: [String: Any] = [
-                        "Message" : "\(response?.Message ?? "")",
+                        "Message" : "\(response?.Message ?? "")"
                     ]
-                    self.successHandler?(response?.WalletEnableStatus ?? false,jsonObject)
+                    self.failureHandler?(success,jsonObject)
+                    self.dismiss(animated: true)
                 }
             }
-            else{
-                self.hideLoader()
-                self.buyButton.isEnabled = true
-                let jsonObject: [String: Any] = [
-                    "Message" : "\(response?.Message ?? "")"
-                    ]
-                self.failureHandler?(success,jsonObject)
-                self.dismiss(animated: true)
-            }
+        }
+        else{
+            let jsonObject: [String: Any] = [
+                "Message" : "ZIGSDK - No internet Connection"
+            ]
+            self.failureHandler?(false,jsonObject)
         }
     }
     @IBAction func cancelBtn(_ sender: Any) {
