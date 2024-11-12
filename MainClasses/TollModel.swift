@@ -59,7 +59,7 @@ struct InOutConfig {
 struct featureStatus {
     static var tollValidation = false
     static var beverageValidation = false
-    static var WalletEnableStatus = true
+    static var WalletEnableStatus = false
     static var TicketValidationStatus = false
 }
 struct benchMarkData {
