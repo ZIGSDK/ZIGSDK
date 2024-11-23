@@ -14,8 +14,8 @@ class userInfoMethod : GetUserInfoDelegate {
                 if success{
                     if response?.message != "Invalid Token"{
                         userDetails.clientId = response?.clientId ?? 0
-                        userDetails.AuthKey = authKey ?? ""
-                        UserMethod.sharedInstance.AddUser(clientId: response?.clientId ?? 0 , userName: userName, userId: userId, emailId: EmailId) { responsevalue, success in
+                        userDetails.AuthKey = authKey
+                        UserMethod.sharedInstance.AddUser(AuthKey: authKey, clientId: response?.clientId ?? 0 , userName: userName, userId: userId, emailId: EmailId) { responsevalue, success in
                             if success{
                                 if responsevalue?.Message == "Session added successfully"{
                                     UserDefaults.standard.setValue(authKey, forKey: "AuthKey")
@@ -30,6 +30,11 @@ class userInfoMethod : GetUserInfoDelegate {
                                     completion(true,"ZIGSDk - User added Successfully")
                                 }
                                 else{
+                                    UserDefaults.standard.setValue(authKey, forKey: "AuthKey")
+                                    UserDefaults.standard.setValue(userId, forKey: "userId")
+                                    UserDefaults.standard.set(userName, forKey: "UserName")
+                                    UserDefaults.standard.set(EmailId, forKey: "UserEmailID")
+                                    
                                     userDetails.UserId = UserDefaults.standard.integer(forKey: "userId")
                                     userDetails.userName = UserDefaults.standard.string(forKey: "UserName") ?? ""
                                     userDetails.emailId = UserDefaults.standard.string(forKey: "UserEmailID") ?? ""
@@ -38,6 +43,14 @@ class userInfoMethod : GetUserInfoDelegate {
                             }
                             else{
                                 completion(false,"ZIGSDk - Unable to add user")
+                            }
+                        }
+                        UserMethod.sharedInstance.getuserEmail(emailId: EmailId, agencyID: userDetails.clientId) { response, success in
+                            if success{
+                                
+                            }
+                            else{
+                                
                             }
                         }
                     }

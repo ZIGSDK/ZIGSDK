@@ -14,13 +14,15 @@ class TicketViewModel : NSObject{
         return instance
     }()
     
-    func zigAddTicket(agencyid: Int, TotalAmount: Double, UserID: Int, TicketList: [TicketList], DestinationAddress: String, Token: String, FromAddress: String, Message: String, transactionID: String, UserName: String, completion: @escaping (_ response: AddTicket?, _ success: Bool) -> Void) {
+    func zigAddTicket(authKey: String,agencyid: Int, TotalAmount: Double, UserID: Int, TicketList: [TicketList], DestinationAddress: String, Token: String, FromAddress: String, Message: String, transactionID: String, UserName: String, completion: @escaping (_ response: AddTicket?, _ success: Bool) -> Void) {
         let parametersValue: [String: Any] = [
             "Agencyid": agencyid,
+            "AuthKey": authKey,
             "TotalAmount": TotalAmount,
             "UserID": UserID,
             "Username": UserName,
             "TransactionId": transactionID,
+            "mobileType" : "iOS",
             "Tickets": TicketList.map { ticket in
                 return [
                     "FromAddress": ticket.FromAddress,
@@ -79,6 +81,7 @@ class TicketViewModel : NSObject{
     
     func ZigGetTicket(userId:Int,agencyId:Int,completion:@escaping(_ response: GetTicket?, _ success: Bool) -> Void){
         let urlString = "\(apiBaseUrl.baseURL)Zigsmartandroid/api/Ticket/GetTicketsNEW?UserID=\(userId)&agencyId=\(agencyId)&count=0"
+        //print("AddTicket---->",urlString)
         guard let url = URL(string: urlString) else {
           
             completion(nil, false)
@@ -86,7 +89,7 @@ class TicketViewModel : NSObject{
         }
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
-                
+                //print("AddTicket---->",response,error)
                 DispatchQueue.main.async {
                     completion(nil, false)
                 }
@@ -94,7 +97,7 @@ class TicketViewModel : NSObject{
             }
             
             guard let data = data else {
-                
+                //print("AddTicket---->",response,data)
                 DispatchQueue.main.async {
                     completion(nil, false)
                 }
@@ -107,7 +110,7 @@ class TicketViewModel : NSObject{
                     completion(json, true)
                 }
             } catch let decodingError {
-                
+                //print("AddTicket---->",response,decodingError)
                 DispatchQueue.main.async {
                     completion(nil, false)
                 }

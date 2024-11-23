@@ -17,6 +17,8 @@ public class ZIGSDK {
     private let zigWalletBalance : ZIGSuperWalletBalanceDelegate
     private let BuyTicketAction: BuyTicketDelegate
     private let addUserInfo: GetUserInfoDelegate
+    private let transAction: TransactionDelegate
+    private let getFare : GetFareDelegate
     public init() {
         self.presenterImpl = PresenterImpl()
         self.onboardingImpl = OnboardingPresenterImpl()
@@ -32,6 +34,8 @@ public class ZIGSDK {
         self.zigWalletBalance = ZIGSuperWalletBalance()
         self.BuyTicketAction = BuyTicketMethod()
         self.addUserInfo = userInfoMethod()
+        self.transAction = TransactionClass()
+        self.getFare = GetFareClass()
     }
     
     public func triggerAlert(title : String) {
@@ -90,9 +94,9 @@ public class ZIGSDK {
         }
     }
     
-    public func zigCreditWallet(walletTitle: String = "",buttonText: String = "", userId: Int, userName: String, creditAmount: Double,setBrandColour : String = "",completion: @escaping (Bool, ([String: Any])) -> Void)
+    public func zigCreditWallet(walletTitle: String = "",buttonText: String = "", userId: Int, userName: String, creditAmount: Double = 0.0,setBrandColour : String = "",paymentMode:paymentType,completion: @escaping (Bool, ([String: Any])) -> Void)
     {
-        addSDKWallet.zigCreditWallet(walletTitle: walletTitle,buttonText: buttonText, userId: userId, userName: userName, creditAmount: creditAmount,setBrandColour : setBrandColour){ success, message in
+        addSDKWallet.zigCreditWallet(walletTitle: walletTitle,buttonText: buttonText, userId: userId, userName: userName, paymentMode: paymentMode, creditAmount: creditAmount,setBrandColour : setBrandColour){ success, message in
             completion(success,message)
         }
     }
@@ -118,6 +122,16 @@ public class ZIGSDK {
     public func zigAddUserInfo(AuthKey: String, UserId: Int, UserName: String, EmailId: String, completion: @escaping(Bool,String) -> Void){
         addUserInfo.UserInfo(authKey: AuthKey, userId: UserId, userName: UserName, EmailId: EmailId) { Success, Message in
             completion(Success,Message)
+        }
+    }
+    public func zigTransaction(userId: Int,completion: @escaping (Bool,([[String: Any]])) -> Void){
+        transAction.zigTransaction(userId: userId) { success, message in
+            completion(success,message)
+        }
+    }
+    public func zigGetFare(authKey: String,completion: @escaping (Bool,([[String: Any]]))-> Void){
+        getFare.getFare(authkey: authKey) { success, Message in
+            completion(success,Message)
         }
     }
 }

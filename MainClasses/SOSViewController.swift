@@ -83,7 +83,7 @@ class SOSViewController: UIViewController,CLLocationManagerDelegate,AVSpeechSynt
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
-            if let error = error {
+            if error != nil {
                 
                 return
             }

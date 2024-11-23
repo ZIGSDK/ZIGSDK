@@ -28,7 +28,7 @@ class TicketMethods : TicketValidationDelegate{
             userDetails.UserId = UserDefaults.standard.integer(forKey: "userId")
             userDetails.userName = UserDefaults.standard.string(forKey: "UserName") ?? ""
             userDetails.emailId = UserDefaults.standard.string(forKey: "UserEmailID") ?? ""
-            let agencyid = userDetails.clientId
+            _ = userDetails.clientId
             let userId = UserDefaults.standard.integer(forKey: "userId")
             let authKey = UserDefaults.standard.string(forKey: "AuthKey")
             let username = UserDefaults.standard.string(forKey: "UserEmailID")
@@ -48,39 +48,139 @@ class TicketMethods : TicketValidationDelegate{
                     amount = ticket["ticketCost"] as? Double ?? 0.0
                     TicketListData.append(TicketList(FromAddress: FromAddress, DestinationAddress: DestinationAddress, Amount: amount, Fareid: fareID, RouteId: routeName))
                 }
-                
-                TicketViewModel.sharedInstance.zigAddTicket(agencyid: userDetails.clientId, TotalAmount: TotalAmount, UserID: userId, TicketList: TicketListData, DestinationAddress: destinationAddress1, Token: authKey ?? "", FromAddress: fromaddress1, Message: "Ticket Take in IOS App",transactionID: transactionId, UserName:username ?? "") { response, success in
-                    if success{
-                        if response?.Message ?? "" == "Ok"{
-                            self.GetTicket { success, Message in
-                                if success{
-                                    completion(true,"Ticket Added Successfully")
+                let AmountCent = Int(TotalAmount * 100)
+                if paymentMethod.paymentmethod {
+                    ZIGwalletPaytment().zigSuperwalletPayment(walletTitle: "", buttonText: "", userId: userDetails.UserId, userName: userDetails.userName, debitAmount: TotalAmount, purpose: "Ticket Purchase", setBrandColour: "") { success, message in
+                        if success{
+                            ReferanceViewModel.sharedInstance.addReferance(Amount: AmountCent, Transcationtype: "Wallet", Currency: "USD", Txn_id: transactionId, Correlation_id: "", Bankmessage: "", Txnstatus: "true", Gatewayrespcode: "", Retrival_ref_no: "", Specialpayment: "", CardType: "", MaskedCardNumber: "", Txntag: "", EmailID: userDetails.emailId, Phone: "", UserName: userDetails.userName, Userid: "\(userDetails.UserId)", Txn_ref_no: transactionId, Error_code: "", Error_description: "", Status_code: "", Fareid: "\(fareID)", Wallet: false, AuthKey: userDetails.AuthKey) { response, success in
+                                if success {
+                                    if response?.Message == "Ok"{
+                                        TicketViewModel.sharedInstance.zigAddTicket(authKey: userDetails.AuthKey, agencyid: userDetails.clientId, TotalAmount: TotalAmount, UserID: userId, TicketList: self.TicketListData, DestinationAddress: destinationAddress1, Token: authKey ?? "", FromAddress: fromaddress1, Message: "Ticket Take in IOS App",transactionID: transactionId, UserName: userDetails.userName) { response, success in
+                                            if success{
+                                                if response?.Message ?? "" == "Ok"{
+                                                    self.GetTicket { success, Message in
+                                                        if success{
+                                                            completion(true,"ZIGSDK - Ticket Added Successfully")
+                                                        }
+                                                        else{
+                                                            completion(false, "ZIGSDK - Failed to Add ticket")
+                                                        }
+                                                    }
+                                                }
+                                                else{
+                                                    ReferanceViewModel.sharedInstance.addReferance(Amount: AmountCent, Transcationtype: "Wallet", Currency: "USD", Txn_id: transactionId, Correlation_id: "", Bankmessage: "", Txnstatus: "false", Gatewayrespcode: "Get Ticket Failed", Retrival_ref_no: "", Specialpayment: "", CardType: "", MaskedCardNumber: "", Txntag: "", EmailID: userDetails.emailId, Phone: "", UserName: userDetails.userName, Userid: "\(userDetails.UserId)", Txn_ref_no: transactionId, Error_code: "", Error_description: "", Status_code: "", Fareid: "\(fareID)", Wallet: false, AuthKey: userDetails.AuthKey) { response, success in
+                                                        if success{
+                                                            if response?.Message == "Ok"{
+                                                                completion(false, "ZIGSDK - Failed to Add ticket")
+                                                            }
+                                                            else{
+                                                                completion(false, "ZIGSDK - Failed to Add ticket")
+                                                            }
+                                                        }
+                                                        else{
+                                                            completion(false, "ZIGSDK - Failed to Add ticket")
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            else{
+                                                ReferanceViewModel.sharedInstance.addReferance(Amount: AmountCent, Transcationtype: "Wallet", Currency: "USD", Txn_id: transactionId, Correlation_id: "", Bankmessage: "", Txnstatus: "false", Gatewayrespcode: "Add Ticket Failed", Retrival_ref_no: "", Specialpayment: "", CardType: "", MaskedCardNumber: "", Txntag: "", EmailID: userDetails.emailId, Phone: "", UserName: userDetails.userName, Userid: "\(userDetails.UserId)", Txn_ref_no: transactionId, Error_code: "", Error_description: "", Status_code: "", Fareid: "\(fareID)", Wallet: false, AuthKey: userDetails.AuthKey) { response, success in
+                                                    if success{
+                                                        if response?.Message == "Ok"{
+                                                            completion(false, "ZIGSDK - Failed to Add ticket")
+                                                        }
+                                                        else{
+                                                            completion(false, "ZIGSDK - Failed to Add ticket")
+                                                        }
+                                                    }
+                                                    else{
+                                                        completion(false, "ZIGSDK - Failed to Add ticket")
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else{
+                                        completion(false, "ZIGSDK - Failed to Add ticket")
+                                    }
                                 }
-                                else{
-                                    completion(false,"Issue on add Ticket")
+                                else
+                                {
+                                    completion(false, "ZIGSDK - Failed to Add ticket")
                                 }
                             }
                         }
-                        else{
-                            completion(false,"ZIGSDK - \(response?.Message ?? "")")
+                        else
+                        {
+                            completion(false, "ZIGSDK - Failed to Debit wallet")
                         }
                     }
-                    else{
-                        completion(false,"TicketDetails are empty!")
+                }
+                else{
+                    ReferanceViewModel.sharedInstance.addReferance(Amount: AmountCent, Transcationtype: "Wallet", Currency: "USD", Txn_id: transactionId, Correlation_id: "", Bankmessage: "", Txnstatus: "true", Gatewayrespcode: "", Retrival_ref_no: "", Specialpayment: "", CardType: "", MaskedCardNumber: "", Txntag: "", EmailID: userDetails.emailId, Phone: "", UserName: userDetails.userName, Userid: "\(userDetails.UserId)", Txn_ref_no: transactionId, Error_code: "", Error_description: "", Status_code: "", Fareid: "\(fareID)", Wallet: false, AuthKey: userDetails.AuthKey) { response, success in
+                        if response?.Message == "Ok"{
+                            TicketViewModel.sharedInstance.zigAddTicket(authKey: userDetails.AuthKey, agencyid: userDetails.clientId, TotalAmount: TotalAmount, UserID: userId, TicketList: self.TicketListData, DestinationAddress: destinationAddress1, Token: authKey ?? "", FromAddress: fromaddress1, Message: "Ticket Take in IOS App",transactionID: transactionId, UserName: userDetails.userName) { responses, success in
+                                if success{
+                                    if responses?.Message ?? "" == "Ok"{
+                                        self.GetTicket { success, Message in
+                                            if success{
+                                                completion(true,"ZIGSDK - Ticket Added Successfully")
+                                            }
+                                            else{
+                                                ReferanceViewModel.sharedInstance.addReferance(Amount: AmountCent, Transcationtype: "Wallet", Currency: "USD", Txn_id: transactionId, Correlation_id: "", Bankmessage: "", Txnstatus: "false", Gatewayrespcode: "Get Ticket Failed", Retrival_ref_no: "", Specialpayment: "", CardType: "", MaskedCardNumber: "", Txntag: "", EmailID: userDetails.emailId, Phone: "", UserName: userDetails.userName, Userid: "\(userDetails.UserId)", Txn_ref_no: transactionId, Error_code: "", Error_description: "", Status_code: "", Fareid: "\(fareID)", Wallet: false, AuthKey: userDetails.AuthKey) { response, success in
+                                                    if success{
+                                                        if response?.Message == "Ok"{
+                                                            completion(false, "ZIGSDK - Failed to Add ticket")
+                                                        }
+                                                        else{
+                                                            completion(false, "ZIGSDK - Failed to Add ticket")
+                                                        }
+                                                    }
+                                                    else{
+                                                        completion(false, "ZIGSDK - Failed to Add ticket")
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else{
+                                        completion(false,"ZIGSDK - \(responses?.Message ?? "")")
+                                    }
+                                }
+                                else{
+                                    ReferanceViewModel.sharedInstance.addReferance(Amount: AmountCent, Transcationtype: "Wallet", Currency: "USD", Txn_id: transactionId, Correlation_id: "", Bankmessage: "", Txnstatus: "false", Gatewayrespcode: "Add Ticket Failed", Retrival_ref_no: "", Specialpayment: "", CardType: "", MaskedCardNumber: "", Txntag: "", EmailID: userDetails.emailId, Phone: "", UserName: userDetails.userName, Userid: "\(userDetails.UserId)", Txn_ref_no: transactionId, Error_code: "", Error_description: "", Status_code: "", Fareid: "\(fareID)", Wallet: false, AuthKey: userDetails.AuthKey) { response, success in
+                                        if success{
+                                            if response?.Message == "Ok"{
+                                                completion(false, "ZIGSDK - Failed to Add ticket")
+                                            }
+                                            else{
+                                                completion(false, "ZIGSDK - Failed to Add ticket")
+                                            }
+                                        }
+                                        else{
+                                            completion(false, "ZIGSDK - Failed to Add ticket")
+                                        }
+                                    }
+                                }
+                                
+                            }
+                        }
+                        else{
+                            completion(false, "ZIGSDK - Failed to Add ticket")
+                        }
                     }
-                    
                 }
             }
             else{
-                completion(false,"Invalid FareList")
+                completion(false,"ZIGSDK - Invalid FareList")
             }
         }
         else{
-            completion(false,"No Internet Connection")
+            completion(false,"ZIGSDK - No Internet Connection")
         }
     }
     func GetTicket(completion: @escaping (Bool, [[String: Any]]) -> Void) {
-        var userId = userDetails.UserId
+        let userId = userDetails.UserId
         userDetails.UserId = UserDefaults.standard.integer(forKey: "userId")
         userDetails.userName = UserDefaults.standard.string(forKey: "UserName") ?? ""
         userDetails.emailId = UserDefaults.standard.string(forKey: "UserEmailID") ?? ""
@@ -113,7 +213,7 @@ class TicketMethods : TicketValidationDelegate{
                                                 let FromAddress = subsetData?.FromAddress ?? ""
                                                 let isActive = subsetData?.isActive ?? false
                                                 let isValid = subsetData?.isValid ?? false
-                                                let AgencyId = Int(subsetData?.AgencyId ?? "0") ?? 0
+                                                let AgencyId = Int(subsetData?.AgencyId ?? 0)
                                                 let TicketId = subsetData?.TicketId ?? 0
                                                 let TripId = subsetData?.TripId ?? ""
                                                 let Fareid = subsetData?.Fareid ?? 0

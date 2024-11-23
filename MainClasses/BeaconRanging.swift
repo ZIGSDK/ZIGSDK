@@ -98,15 +98,6 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                                             }
                                         }
                                     }
-                                    QmVhdm9uUmFuZ2luZw.locationManager.delegate = self
-                                    QmVhdm9uUmFuZ2luZw.locationManager.requestWhenInUseAuthorization()
-                                    QmVhdm9uUmFuZ2luZw.locationManager.allowsBackgroundLocationUpdates = true
-                                    QmVhdm9uUmFuZ2luZw.locationManager.showsBackgroundLocationIndicator = true
-                                    QmVhdm9uUmFuZ2luZw.locationManager.pausesLocationUpdatesAutomatically = false
-                                    QmVhdm9uUmFuZ2luZw.locationManager = CLLocationManager()
-                                    QmVhdm9uUmFuZ2luZw.locationManager.delegate = self
-                                    QmVhdm9uUmFuZ2luZw.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-                                    QmVhdm9uUmFuZ2luZw.locationManager.startUpdatingLocation()
                                     
                                     QmVhdm9uUmFuZ2luZw.logEnable = enableLog
                                     QmVhdm9uUmFuZ2luZw.userLimitBool = response?.LimitStatus ?? false
@@ -135,6 +126,15 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                                     
                                     
                                     if featureStatus.TicketValidationStatus || featureStatus.beverageValidation || featureStatus.tollValidation{
+                                        QmVhdm9uUmFuZ2luZw.locationManager.delegate = self
+                                        QmVhdm9uUmFuZ2luZw.locationManager.requestWhenInUseAuthorization()
+                                        QmVhdm9uUmFuZ2luZw.locationManager.allowsBackgroundLocationUpdates = true
+                                        QmVhdm9uUmFuZ2luZw.locationManager.showsBackgroundLocationIndicator = true
+                                        QmVhdm9uUmFuZ2luZw.locationManager.pausesLocationUpdatesAutomatically = false
+                                        QmVhdm9uUmFuZ2luZw.locationManager = CLLocationManager()
+                                        QmVhdm9uUmFuZ2luZw.locationManager.delegate = self
+                                        QmVhdm9uUmFuZ2luZw.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                                        QmVhdm9uUmFuZ2luZw.locationManager.startUpdatingLocation()
                                         let tollArray = response?.tollBeaconList ?? []
                                         if tollArray.count > 0 {
                                             QmVhdm9uUmFuZ2luZw.iBeaconList.removeAll()
@@ -151,32 +151,36 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                                             completion(success,"ZIGSDK - Your Ticket Feature has been Enabled")
                                         }
                                         else {
-                                            completion(false,"ZIGSDK - MAC address was not found, please contact admin")
+                                            completion(false,"ZIGSDK - MAC address was not found, please contact administrator")
                                         }
                                     }
-                                    else if featureStatus.WalletEnableStatus{
+                                    if featureStatus.WalletEnableStatus{
+                                        paymentMethod.liveKey = response?.liveKey ?? ""
+                                        paymentMethod.sandboxKey = response?.sandboxKey ?? ""
+                                       // paymentMethod.paymentMode = response?.paymentmode ?? false
+                                        paymentMethod.paymentmethod = response?.paymentmethod ?? false
                                         completion(true,"ZIGSDK - Your Wallet Feature has been Enabled")
                                     }
                                     else{
-                                        completion(false,"ZIGSDK - All features are Blocked Contact Admin")
+                                        completion(false,"ZIGSDK - All features are Blocked Contact administrator")
                                     }
                                 }
                                 else{
                                     QmVhdm9uUmFuZ2luZw.userLimitBool = false
-                                    completion(false,"ZIGSDK - Your limit has been expried. Please contact the admin")
+                                    completion(false,"ZIGSDK - Your limit has been expried. Please contact the administrator")
                                 }
                             }
                             else{
                                 QmVhdm9uUmFuZ2luZw.userLimitBool = false
-                                completion(false,"ZIGSDK - Your limit has been expried. Please contact the admin")
+                                completion(false,"ZIGSDK - Your limit has been expried. Please contact the administrator")
                             }
                         }
                         else{
-                            completion(false,"ZIGSDK - Security key is invalid or unauthorized, please contact admin")
+                            completion(false,"ZIGSDK - Security key is invalid or unauthorized, please contact administrator")
                         }
                     }
                     else{
-                        completion(success,"Security key is invalid or unauthorized, please contact admin")
+                        completion(success,"Security key is invalid or unauthorized, please contact administrator")
                     }
                 }
         }
@@ -185,7 +189,7 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
         }
     }
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        print("Stop Scanning----->")
+       // print("Stop Scanning----->")
         self.stopSendingOutData()
     }
     func startScanning(){
@@ -225,9 +229,9 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
         let loc = manager.location?.coordinate
         currentlat = loc?.latitude ?? 0.0
         currentLong = loc?.longitude ?? 0.0
-        print(currentlat,currentLong)
+       // print(currentlat,currentLong)
         sdkLog.shared.printLog(message: "Scan found nearby devices")
-        print("BeaconData====>",beacons)
+       // print("BeaconData====>",beacons)
         if beacons.count > 0{
             for beacon in beacons {
                 updateDistance(beacon.proximity, locationCo: loc!, RssiValue: beacon.rssi, Meterint: beacon.accuracy, major: Int(truncating: beacon.major), Minor: Int(truncating: beacon.minor), proximityVle: beacon.proximity.rawValue, uuid: "\(beacon.uuid)")

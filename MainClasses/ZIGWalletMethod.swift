@@ -9,42 +9,54 @@ import Foundation
 import UIKit
 
 class ZIGSuperWallet: addWalletDelegate{
-    func zigCreditWallet(walletTitle: String,buttonText: String, userId: Int, userName: String, creditAmount: Double,setBrandColour : String,completion: @escaping (Bool, ([String: Any])) -> Void) {
+    func zigCreditWallet(walletTitle: String, buttonText: String, userId: Int, userName: String, paymentMode: paymentType, creditAmount: Double, setBrandColour: String, completion: @escaping (Bool, ([String : Any])) -> Void) {
         if isReachable(){
             if featureStatus.WalletEnableStatus{
-                AddWalletViewController.brandTitle = walletTitle
-                AddWalletViewController.payTitle = buttonText
-                
-                AddWalletViewController.userID = userId
-                AddWalletViewController.userName = userName
-                AddWalletViewController.creditAmount = creditAmount
-                AddWalletViewController.setBrandColour = setBrandColour
-                
-                let storyboard = UIStoryboard(name: "addWallet", bundle: Bundle(for: NeedPermisson.self))
-                let addWalletScreen = storyboard.instantiateViewController(withIdentifier: "AddWalletViewController") as! AddWalletViewController
-                guard let rootViewController = UIApplication.shared.windows.first?.rootViewController else {
-                    return
+                if userId == userDetails.UserId {
+                    AddWalletViewController.brandTitle = walletTitle
+                    AddWalletViewController.payTitle = buttonText
+                    if paymentMode == .live {
+                        paymentMethod.paymentMode = true
+                    } else if paymentMode == .sandbox {
+                        paymentMethod.paymentMode = false
+                    }
+                    AddWalletViewController.userID = userId
+                    AddWalletViewController.userName = userName
+                    AddWalletViewController.creditAmount = creditAmount
+                    AddWalletViewController.setBrandColour = setBrandColour
+                    
+                    let storyboard = UIStoryboard(name: "addWallet", bundle: Bundle(for: NeedPermisson.self))
+                    let addWalletScreen = storyboard.instantiateViewController(withIdentifier: "AddWalletViewController") as! AddWalletViewController
+                    guard let rootViewController = UIApplication.shared.windows.first?.rootViewController else {
+                        return
+                    }
+                    addWalletScreen.successHandler = { success, message in
+                        completion(success, message ?? [:])
+                    }
+                    
+                    addWalletScreen.failureHandler = {  success, message in
+                        completion(success, message ?? [:])
+                    }
+                    addWalletScreen.modalPresentationStyle = .fullScreen
+                    rootViewController.present(addWalletScreen, animated: true, completion: nil)
                 }
-                addWalletScreen.successHandler = { success, message in
-                    completion(success, message ?? [:])
+                else{
+                    let jsonObject: [String: Any] = [
+                        "Message" : "ZIGSDK - Invalid Authentication or userID"
+                    ]
+                    completion(false, jsonObject)
                 }
-                
-                addWalletScreen.failureHandler = {  success, message in
-                    completion(success, message ?? [:])
-                }
-                addWalletScreen.modalPresentationStyle = .fullScreen
-                rootViewController.present(addWalletScreen, animated: true, completion: nil)
             }
             else{
                 let jsonObject: [String: Any] = [
-                    "Message" : "Your Wallet has been blocked,Contact admin"
+                    "Message" : "ZIGSDK - Your Wallet has been blocked,Contact administrator"
                 ]
                 completion(false, jsonObject)
             }
         }
         else{
             let jsonObject: [String: Any] = [
-                "Message" : "ZIGSDK - No internet Connection"
+                "Message" : "ZIGSDK - ZIGSDK - No internet Connection"
             ]
             completion(false, jsonObject)
         }
@@ -54,47 +66,55 @@ class ZIGwalletPaytment: walletPaymentDelegate {
     func zigSuperwalletPayment(walletTitle: String, buttonText: String, userId: Int, userName: String, debitAmount: Double,purpose: String,setBrandColour : String, completion: @escaping (Bool, ([String: Any])) -> Void) {
         if isReachable(){
             if featureStatus.WalletEnableStatus {
-                ReduceWalletAmount.debitAmount = 0.0
-                ReduceWalletAmount.userId = userId
-                ReduceWalletAmount.debitAmount = debitAmount
-                ReduceWalletAmount.purpose = purpose
-                ReduceWalletAmount.userName = userName
-                ReduceWalletAmount.walletTitle = walletTitle
-                ReduceWalletAmount.payTitle = buttonText
-                ReduceWalletAmount.setBrandColour = setBrandColour
-                let storyboard = UIStoryboard(name: "WalletPayment", bundle: Bundle(for: NeedPermisson.self))
-                guard let addWalletScreen = storyboard.instantiateViewController(withIdentifier: "ReduceWalletAmount") as? ReduceWalletAmount else {
-                    return
-                }
-                
-                addWalletScreen.successHandler = { success, message in
-                    completion(success, message ?? [:])
-                }
-                
-                addWalletScreen.failureHandler = { success, message in
-                    completion(success, message ?? [:])
-                }
-                
-                addWalletScreen.modalPresentationStyle = .overCurrentContext
-                
-                if let rootViewController = UIApplication.shared.windows.first?.rootViewController {
-                    rootViewController.present(addWalletScreen, animated: false, completion: {
-                        addWalletScreen.view.frame = CGRect(x: 0, y: rootViewController.view.bounds.height, width: rootViewController.view.bounds.width, height: 200)
-                        
-                        UIView.animate(withDuration: 0.3) {
-                            addWalletScreen.view.frame = CGRect(x: 0, y: rootViewController.view.bounds.height - 350, width: rootViewController.view.bounds.width, height: 350)
+                if userId == userDetails.UserId {
+                    ReduceWalletAmount.debitAmount = 0.0
+                    ReduceWalletAmount.userId = userId
+                    ReduceWalletAmount.debitAmount = debitAmount
+                    ReduceWalletAmount.purpose = purpose
+                    ReduceWalletAmount.userName = userName
+                    ReduceWalletAmount.walletTitle = walletTitle
+                    ReduceWalletAmount.payTitle = buttonText
+                    ReduceWalletAmount.setBrandColour = setBrandColour
+                    let storyboard = UIStoryboard(name: "WalletPayment", bundle: Bundle(for: NeedPermisson.self))
+                    guard let addWalletScreen = storyboard.instantiateViewController(withIdentifier: "ReduceWalletAmount") as? ReduceWalletAmount else {
+                        return
+                    }
+                    
+                    addWalletScreen.successHandler = { success, message in
+                        completion(success, message ?? [:])
+                    }
+                    
+                    addWalletScreen.failureHandler = { success, message in
+                        completion(success, message ?? [:])
+                    }
+                    
+                    addWalletScreen.modalPresentationStyle = .overCurrentContext
+                    
+                    if let rootViewController = UIApplication.shared.windows.first?.rootViewController {
+                        rootViewController.present(addWalletScreen, animated: false, completion: {
+                            addWalletScreen.view.frame = CGRect(x: 0, y: rootViewController.view.bounds.height, width: rootViewController.view.bounds.width, height: 200)
                             
-                            let path = UIBezierPath(roundedRect: addWalletScreen.view.bounds, byRoundingCorners: [.topRight, .topLeft], cornerRadii: CGSize(width: 20, height: 20))
-                            let mask = CAShapeLayer()
-                            mask.path = path.cgPath
-                            addWalletScreen.view.layer.mask = mask
-                        }
-                    })
+                            UIView.animate(withDuration: 0.3) {
+                                addWalletScreen.view.frame = CGRect(x: 0, y: rootViewController.view.bounds.height - 350, width: rootViewController.view.bounds.width, height: 350)
+                                
+                                let path = UIBezierPath(roundedRect: addWalletScreen.view.bounds, byRoundingCorners: [.topRight, .topLeft], cornerRadii: CGSize(width: 20, height: 20))
+                                let mask = CAShapeLayer()
+                                mask.path = path.cgPath
+                                addWalletScreen.view.layer.mask = mask
+                            }
+                        })
+                    }
+                }
+                else{
+                    let jsonObject: [String: Any] = [
+                        "Message" : "ZIGSDK - Invalid Authentication or userID"
+                    ]
+                    completion(false, jsonObject)
                 }
             }
             else{
                 let jsonObject: [String: Any] = [
-                    "Message" : "Your Wallet has been blocked,Contact admin"
+                    "Message" : "ZIGSDK - Your Wallet has been blocked,Contact administrator"
                 ]
                 completion(false, jsonObject)
             }
@@ -111,25 +131,34 @@ class ZIGSuperWalletBalance : ZIGSuperWalletBalanceDelegate {
     func zigGetWallet(userId: Int, completion: @escaping (Bool, ([String : Any])) -> Void) {
         if isReachable(){
             if featureStatus.WalletEnableStatus {
-                WalletViewModel.sharedInstance.walletBalanceCheck(clientId: MqttValidationData.userid, userId: userId) { response, success in
-                    if success{
-                        let jsonObject: [String: Any] = [
-                            "WalletBalance" : "\(response?.walletBalanceAmount ?? 0.0)",
-                            "WalletMessage" : "your Wallet has \(response?.walletBalanceAmount ?? 0.0)"
-                        ]
-                        completion(success,jsonObject)
+                if userId == userDetails.UserId {
+                    WalletViewModel.sharedInstance.walletBalanceCheck(clientId: MqttValidationData.userid, userId: userId) { response, success in
+                        if success{
+                            let balanceAmount = String.init(format: "%.2f", response?.walletBalanceAmount ?? 0.0)
+                            let jsonObject: [String: Any] = [
+                                "WalletBalance" : "ZIGSDK - \(response?.walletBalanceAmount ?? 0.0)",
+                                "WalletMessage" : "ZIGSDK - your Wallet has \(balanceAmount ?? "0.00")"
+                            ]
+                            completion(success,jsonObject)
+                        }
+                        else{
+                            let jsonObject: [String: Any] = [
+                                "Message" : "ZIGSDK - \(response?.Message ?? "")"
+                            ]
+                            completion(success,jsonObject)
+                        }
                     }
-                    else{
-                        let jsonObject: [String: Any] = [
-                            "Message" : "\(response?.Message ?? "")"
-                        ]
-                        completion(success,jsonObject)
-                    }
+                }
+                else{
+                    let jsonObject: [String: Any] = [
+                        "Message" : "ZIGSDK - Invalid Authentication or userID"
+                    ]
+                    completion(false, jsonObject)
                 }
             }
             else{
                 let jsonObject: [String: Any] = [
-                    "Message" : "Your Wallet has been blocked,Contact admin"
+                    "Message" : "ZIGSDK - Your Wallet has been blocked,Contact administrator"
                 ]
                 completion(false, jsonObject)
             }

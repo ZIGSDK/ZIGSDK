@@ -44,8 +44,10 @@ class ReduceWalletAmount: UIViewController {
                 if success{
                     self.hideLoader()
                     // print("ReduceWalletAmount.debitAmount====>",ReduceWalletAmount.debitAmount)
-                    self.walletTotalAmount.text = "$ \(response?.walletBalanceAmount ?? 0.0)"
-                    self.totalAmount.text = "$ \(ReduceWalletAmount.debitAmount)"
+                    let balanceAmount = String.init(format: "%.2f", response?.walletBalanceAmount ?? 0.0)
+                    let walletAmount = String.init(format: "%.2f", ReduceWalletAmount.debitAmount)
+                    self.walletTotalAmount.text = "$ \(balanceAmount)"
+                    self.totalAmount.text = "$ \(walletAmount)"
                 }
                 else{
                     self.hideLoader()
@@ -72,11 +74,12 @@ class ReduceWalletAmount: UIViewController {
                 if success{
                     self.buyButton.isEnabled = true
                     if response?.WalletEnableStatus ?? false {
+                        let balanceAmount = String.init(format: "%.2f", response?.walletBalanceAmount ?? 0.0)
                         let jsonObject: [String: Any] = [
-                            "Message" : "\(response?.Message ?? "")",
+                            "Message" : "Amount debited from wallet successfully",
                             "userId" : "\(response?.userId ?? 0)",
                             "userName" : "\(response?.userName ?? "")",
-                            "BalanceAmount" : "\(response?.walletBalanceAmount ?? 0.0)"
+                            "BalanceAmount" : "\(balanceAmount)"
                         ]
                         Trigger().scheduleNotification(title: "ZIG SuperWallet", body: "Your recent transaction has been processed. $\(ReduceWalletAmount.debitAmount) has been debited from your wallet.")
                         self.successHandler?(response?.WalletEnableStatus ?? false,jsonObject)

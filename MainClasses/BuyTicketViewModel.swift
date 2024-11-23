@@ -20,7 +20,7 @@ class TicketMethod: NSObject{
             return
         }
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
+            if error != nil {
                 DispatchQueue.main.async {
                     completion(nil, false)
                 }
@@ -39,7 +39,7 @@ class TicketMethod: NSObject{
                 DispatchQueue.main.async {
                     completion(json, true)
                 }
-            } catch let decodingError {
+            } catch _ {
                 DispatchQueue.main.async {
                     completion(nil, false)
                 }

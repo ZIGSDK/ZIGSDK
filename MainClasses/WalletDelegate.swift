@@ -6,11 +6,15 @@
 //
 
 import Foundation
+public enum paymentType {
+    case live
+    case sandbox
+}
 protocol addWalletDelegate {
     func zigCreditWallet( walletTitle: String,
-                       buttonText: String,
-                       userId : Int,
-                       userName : String,
+                          buttonText: String,
+                          userId : Int,
+                          userName : String,paymentMode : paymentType,
                           creditAmount : Double,setBrandColour : String,completion: @escaping (Bool, ([String: Any])) -> Void)
 }
 protocol walletPaymentDelegate {

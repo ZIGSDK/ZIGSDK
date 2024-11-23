@@ -55,6 +55,10 @@ struct configData : Codable{
     var ble_rssi_5b : String?
     var ble_rssi_5c : String?
     var screen_wake_status : Bool?
+    var liveKey : String?
+    var sandboxKey : String?
+    var paymentmode : Bool?
+    var paymentmethod : Bool?
     var tollBeaconList : [tollBeaconList]
 }
 struct tollBeaconList : Codable{

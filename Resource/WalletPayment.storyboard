@@ -12,7 +12,7 @@
         <!--Reduce Wallet Amount-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="ReduceWalletAmount" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ReduceWalletAmount" customModule="SwiftFramework" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReduceWalletAmount" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ReduceWalletAmount" customModule="ZIGSDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,7 @@
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="qc5-cn-zw8">
                                 <rect key="frame" x="15" y="168.33333333333334" width="363" height="61"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUt-LK-6gL">
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUt-LK-6gL">
                                         <rect key="frame" x="8" y="10" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="OwV-Eo-NQp"/>
@@ -51,7 +51,7 @@
                                         </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZIG Super Wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrD-cZ-K7I">
-                                        <rect key="frame" x="38" y="10.666666666666657" width="156" height="24"/>
+                                        <rect key="frame" x="8" y="10.666666666666657" width="156" height="24"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -84,9 +84,9 @@
                                     <constraint firstItem="SUt-LK-6gL" firstAttribute="leading" secondItem="qc5-cn-zw8" secondAttribute="leading" constant="8" id="G1r-uX-tnt"/>
                                     <constraint firstItem="SUt-LK-6gL" firstAttribute="top" secondItem="qc5-cn-zw8" secondAttribute="top" constant="10" id="MGd-VB-czN"/>
                                     <constraint firstItem="4lP-4x-oKy" firstAttribute="centerY" secondItem="TrD-cZ-K7I" secondAttribute="centerY" id="SnD-Zd-0jo"/>
+                                    <constraint firstItem="TrD-cZ-K7I" firstAttribute="leading" secondItem="qc5-cn-zw8" secondAttribute="leading" constant="8" id="V3R-3c-PRh"/>
                                     <constraint firstItem="bxT-87-SL9" firstAttribute="top" secondItem="TrD-cZ-K7I" secondAttribute="bottom" constant="3" id="X4T-Je-uw4"/>
                                     <constraint firstItem="bxT-87-SL9" firstAttribute="leading" secondItem="SUt-LK-6gL" secondAttribute="leading" id="d3X-V2-4H1"/>
-                                    <constraint firstItem="TrD-cZ-K7I" firstAttribute="leading" secondItem="SUt-LK-6gL" secondAttribute="trailing" constant="5" id="egz-jT-8XG"/>
                                     <constraint firstItem="cd5-ZJ-Ion" firstAttribute="leading" secondItem="4lP-4x-oKy" secondAttribute="trailing" constant="5" id="gEm-ND-Iq3"/>
                                     <constraint firstAttribute="trailing" secondItem="cd5-ZJ-Ion" secondAttribute="trailing" constant="1" id="k5q-Hz-d5B"/>
                                     <constraint firstItem="TrD-cZ-K7I" firstAttribute="centerY" secondItem="SUt-LK-6gL" secondAttribute="centerY" id="kbO-W2-cuw"/>

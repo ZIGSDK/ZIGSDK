@@ -68,7 +68,7 @@ class QRViewController: UIViewController {
             self.imageVC?.showsCameraControls = false
             let screenSize = UIScreen.main.bounds.size
             let cameraAspectRatio = CGFloat(4.0 / 3.0)
-            let cameraImageHeight = screenSize.width * cameraAspectRatio
+            _ = screenSize.width * cameraAspectRatio
             let scale = screenSize.height/screenSize.width * cameraAspectRatio
             self.imageVC?.cameraViewTransform = CGAffineTransformMakeScale(scale, scale);
             self.imageVC?.view.frame = CGRect(x: 0, y: 0, width: 120, height: 120)

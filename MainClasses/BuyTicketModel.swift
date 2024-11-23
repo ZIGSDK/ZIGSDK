@@ -85,7 +85,7 @@ struct subset: Codable{
     var status : Int?
     var isActive : Bool?
     var isValid : Bool?
-    var AgencyId : String?
+    var AgencyId : Int?
     var TicketId : Int?
     var RemainingTime : Int?
     var TripId : String?
@@ -97,4 +97,7 @@ struct subset: Codable{
 
 struct ActivateTicket: Codable{
     var Message : String?
+}
+struct successResponse : Codable{
+    var message : String?
 }

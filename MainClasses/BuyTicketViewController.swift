@@ -54,12 +54,12 @@ class BuyTicketViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.amountLable.text = "\(counterValues[indexPath.row])"
 
         loadImage(from: data.BannerImage ?? "") { [weak self] image in
-            guard let self = self else { return }
+            guard self != nil else { return }
             cell.ticketImage.image = image ?? UIImage(named: "defaultImage")
         }
 
         loadImage(from: data.ProductImageURL ?? "") { [weak self] image in
-            guard let self = self else { return }
+            guard self != nil else { return }
             cell.ticketIcon.image = image ?? UIImage(named: "defaultIcon")
         }
 
