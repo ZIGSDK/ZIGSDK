@@ -31,8 +31,8 @@ class TripPlannerViewModel: NSObject{
             "ApiKey": ApiKey,
             "MobileType": "iOS"
         ]
-        print(parameter)
-        print(url)
+        // print(parameter)
+        // print(url)
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: parameter, options: [])
             var request = URLRequest(url: url)
