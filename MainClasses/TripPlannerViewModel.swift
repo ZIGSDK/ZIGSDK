@@ -25,7 +25,7 @@ class TripPlannerViewModel: NSObject{
             "DestinationAddress": DestinationAddress,
             "CurrentTimeType": CurrentTimeType,
             "CurrentTime": DateTime,
-            "vehicleMode": vehicleMode,
+            "VechicalMode": vehicleMode,
             "RoutePreferance": RoutePreferance,
             "ClientId": ClientId,
             "ApiKey": ApiKey,
