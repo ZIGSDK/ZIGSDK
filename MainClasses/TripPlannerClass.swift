@@ -7,7 +7,7 @@
 
 import Foundation
 class tripPlannerClass : TripPlannerDelegate{
-    func zigTripPlanner(sourceLat: Double, sourceLong: Double, destinationLat: Double, destinationLong: Double, sourceAddress: String, destinationAddress: String, currentTimeType: Time, vechicalMode: VechicalMode, routePreference: RoutePreferance, apiKey: String,dateTime: String, completion: @escaping (Bool, [[String : Any]]) -> Void) {
+    func zigTripPlanner(sourceLat: Double, sourceLong: Double, destinationLat: Double, destinationLong: Double, sourceAddress: String, destinationAddress: String, currentTimeType: Time, vehicleMode: vehicleMode, routePreference: RoutePreferance, apiKey: String,dateTime: String, completion: @escaping (Bool, [[String : Any]]) -> Void) {
         if isReachable(){
             var CurrentTimeType = ""
             var vechicleModeData = ""
@@ -23,13 +23,13 @@ class tripPlannerClass : TripPlannerDelegate{
                 CurrentTimeType = "DepartNow"
             }
             
-            if vechicalMode == .driving {
+            if vehicleMode == .driving {
                 vechicleModeData = "driving"
             }
-            else if vechicalMode == .bus{
+            else if vehicleMode == .bus{
                 vechicleModeData = "transit"
             }
-            else if vechicalMode == .walking {
+            else if vehicleMode == .walking {
                 vechicleModeData = "walking"
             }
             
@@ -42,7 +42,7 @@ class tripPlannerClass : TripPlannerDelegate{
             else if routePreference == .leastWalking {
                 routePreferanceData = "least walking"
             }
-            TripPlannerViewModel.sharedInstance.tripPlannerViewModel(SourceLat: sourceLat, SourceLong: sourceLong, DestinationLat: destinationLat, DestinationLong: destinationLong, SourceAddress: sourceAddress, DestinationAddress: destinationAddress, CurrentTimeType: CurrentTimeType, VechicalMode: vechicleModeData, RoutePreferance: routePreferanceData, ClientId: userDetails.clientId, ApiKey: apiKey, DateTime: dateTime) { response, success in
+            TripPlannerViewModel.sharedInstance.tripPlannerViewModel(SourceLat: sourceLat, SourceLong: sourceLong, DestinationLat: destinationLat, DestinationLong: destinationLong, SourceAddress: sourceAddress, DestinationAddress: destinationAddress, CurrentTimeType: CurrentTimeType, vehicleMode: vechicleModeData, RoutePreferance: routePreferanceData, ClientId: userDetails.clientId, ApiKey: apiKey, DateTime: dateTime) { response, success in
                 if success, let responseData = response {
                     do {
                         if let json = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any],

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum VechicalMode {
+public enum vehicleMode {
     case driving
     case walking
     case bus
@@ -32,7 +32,7 @@ protocol TripPlannerDelegate {
         sourceAddress: String,
         destinationAddress: String,
         currentTimeType: Time,
-        vechicalMode: VechicalMode,
+        vehicleMode: vehicleMode,
         routePreference: RoutePreferance,
         apiKey: String,dateTime: String,completion: @escaping (Bool, [[String: Any]]) -> Void)
 }

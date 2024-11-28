@@ -11,7 +11,7 @@ class TripPlannerViewModel: NSObject{
         let instance = TripPlannerViewModel()
         return instance
     }()
-    func tripPlannerViewModel(SourceLat: Double,SourceLong: Double,DestinationLat: Double,DestinationLong: Double,SourceAddress: String,DestinationAddress: String,CurrentTimeType: String,VechicalMode: String,RoutePreferance: String,ClientId: Int,ApiKey: String,DateTime:String,completion : @escaping (_ response: Data?, _ success: Bool) -> Void){
+    func tripPlannerViewModel(SourceLat: Double,SourceLong: Double,DestinationLat: Double,DestinationLong: Double,SourceAddress: String,DestinationAddress: String,CurrentTimeType: String,vehicleMode: String,RoutePreferance: String,ClientId: Int,ApiKey: String,DateTime:String,completion : @escaping (_ response: Data?, _ success: Bool) -> Void){
         guard let url = URL(string: "\(apiBaseUrl.baseURL)sdk/Trips/Directions") else {
             completion(nil, false)
             return
@@ -25,7 +25,7 @@ class TripPlannerViewModel: NSObject{
             "DestinationAddress": DestinationAddress,
             "CurrentTimeType": CurrentTimeType,
             "CurrentTime": DateTime,
-            "VechicalMode": VechicalMode,
+            "vehicleMode": vehicleMode,
             "RoutePreferance": RoutePreferance,
             "ClientId": ClientId,
             "ApiKey": ApiKey,
