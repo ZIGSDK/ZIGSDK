@@ -19,6 +19,7 @@ public class ZIGSDK {
     private let addUserInfo: GetUserInfoDelegate
     private let transAction: TransactionDelegate
     private let getFare : GetFareDelegate
+    private let tripPlanner : TripPlannerDelegate
     public init() {
         self.presenterImpl = PresenterImpl()
         self.onboardingImpl = OnboardingPresenterImpl()
@@ -36,6 +37,7 @@ public class ZIGSDK {
         self.addUserInfo = userInfoMethod()
         self.transAction = TransactionClass()
         self.getFare = GetFareClass()
+        self.tripPlanner = tripPlannerClass()
     }
     
     public func triggerAlert(title : String) {
@@ -68,7 +70,7 @@ public class ZIGSDK {
         }
     }
     
-    public func zigAddTicket(TotalAmount: Double, TicketDetails: [[String: Any]], completion: @escaping(Bool,String) -> Void) {
+    public func zigAddTicket(TotalAmount: Double, TicketDetails: [[String: Any]], completion: @escaping(Bool,[String : Any]) -> Void) {
         TicketImpl.addTickets(TotalAmount: TotalAmount, TicketDetails: TicketDetails) { success, message in
             completion(success, message)
         }
@@ -83,7 +85,7 @@ public class ZIGSDK {
             completion(success,message)
         }
     }
-    public func zigInit(authKey : String,enableLog : Bool = true,completion: @escaping (Bool, String?) -> Void){
+    public func zigInit(authKey : String,enableLog : Bool = true,completion: @escaping (Bool, [String : Any]?) -> Void){
         beacon.ZIGSDKInit(authKey: authKey,enableLog: enableLog) {  success, message in
             completion(success,message)
         }
@@ -119,7 +121,7 @@ public class ZIGSDK {
         }
     }
     
-    public func zigAddUserInfo(AuthKey: String, UserId: Int, UserName: String, EmailId: String, completion: @escaping(Bool,String) -> Void){
+    public func zigAddUserInfo(AuthKey: String, UserId: Int, UserName: String, EmailId: String, completion: @escaping(Bool,[String : Any]) -> Void){
         addUserInfo.UserInfo(authKey: AuthKey, userId: UserId, userName: UserName, EmailId: EmailId) { Success, Message in
             completion(Success,Message)
         }
@@ -132,6 +134,11 @@ public class ZIGSDK {
     public func zigGetFare(authKey: String,completion: @escaping (Bool,([[String: Any]]))-> Void){
         getFare.getFare(authkey: authKey) { success, Message in
             completion(success,Message)
+        }
+    }
+    public func zigTripplanner(sourceLat: Double, sourceLong: Double, destinationLat: Double, destinationLong: Double, sourceAddress: String, destinationAddress: String, currentTimeType: Time, vechicalMode: VechicalMode, routePreference: RoutePreferance, apiKey: String,dateTime: String, completion: @escaping (Bool, [[String : Any]]) -> Void){
+        tripPlanner.zigTripPlanner(sourceLat: sourceLat, sourceLong: sourceLong, destinationLat: destinationLat, destinationLong: destinationLong, sourceAddress: sourceAddress, destinationAddress: destinationAddress, currentTimeType: currentTimeType, vechicalMode: vechicalMode, routePreference: routePreference, apiKey: apiKey,dateTime: dateTime) { success, message in
+            completion(success,message)
         }
     }
 }

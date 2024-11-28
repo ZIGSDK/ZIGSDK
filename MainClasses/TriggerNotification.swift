@@ -172,7 +172,7 @@ class sdkLog {
     public static let shared = sdkLog()
     public func printLog(message : String){
         if QmVhdm9uUmFuZ2luZw.logEnable{
-            print(message)
+          //  print(message)
         }
     }
 }

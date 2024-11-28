@@ -15,6 +15,8 @@ class TransactionClass: TransactionDelegate {
                         if let transactionData = response?.TransactionsData {
                             let formattedResponse: [[String: Any]] = transactionData.map {
                                 return [
+                                    "message": "ok",
+                                    "statusCode" : 5004,
                                     "transactionid": $0.transactionid ?? "",
                                     "amount": $0.amount ?? "0.0",
                                     "transactiondate": $0.transactiondate ?? ""
@@ -22,25 +24,30 @@ class TransactionClass: TransactionDelegate {
                             }
                             completion(true, formattedResponse)
                         } else {
-                            completion(false, [["Message": "No transactions found."]])
+                            completion(false, [["statusCode" : 5001,
+                                                "message": "No transactions found."]])
                         }
                     }
                     else{
                         if ((response?.Message.contains("invlid")) != nil) {
-                            completion(false,[["Message": "ZIGSDK - Invalid UserId or AuthKey"]])
+                            completion(false,[["statusCode" : 5002,
+                                               "message": "ZIGSDK - Invalid UserId or AuthKey"]])
                         }
                         else{
-                            completion(false,[["Message": "ZIGSDK - Failed to get Transaction details"]])
+                            completion(false,[["statusCode" : 5003,
+                                               "message": "ZIGSDK - Failed to get Transaction details"]])
                         }
                     }
                 }
                 else{
-                    completion(false,[["Message": "ZIGSDK - Failed to get Transaction details"]])
+                    completion(false,[["statusCode" : 5003,
+                                       "message": "ZIGSDK - Failed to get Transaction details"]])
                 }
             }
         }
         else{
-            completion(false,[["Message": "No internet Connection"]])
+            completion(false,[["statusCode" : 2001,
+                               "message": "No internet Connection"]])
         }
     }
 }

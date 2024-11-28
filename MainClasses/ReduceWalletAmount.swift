@@ -52,7 +52,8 @@ class ReduceWalletAmount: UIViewController {
                 else{
                     self.hideLoader()
                     let jsonObject: [String: Any] = [
-                        "Message" : "\(response?.Message ?? "")"
+                        "statusCode" : 4102,
+                        "message" : "\(response?.Message ?? "")"
                     ]
                     self.failureHandler?(success,jsonObject)
                 }
@@ -61,7 +62,8 @@ class ReduceWalletAmount: UIViewController {
         }
         else{
             let jsonObject: [String: Any] = [
-                "Message" : "ZIGSDK - No internet connection)"
+                "statusCode" : 2001,
+                "message" : "ZIGSDK - No internet connection)"
             ]
             self.failureHandler?(false,jsonObject)
         }
@@ -76,7 +78,8 @@ class ReduceWalletAmount: UIViewController {
                     if response?.WalletEnableStatus ?? false {
                         let balanceAmount = String.init(format: "%.2f", response?.walletBalanceAmount ?? 0.0)
                         let jsonObject: [String: Any] = [
-                            "Message" : "Amount debited from wallet successfully",
+                            "statusCode" : 4101,
+                            "message" : "Amount debited from wallet successfully",
                             "userId" : "\(response?.userId ?? 0)",
                             "userName" : "\(response?.userName ?? "")",
                             "BalanceAmount" : "\(balanceAmount)"
@@ -90,7 +93,8 @@ class ReduceWalletAmount: UIViewController {
                         self.buyButton.isEnabled = true
                         self.dismiss(animated: true)
                         let jsonObject: [String: Any] = [
-                            "Message" : "\(response?.Message ?? "")",
+                            "statusCode" : 4102,
+                            "message" : "\(response?.Message ?? "")",
                         ]
                         self.successHandler?(response?.WalletEnableStatus ?? false,jsonObject)
                     }
@@ -99,7 +103,8 @@ class ReduceWalletAmount: UIViewController {
                     self.hideLoader()
                     self.buyButton.isEnabled = true
                     let jsonObject: [String: Any] = [
-                        "Message" : "\(response?.Message ?? "")"
+                        "statusCode" : 4102,
+                        "message" : "\(response?.Message ?? "")"
                     ]
                     self.failureHandler?(success,jsonObject)
                     self.dismiss(animated: true)
@@ -108,7 +113,8 @@ class ReduceWalletAmount: UIViewController {
         }
         else{
             let jsonObject: [String: Any] = [
-                "Message" : "ZIGSDK - No internet Connection"
+                "statusCode" : 2001,
+                "message" : "ZIGSDK - No internet Connection"
             ]
             self.failureHandler?(false,jsonObject)
         }

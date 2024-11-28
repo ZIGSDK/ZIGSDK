@@ -133,7 +133,7 @@ class StopViewController: UIViewController,CLLocationManagerDelegate,UNUserNotif
                         if success{
                             let jsonObject: [String: Any] = [
                                 "TicketId" : "\(StopViewController.beaconMessage) Request",
-                                "Message" : "Your \(StopViewController.beaconMessage) request has been delivered to the driver"
+                                "message" : "Your \(StopViewController.beaconMessage) request has been delivered to the driver"
                             ]
                             self.receiver.senderFunction(jsonObject: jsonObject)
                             self.successHandler?(success,"Message sent successfully")

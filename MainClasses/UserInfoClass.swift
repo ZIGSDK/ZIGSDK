@@ -8,7 +8,7 @@
 import Foundation
 
 class userInfoMethod : GetUserInfoDelegate {
-    func UserInfo(authKey: String, userId: Int, userName: String, EmailId: String, completion: @escaping (Bool, String) -> Void) {
+    func UserInfo(authKey: String, userId: Int, userName: String, EmailId: String, completion: @escaping (Bool, [String : Any]) -> Void) {
         if isReachable(){
             SDKViewModel.sharedInstance.configApi(authKey: authKey) { response, success in
                 if success{
@@ -27,7 +27,8 @@ class userInfoMethod : GetUserInfoDelegate {
                                     userDetails.AuthKey = authKey
                                     userDetails.emailId = EmailId
                                     userDetails.userName = userName
-                                    completion(true,"ZIGSDk - User added Successfully")
+                                    completion(true,["statusCode" : 6001,
+                                                     "message": "ZIGSDk - User added Successfully"])
                                 }
                                 else{
                                     UserDefaults.standard.setValue(authKey, forKey: "AuthKey")
@@ -38,11 +39,13 @@ class userInfoMethod : GetUserInfoDelegate {
                                     userDetails.UserId = UserDefaults.standard.integer(forKey: "userId")
                                     userDetails.userName = UserDefaults.standard.string(forKey: "UserName") ?? ""
                                     userDetails.emailId = UserDefaults.standard.string(forKey: "UserEmailID") ?? ""
-                                    completion(false,"ZIGSDK - \(responsevalue?.Message ?? "")")
+                                    completion(false,["statusCode" : 6002,
+                                                     "message": "ZIGSDK - \(responsevalue?.Message ?? "")"])
                                 }
                             }
                             else{
-                                completion(false,"ZIGSDk - Unable to add user")
+                                completion(false,["statusCode" : 6003,
+                                                 "message": "ZIGSDk - Unable to add user"])
                             }
                         }
                         UserMethod.sharedInstance.getuserEmail(emailId: EmailId, agencyID: userDetails.clientId) { response, success in
@@ -55,16 +58,19 @@ class userInfoMethod : GetUserInfoDelegate {
                         }
                     }
                     else{
-                        completion(false,"ZIGSDK - Invalid Authentication key")
+                        completion(false,["statusCode" : 6004,
+                                         "message": "ZIGSDK - Invalid Authentication key"])
                     }
                 }
                 else{
-                    completion(false,"ZIGSDK - Invalid Authentication key")
+                    completion(false,["statusCode" : 6004,
+                                     "message": "ZIGSDK - Invalid Authentication key"])
                 }
             }
         }
         else{
-            completion(false,"ZIGSDK - No Internet connection")
+            completion(false,["statusCode" : 2001,
+                             "message": "ZIGSDK - No Internet connection"])
         }
     }
 }

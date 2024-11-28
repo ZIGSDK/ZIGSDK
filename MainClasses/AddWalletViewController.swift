@@ -187,7 +187,7 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
         }
         else{
             let jsonObject: [String: Any] = [
-                "Message" : "ZIGSDK-No internet connection"
+                "message" : "ZIGSDK-No internet connection"
             ]
             self.failureHandler?(false,jsonObject)
         }
@@ -277,8 +277,9 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
             else{
                 if cvvNumber.text?.isEmpty == false && cvvNumber.text?.count == 3 {
                     let cardDetails = cardDeatils()
+                  //  print("Cardknox integration------->",cardDetails)
                     if let amountText = amountField.text?.replacingOccurrences(of: "$", with: "").trimmingCharacters(in: .whitespaces),
-                       let creditAmount = Double(amountText) {
+                        let creditAmount = Double(amountText) {
                         
                         let AmountCent = Int(paymentViewController.amount * 100)
                         let mercentId = LoaderUtility.shared.generateRandom17DigitNumber()
@@ -292,7 +293,7 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
                         PaymentViewModel.sharedInstance.paymentGateWayToken(appName: userDetails.clientName, amount: "\(creditAmount)", token: key, cvvNumber: "\(cvvNumber.text ?? "")") { response, success in
                             if success{
                                 if response?.xError ?? "" == ""{
-                                   // print("PaymentGateway----->",response ?? "")
+                                 //   print("PaymentGateway----->",response ?? "")
                                     ReferanceViewModel.sharedInstance.addReferance(Amount: AmountCent, Transcationtype: "Card", Currency: "USD", Txn_id: response?.xRefNum ?? "", Correlation_id: response?.xStatus ?? "", Bankmessage: "", Txnstatus: "false", Gatewayrespcode: "", Retrival_ref_no: "", Specialpayment: "iOS Payment", CardType: response?.xCardType ?? "", MaskedCardNumber: response?.xMaskedCardNumber ?? "", Txntag: "\(mercentId)", EmailID: userDetails.emailId, Phone: "", UserName: userDetails.userName, Userid: "\(userDetails.UserId)", Txn_ref_no: mercentId, Error_code: response?.xErrorCode ?? "", Error_description: response?.xError ?? "", Status_code: response?.xAuthCode ?? "", Fareid: "0", Wallet: true, AuthKey: userDetails.AuthKey) { responses, success in
                                         if success{
                                             if responses?.Message == "Ok"{
@@ -303,7 +304,8 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
                                                             self.dismiss(animated: true)
                                                             let balanceAmount = String.init(format: "%.2f", responseData?.walletBalanceAmount ?? 0.0)
                                                             let jsonObject: [String: Any] = [
-                                                                "Message" : "\(responseData?.Message ?? "")",
+                                                                "statusCode" : 4001,
+                                                                "message" : "\(responseData?.Message ?? "")",
                                                                 "userId" : "\(responseData?.userId ?? 0)",
                                                                 "userName" : "\(responseData?.userName ?? "")",
                                                                 "BalanceAmount" : "\(balanceAmount)"
@@ -318,7 +320,8 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
                                                             }
                                                             LoaderUtility.shared.hideLoader()
                                                             let jsonObject: [String: Any] = [
-                                                                "Message" : "ZIGSDK-Payment Failed \(response?.xErrorCode ?? "") - \(response?.xError ?? "")"
+                                                                "statusCode" : 4002,
+                                                                "message" : "ZIGSDK-Payment Failed \(response?.xErrorCode ?? "") - \(response?.xError ?? "")"
                                                             ]
                                                             self.failureHandler?(false,jsonObject)
                                                         }
@@ -329,7 +332,8 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
                                                         }
                                                         LoaderUtility.shared.hideLoader()
                                                         let jsonObject: [String: Any] = [
-                                                            "Message" : "ZIGSDK-Payment Failed \(response?.xErrorCode ?? "") - \(response?.xError ?? "")"
+                                                            "statusCode" : 4002,
+                                                            "message" : "ZIGSDK-Payment Failed \(response?.xErrorCode ?? "") - \(response?.xError ?? "")"
                                                         ]
                                                         self.failureHandler?(false,jsonObject)
                                                     }
@@ -341,7 +345,8 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
                                                 }
                                                 LoaderUtility.shared.hideLoader()
                                                 let jsonObject: [String: Any] = [
-                                                    "Message" : "ZIGSDK-Payment Failed \(response?.xErrorCode ?? "") - \(response?.xError ?? "")"
+                                                    "statusCode" : 4002,
+                                                    "message" : "ZIGSDK-Payment Failed \(response?.xErrorCode ?? "") - \(response?.xError ?? "")"
                                                 ]
                                                 self.failureHandler?(false,jsonObject)
                                             }
@@ -352,7 +357,8 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
                                                 self.dismiss(animated: true, completion: nil)
                                             }
                                             let jsonObject: [String: Any] = [
-                                                "Message" : "ZIGSDK-Payment Failed \(response?.xErrorCode ?? "") - \(response?.xError ?? "")"
+                                                "statusCode" : 4002,
+                                                "message" : "ZIGSDK-Payment Failed \(response?.xErrorCode ?? "") - \(response?.xError ?? "")"
                                             ]
                                             self.failureHandler?(false,jsonObject)
                                         }
@@ -364,7 +370,8 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
                                         self.dismiss(animated: true, completion: nil)
                                     }
                                     let jsonObject: [String: Any] = [
-                                        "Message" : "ZIGSDK-Payment Failed \(response?.xErrorCode ?? "") - \(response?.xError ?? "")"
+                                        "statusCode" : 4002,
+                                        "message" : "ZIGSDK-Payment Failed \(response?.xErrorCode ?? "") - \(response?.xError ?? "")"
                                     ]
                                     self.failureHandler?(false,jsonObject)
                                 }
@@ -375,14 +382,16 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
                                     self.dismiss(animated: true, completion: nil)
                                 }
                                 let jsonObject: [String: Any] = [
-                                    "Message" : "ZIGSDK-Payment Failed \(response?.xErrorCode ?? "") - \(response?.xError ?? "")"
+                                    "statusCode" : 4002,
+                                    "message" : "ZIGSDK-Payment Failed \(response?.xErrorCode ?? "") - \(response?.xError ?? "")"
                                 ]
                                 self.failureHandler?(false,jsonObject)
                             }
                         }
                     } else {
                         let jsonObject: [String: Any] = [
-                            "Message" : "ZIGSDK-Something wnt wronf during payment"
+                            "statusCode" : 4002,
+                            "message" : "ZIGSDK-Payment Failed"
                         ]
                         self.failureHandler?(false,jsonObject)
                         LoaderUtility.shared.hideLoader()
@@ -400,7 +409,8 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
         }
         else{
             let jsonObject: [String: Any] = [
-                "Message" : "ZIGSDK-No internet connection"
+                "statusCode" : 2001,
+                "message" : "ZIGSDK-No internet connection"
             ]
             DispatchQueue.main.async {
                 self.dismiss(animated: true, completion: nil)
@@ -486,7 +496,7 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
         }
     }
     func cardDeatils() -> (userData: [String: Any]?, isEmpty: Bool) {
-        if let userData = CustomUserDefaults.shared.object(forKey: "savedCardDetails") as? [String: Any] {
+        if let userData = LoaderUtility.shared.retrieveSavedCardDetails(forKey: "savedCardDetails"){
             return (userData, true)
         }
         else{

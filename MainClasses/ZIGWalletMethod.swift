@@ -42,21 +42,24 @@ class ZIGSuperWallet: addWalletDelegate{
                 }
                 else{
                     let jsonObject: [String: Any] = [
-                        "Message" : "ZIGSDK - Invalid Authentication or userID"
+                        "statusCode" : 4103,
+                        "message" : "ZIGSDK - Invalid Authentication or userID"
                     ]
                     completion(false, jsonObject)
                 }
             }
             else{
                 let jsonObject: [String: Any] = [
-                    "Message" : "ZIGSDK - Your Wallet has been blocked,Contact administrator"
+                    "statusCode" : 4103,
+                    "message" : "ZIGSDK - Your Wallet has been blocked,Contact administrator"
                 ]
                 completion(false, jsonObject)
             }
         }
         else{
             let jsonObject: [String: Any] = [
-                "Message" : "ZIGSDK - ZIGSDK - No internet Connection"
+                "statusCode" : 2001,
+                "message" : "ZIGSDK - ZIGSDK - No internet Connection"
             ]
             completion(false, jsonObject)
         }
@@ -107,21 +110,24 @@ class ZIGwalletPaytment: walletPaymentDelegate {
                 }
                 else{
                     let jsonObject: [String: Any] = [
-                        "Message" : "ZIGSDK - Invalid Authentication or userID"
+                        "statusCode" : 4103,
+                        "message" : "ZIGSDK - Invalid Authentication or userID"
                     ]
                     completion(false, jsonObject)
                 }
             }
             else{
                 let jsonObject: [String: Any] = [
-                    "Message" : "ZIGSDK - Your Wallet has been blocked,Contact administrator"
+                    "statusCode" : 4103,
+                    "message" : "ZIGSDK - Your Wallet has been blocked,Contact administrator"
                 ]
                 completion(false, jsonObject)
             }
         }
         else{
             let jsonObject: [String: Any] = [
-                "Message" : "ZIGSDK - No internet Connection"
+                "statusCode" : 2001,
+                "message" : "ZIGSDK - No internet Connection"
             ]
             completion(false, jsonObject)
         }
@@ -136,6 +142,7 @@ class ZIGSuperWalletBalance : ZIGSuperWalletBalanceDelegate {
                         if success{
                             let balanceAmount = String.init(format: "%.2f", response?.walletBalanceAmount ?? 0.0)
                             let jsonObject: [String: Any] = [
+                                "statusCode" : 4201,
                                 "WalletBalance" : "ZIGSDK - \(response?.walletBalanceAmount ?? 0.0)",
                                 "WalletMessage" : "ZIGSDK - your Wallet has \(balanceAmount ?? "0.00")"
                             ]
@@ -143,7 +150,8 @@ class ZIGSuperWalletBalance : ZIGSuperWalletBalanceDelegate {
                         }
                         else{
                             let jsonObject: [String: Any] = [
-                                "Message" : "ZIGSDK - \(response?.Message ?? "")"
+                                "statusCode" : 4202,
+                                "message" : "ZIGSDK - \(response?.Message ?? "")"
                             ]
                             completion(success,jsonObject)
                         }
@@ -151,21 +159,24 @@ class ZIGSuperWalletBalance : ZIGSuperWalletBalanceDelegate {
                 }
                 else{
                     let jsonObject: [String: Any] = [
-                        "Message" : "ZIGSDK - Invalid Authentication or userID"
+                        "statusCode" : 4103,
+                        "message" : "ZIGSDK - Invalid Authentication or userID"
                     ]
                     completion(false, jsonObject)
                 }
             }
             else{
                 let jsonObject: [String: Any] = [
-                    "Message" : "ZIGSDK - Your Wallet has been blocked,Contact administrator"
+                    "statusCode" : 4103,
+                    "message" : "ZIGSDK - Your Wallet has been blocked,Contact administrator"
                 ]
                 completion(false, jsonObject)
             }
         }
         else{
             let jsonObject: [String: Any] = [
-                "Message" : "ZIGSDK - No internet Connection"
+                "statusCode" : 2001,
+                "message" : "ZIGSDK - No internet Connection"
             ]
             completion(false, jsonObject)
         }

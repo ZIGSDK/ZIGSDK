@@ -8,5 +8,5 @@
 import Foundation
 import UIKit
 public protocol bearonRangingDelegate {
-    func ZIGSDKInit(authKey : String,enableLog : Bool,completion: @escaping (Bool, String?) -> Void)
+    func ZIGSDKInit(authKey : String,enableLog : Bool,completion: @escaping (Bool, [String : Any]?) -> Void)
 }

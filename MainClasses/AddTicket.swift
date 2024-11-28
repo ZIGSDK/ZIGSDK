@@ -23,7 +23,7 @@ class TicketMethods : TicketValidationDelegate{
         return instance
     }()
     
-    public func addTickets(TotalAmount: Double, TicketDetails: [[String: Any]], completion: @escaping(Bool,String) -> Void){
+    public func addTickets(TotalAmount: Double, TicketDetails: [[String: Any]], completion: @escaping(Bool,[String : Any]) -> Void){
         if isReachable(){
             userDetails.UserId = UserDefaults.standard.integer(forKey: "userId")
             userDetails.userName = UserDefaults.standard.string(forKey: "UserName") ?? ""
@@ -60,10 +60,12 @@ class TicketMethods : TicketValidationDelegate{
                                                 if response?.Message ?? "" == "Ok"{
                                                     self.GetTicket { success, Message in
                                                         if success{
-                                                            completion(true,"ZIGSDK - Ticket Added Successfully")
+                                                            completion(true,["statusCode" : 3103,
+                                                                             "message": "ZIGSDK - Ticket Added Successfully"])
                                                         }
                                                         else{
-                                                            completion(false, "ZIGSDK - Failed to Add ticket")
+                                                            completion(false, ["statusCode" : 3102,
+                                                                               "message": "ZIGSDK - Ticket not generated"])
                                                         }
                                                     }
                                                 }
@@ -71,14 +73,17 @@ class TicketMethods : TicketValidationDelegate{
                                                     ReferanceViewModel.sharedInstance.addReferance(Amount: AmountCent, Transcationtype: "Wallet", Currency: "USD", Txn_id: transactionId, Correlation_id: "", Bankmessage: "", Txnstatus: "false", Gatewayrespcode: "Get Ticket Failed", Retrival_ref_no: "", Specialpayment: "", CardType: "", MaskedCardNumber: "", Txntag: "", EmailID: userDetails.emailId, Phone: "", UserName: userDetails.userName, Userid: "\(userDetails.UserId)", Txn_ref_no: transactionId, Error_code: "", Error_description: "", Status_code: "", Fareid: "\(fareID)", Wallet: false, AuthKey: userDetails.AuthKey) { response, success in
                                                         if success{
                                                             if response?.Message == "Ok"{
-                                                                completion(false, "ZIGSDK - Failed to Add ticket")
+                                                                completion(false, ["statusCode" : 3102,
+                                                                                   "message": "ZIGSDK - Ticket not generated"])
                                                             }
                                                             else{
-                                                                completion(false, "ZIGSDK - Failed to Add ticket")
+                                                                completion(false, ["statusCode" : 3102,
+                                                                                   "message": "ZIGSDK - Ticket not generated"])
                                                             }
                                                         }
                                                         else{
-                                                            completion(false, "ZIGSDK - Failed to Add ticket")
+                                                            completion(false, ["statusCode" : 3102,
+                                                                               "message": "ZIGSDK - Ticket not generated"])
                                                         }
                                                     }
                                                 }
@@ -87,96 +92,119 @@ class TicketMethods : TicketValidationDelegate{
                                                 ReferanceViewModel.sharedInstance.addReferance(Amount: AmountCent, Transcationtype: "Wallet", Currency: "USD", Txn_id: transactionId, Correlation_id: "", Bankmessage: "", Txnstatus: "false", Gatewayrespcode: "Add Ticket Failed", Retrival_ref_no: "", Specialpayment: "", CardType: "", MaskedCardNumber: "", Txntag: "", EmailID: userDetails.emailId, Phone: "", UserName: userDetails.userName, Userid: "\(userDetails.UserId)", Txn_ref_no: transactionId, Error_code: "", Error_description: "", Status_code: "", Fareid: "\(fareID)", Wallet: false, AuthKey: userDetails.AuthKey) { response, success in
                                                     if success{
                                                         if response?.Message == "Ok"{
-                                                            completion(false, "ZIGSDK - Failed to Add ticket")
+                                                            completion(false, ["statusCode" : 3102,
+                                                                               "message": "ZIGSDK - Ticket not generated"])
                                                         }
                                                         else{
-                                                            completion(false, "ZIGSDK - Failed to Add ticket")
+                                                            completion(false, ["statusCode" : 3102,
+                                                                               "message": "ZIGSDK - Ticket not generated"])
                                                         }
                                                     }
                                                     else{
-                                                        completion(false, "ZIGSDK - Failed to Add ticket")
+                                                        completion(false, ["statusCode" : 3102,
+                                                                           "message": "ZIGSDK - Ticket not generated"])
                                                     }
                                                 }
                                             }
                                         }
                                     }
                                     else{
-                                        completion(false, "ZIGSDK - Failed to Add ticket")
+                                        completion(false, ["statusCode" : 3102,
+                                                           "message": "ZIGSDK - Ticket not generated"])
                                     }
                                 }
                                 else
                                 {
-                                    completion(false, "ZIGSDK - Failed to Add ticket")
+                                    completion(false, ["statusCode" : 3102,
+                                                       "message": "ZIGSDK - Ticket not generated"])
                                 }
                             }
                         }
                         else
                         {
-                            completion(false, "ZIGSDK - Failed to Debit wallet")
+                            completion(false, ["statusCode" : 4102,
+                                               "message": "ZIGSDK - Failed to debit amount"])
                         }
                     }
                 }
                 else{
-                    ReferanceViewModel.sharedInstance.addReferance(Amount: AmountCent, Transcationtype: "Wallet", Currency: "USD", Txn_id: transactionId, Correlation_id: "", Bankmessage: "", Txnstatus: "true", Gatewayrespcode: "", Retrival_ref_no: "", Specialpayment: "", CardType: "", MaskedCardNumber: "", Txntag: "", EmailID: userDetails.emailId, Phone: "", UserName: userDetails.userName, Userid: "\(userDetails.UserId)", Txn_ref_no: transactionId, Error_code: "", Error_description: "", Status_code: "", Fareid: "\(fareID)", Wallet: false, AuthKey: userDetails.AuthKey) { response, success in
-                        if response?.Message == "Ok"{
-                            TicketViewModel.sharedInstance.zigAddTicket(authKey: userDetails.AuthKey, agencyid: userDetails.clientId, TotalAmount: TotalAmount, UserID: userId, TicketList: self.TicketListData, DestinationAddress: destinationAddress1, Token: authKey ?? "", FromAddress: fromaddress1, Message: "Ticket Take in IOS App",transactionID: transactionId, UserName: userDetails.userName) { responses, success in
-                                if success{
-                                    if responses?.Message ?? "" == "Ok"{
-                                        self.GetTicket { success, Message in
-                                            if success{
-                                                completion(true,"ZIGSDK - Ticket Added Successfully")
-                                            }
-                                            else{
-                                                ReferanceViewModel.sharedInstance.addReferance(Amount: AmountCent, Transcationtype: "Wallet", Currency: "USD", Txn_id: transactionId, Correlation_id: "", Bankmessage: "", Txnstatus: "false", Gatewayrespcode: "Get Ticket Failed", Retrival_ref_no: "", Specialpayment: "", CardType: "", MaskedCardNumber: "", Txntag: "", EmailID: userDetails.emailId, Phone: "", UserName: userDetails.userName, Userid: "\(userDetails.UserId)", Txn_ref_no: transactionId, Error_code: "", Error_description: "", Status_code: "", Fareid: "\(fareID)", Wallet: false, AuthKey: userDetails.AuthKey) { response, success in
-                                                    if success{
-                                                        if response?.Message == "Ok"{
-                                                            completion(false, "ZIGSDK - Failed to Add ticket")
+                    ReferanceViewModel.sharedInstance.addReferance(Amount: AmountCent, Transcationtype: "Free", Currency: "USD", Txn_id: transactionId, Correlation_id: "", Bankmessage: "", Txnstatus: "true", Gatewayrespcode: "", Retrival_ref_no: "", Specialpayment: "", CardType: "", MaskedCardNumber: "", Txntag: "", EmailID: userDetails.emailId, Phone: "", UserName: userDetails.userName, Userid: "\(userDetails.UserId)", Txn_ref_no: transactionId, Error_code: "", Error_description: "", Status_code: "", Fareid: "\(fareID)", Wallet: false, AuthKey: userDetails.AuthKey) { response, success in
+                        if success {
+                            if response?.Message == "Ok"{
+                                TicketViewModel.sharedInstance.zigAddTicket(authKey: userDetails.AuthKey, agencyid: userDetails.clientId, TotalAmount: TotalAmount, UserID: userId, TicketList: self.TicketListData, DestinationAddress: destinationAddress1, Token: authKey ?? "", FromAddress: fromaddress1, Message: "Ticket Take in IOS App",transactionID: transactionId, UserName: userDetails.userName) { responses, success in
+                                    if success{
+                                        if responses?.Message ?? "" == "Ok"{
+                                            self.GetTicket { success, Message in
+                                                if success{
+                                                    completion(true,["statusCode" : 3103,
+                                                                     "message": "ZIGSDK - Ticket Added Successfully"])
+                                                }
+                                                else{
+                                                    ReferanceViewModel.sharedInstance.addReferance(Amount: AmountCent, Transcationtype: "Wallet", Currency: "USD", Txn_id: transactionId, Correlation_id: "", Bankmessage: "", Txnstatus: "false", Gatewayrespcode: "Get Ticket Failed", Retrival_ref_no: "", Specialpayment: "", CardType: "", MaskedCardNumber: "", Txntag: "", EmailID: userDetails.emailId, Phone: "", UserName: userDetails.userName, Userid: "\(userDetails.UserId)", Txn_ref_no: transactionId, Error_code: "", Error_description: "", Status_code: "", Fareid: "\(fareID)", Wallet: false, AuthKey: userDetails.AuthKey) { response, success in
+                                                        if success{
+                                                            if response?.Message == "Ok"{
+                                                                completion(false,["statusCode" : 3102,
+                                                                                  "message": "ZIGSDK - Ticket not generated"])
+                                                            }
+                                                            else{
+                                                                completion(false,["statusCode" : 3102,
+                                                                                  "message": "ZIGSDK - Ticket not generated"])
+                                                            }
                                                         }
                                                         else{
-                                                            completion(false, "ZIGSDK - Failed to Add ticket")
+                                                            completion(false, ["statusCode" : 3102,
+                                                                               "message": "ZIGSDK - Ticket not generated"])
                                                         }
-                                                    }
-                                                    else{
-                                                        completion(false, "ZIGSDK - Failed to Add ticket")
                                                     }
                                                 }
                                             }
                                         }
+                                        else{
+                                            completion(false,["statusCode" : 3102,
+                                                              "message": "ZIGSDK - \(responses?.Message ?? "")"])
+                                        }
                                     }
                                     else{
-                                        completion(false,"ZIGSDK - \(responses?.Message ?? "")")
-                                    }
-                                }
-                                else{
-                                    ReferanceViewModel.sharedInstance.addReferance(Amount: AmountCent, Transcationtype: "Wallet", Currency: "USD", Txn_id: transactionId, Correlation_id: "", Bankmessage: "", Txnstatus: "false", Gatewayrespcode: "Add Ticket Failed", Retrival_ref_no: "", Specialpayment: "", CardType: "", MaskedCardNumber: "", Txntag: "", EmailID: userDetails.emailId, Phone: "", UserName: userDetails.userName, Userid: "\(userDetails.UserId)", Txn_ref_no: transactionId, Error_code: "", Error_description: "", Status_code: "", Fareid: "\(fareID)", Wallet: false, AuthKey: userDetails.AuthKey) { response, success in
-                                        if success{
-                                            if response?.Message == "Ok"{
-                                                completion(false, "ZIGSDK - Failed to Add ticket")
+                                        ReferanceViewModel.sharedInstance.addReferance(Amount: AmountCent, Transcationtype: "Free", Currency: "USD", Txn_id: transactionId, Correlation_id: "", Bankmessage: "", Txnstatus: "false", Gatewayrespcode: "Add Ticket Failed", Retrival_ref_no: "", Specialpayment: "", CardType: "", MaskedCardNumber: "", Txntag: "", EmailID: userDetails.emailId, Phone: "", UserName: userDetails.userName, Userid: "\(userDetails.UserId)", Txn_ref_no: transactionId, Error_code: "", Error_description: "", Status_code: "", Fareid: "\(fareID)", Wallet: false, AuthKey: userDetails.AuthKey) { response, success in
+                                            if success{
+                                                if response?.Message == "Ok"{
+                                                    completion(false, ["statusCode" : 3102,
+                                                                       "message": "ZIGSDK - Ticket not generated"])
+                                                }
+                                                else{
+                                                    completion(false, ["statusCode" : 3102,
+                                                                       "message": "ZIGSDK - Ticket not generated"])
+                                                }
                                             }
                                             else{
-                                                completion(false, "ZIGSDK - Failed to Add ticket")
+                                                completion(false, ["statusCode" : 3102,
+                                                                   "message": "ZIGSDK - Ticket not generated"])
                                             }
                                         }
-                                        else{
-                                            completion(false, "ZIGSDK - Failed to Add ticket")
-                                        }
                                     }
+                                    
                                 }
-                                
+                            }
+                            else{
+                                completion(false, ["statusCode" : 3102,
+                                                   "message": "ZIGSDK - Ticket not generated"])
                             }
                         }
                         else{
-                            completion(false, "ZIGSDK - Failed to Add ticket")
+                            completion(false, ["statusCode" : 3102,
+                                               "message": "ZIGSDK - Ticket not generated"])
                         }
                     }
                 }
             }
             else{
-                completion(false,"ZIGSDK - Invalid FareList")
+                completion(false,["statusCode" : 3101,
+                                  "message": "ZIGSDK - Invalid FareList"])
             }
         }
         else{
-            completion(false,"ZIGSDK - No Internet Connection")
+            completion(false,[ "statusCode" : 2001,
+                               "message": "ZIGSDK - No internet Connection"])
         }
     }
     func GetTicket(completion: @escaping (Bool, [[String: Any]]) -> Void) {
@@ -241,7 +269,9 @@ class TicketMethods : TicketValidationDelegate{
                                                     "DestinationAddress": DestinationAddress,
                                                     "RouteId": RouteId,
                                                     "Ticketcount": Ticketcount,
-                                                    "TicketStatus": TicketStatus
+                                                    "TicketStatus": TicketStatus,
+                                                    "statusCode": 3201,
+                                                    "message": "OK"
                                                 ]
                                                 
                                                 // Add ticket data to ticketsArray
@@ -274,14 +304,16 @@ class TicketMethods : TicketValidationDelegate{
                                                         realm.add(newTask)
                                                     }
                                                 } catch {
-                                                    completion(false, [])
+                                                    completion(false, [[ "statusCode" : 3202,
+                                                                         "message": "ZIGSDK - Failed to get ticket"]])
                                                     return
                                                 }
                                                 break
                                             }
                                         } else {
                                             // If no subsets found, complete with empty data
-                                            completion(false, [])
+                                            completion(false, [[ "statusCode" : 3203,
+                                                                 "message": "ZIGSDK - Ticket list Not Found"]])
                                             return
                                         }
                                     }
@@ -289,22 +321,27 @@ class TicketMethods : TicketValidationDelegate{
                                     // If processing is successful, call completion with ticketsArray
                                     completion(true, ticketsArray)
                                 } else {
-                                    completion(false, [])
+                                    completion(false, [[ "statusCode" : 3202,
+                                                         "message": "ZIGSDK - Failed to get ticket"]])
                                 }
                             }
                         } else {
-                            completion(false, [["Message": "ZIGSDK - \(response?.Message ?? "")"]])
+                            completion(false, [["statusCode" : 3202,
+                                                "message": "ZIGSDK - \(response?.Message ?? "")"]])
                         }
                     } catch {
-                        completion(false, [])
+                        completion(false, [[ "statusCode" : 3202,
+                                             "message": "ZIGSDK - Failed to get ticket"]])
                     }
                 } else {
-                    completion(false, [])
+                    completion(false, [[ "statusCode" : 3202,
+                                         "message": "ZIGSDK - Failed to get ticket"]])
                 }
             }
         }
         else{
-            completion(false,[["Message": "No internet Connection"]])
+            completion(false,[[ "statusCode" : 2001,
+                                "message": "ZIGSDK - No internet Connection"]])
         }
     }
     func DeleteRealm(agencyId: Int,completion:@escaping(Bool,String)->Void){
@@ -358,19 +395,22 @@ class TicketMethods : TicketValidationDelegate{
                         }
                     }
                     else{
-                        completion(false, [["Message": "ZIGSDK - \(response?.Message ?? "")"]])
+                        completion(false, [["statusCode" : 3303,
+                                            "message": "ZIGSDK - \(response?.Message ?? "")"]])
                     }
                 }
                 else{
                     let jsonObject: [String: Any] = [
-                        "Message" : "Issue on Ticket Activation",
+                        "statusCode" : 3302,
+                        "message" : "Issue on Ticket Activation",
                     ]
                     completion(false,[jsonObject])
                 }
             }
         }
         else{
-            completion(false,[["Message": "No internet Connection"]])
+            completion(false,[["statusCode" : 2001,
+                               "message": "No internet Connection"]])
         }
     }
     func TicketStatusChange(ticketId: Int,newIsActiveStatus:Int,completion:@escaping(Bool,String)->Void){

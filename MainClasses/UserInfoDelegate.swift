@@ -8,5 +8,5 @@
 import Foundation
 import UIKit
 protocol GetUserInfoDelegate {
-    func UserInfo(authKey: String, userId: Int, userName: String, EmailId: String, completion:@escaping(Bool,String) -> Void)
+    func UserInfo(authKey: String, userId: Int, userName: String, EmailId: String, completion:@escaping(Bool,[String : Any]) -> Void)
 }

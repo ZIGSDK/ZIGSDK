@@ -17,14 +17,15 @@ class UserMethod {
             "userName" : userName,
             "userId" : userId,
             "emailId" : emailId,
-            "AuthKey" : AuthKey
+            "AuthKey" : AuthKey,
+            "MobileType": "iOS"
         ]
-        //print("Add-->Userinfo---->",parametersValue)
+      //  print("Add-->Userinfo---->",parametersValue)
         guard let url = URL(string: "\(apiBaseUrl.baseURL)User/SessionData") else {
             completion(nil, false)
             return
         }
-       // print("Add-->Userinfo---->",url)
+      //  print("Add-->Userinfo---->",url)
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

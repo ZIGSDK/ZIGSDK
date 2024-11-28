@@ -106,7 +106,7 @@ class SOSViewController: UIViewController,CLLocationManagerDelegate,AVSpeechSynt
                         if success{
                             let jsonObject: [String: Any] = [
                                 "TicketId" : "SOS Request",
-                                "Message" : "Your SOS request has been delivered to the driver"
+                                "message" : "Your SOS request has been delivered to the driver"
                             ]
                             self.receiver.senderFunction(jsonObject: jsonObject)
                             self.successHandler?(success,"Message sent successfully")

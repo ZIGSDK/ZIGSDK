@@ -65,7 +65,7 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
         QmVhdm9uUmFuZ2luZw.locationManager.showsBackgroundLocationIndicator = true
         QmVhdm9uUmFuZ2luZw.locationManager.pausesLocationUpdatesAutomatically = false
     }
-    internal func ZIGSDKInit(authKey : String, enableLog : Bool = false,completion: @escaping (Bool, String?) -> Void) {
+    internal func ZIGSDKInit(authKey : String, enableLog : Bool = false,completion: @escaping (Bool, [String:Any]?) -> Void) {
         let startTime = DispatchTime.now()
         if isReachable(){
                  SDKViewModel.sharedInstance.configApi(authKey: authKey) { [self] response, success in
@@ -148,10 +148,12 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                                             self.mqttManager = CocoaMQTTManager.shared
                                             self.startScanning()
 
-                                            completion(success,"ZIGSDK - Your Ticket Feature has been Enabled")
+                                            completion(success,["statusCode" : 1006,
+                                                                "message": "ZIGSDK - Your Ticket Feature has been Enabled"])
                                         }
                                         else {
-                                            completion(false,"ZIGSDK - MAC address was not found, please contact administrator")
+                                            completion(false,["statusCode" : 1004,
+                                                              "message": "ZIGSDK - MAC address was not found, please contact administrator"])
                                         }
                                     }
                                     if featureStatus.WalletEnableStatus{
@@ -159,37 +161,45 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                                         paymentMethod.sandboxKey = response?.sandboxKey ?? ""
                                        // paymentMethod.paymentMode = response?.paymentmode ?? false
                                         paymentMethod.paymentmethod = response?.paymentmethod ?? false
-                                        completion(true,"ZIGSDK - Your Wallet Feature has been Enabled")
+                                        completion(true,["statusCode" : 1005,
+                                                         "message": "ZIGSDK - Your Wallet Feature has been Enabled"])
                                     }
                                     else{
-                                        completion(false,"ZIGSDK - All features are Blocked Contact administrator")
+                                        completion(false,["statusCode" : 1003,
+                                                          "message": "All features are Blocked Contact administrator"])
+                                        
                                     }
                                 }
                                 else{
                                     QmVhdm9uUmFuZ2luZw.userLimitBool = false
-                                    completion(false,"ZIGSDK - Your limit has been expried. Please contact the administrator")
+                                    completion(false,["statusCode" : 1002,
+                                                      "message": "ZIGSDK - Your limit has been expried. Please contact the administrator"])
                                 }
                             }
                             else{
                                 QmVhdm9uUmFuZ2luZw.userLimitBool = false
-                                completion(false,"ZIGSDK - Your limit has been expried. Please contact the administrator")
+                                completion(false,["statusCode" : 1002,
+                                                  "message": "ZIGSDK - Your limit has been expried. Please contact the administrator"])
                             }
                         }
                         else{
-                            completion(false,"ZIGSDK - Security key is invalid or unauthorized, please contact administrator")
+                            completion(false,["statusCode" : 1001,
+                                              "message": "ZIGSDK - Security key is invalid or unauthorized, please contact administrator"])
                         }
                     }
                     else{
-                        completion(success,"Security key is invalid or unauthorized, please contact administrator")
+                        completion(success,["statusCode" : 1001,
+                                            "message": "ZIGSDK - Security key is invalid or unauthorized, please contact administrator"])
                     }
                 }
         }
         else{
-            completion(false,"ZIGSDK - No internet Connection!")
+            completion(false,["statusCode" : 2001,
+                               "message": "No internet Connection"])
         }
     }
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-       // print("Stop Scanning----->")
+        print("Stop Scanning----->")
         self.stopSendingOutData()
     }
     func startScanning(){
@@ -216,7 +226,7 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
     private func stopFunction() {
         let clientIdentifier = "Validationbeacon"
         guard let uuid = UUID(uuidString: MqttValidationData.uuid) else {
-            print("Invalid UUID")
+           // print("Invalid UUID")
             return
         }
         
@@ -229,7 +239,7 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
         let loc = manager.location?.coordinate
         currentlat = loc?.latitude ?? 0.0
         currentLong = loc?.longitude ?? 0.0
-       // print(currentlat,currentLong)
+     //   print(currentlat,currentLong)
         sdkLog.shared.printLog(message: "Scan found nearby devices")
        // print("BeaconData====>",beacons)
         if beacons.count > 0{
@@ -524,7 +534,7 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                     if success {
                         let jsonObject: [String: Any] = [
                             "TicketId" : "Illegal",
-                            "Message" : "Successfully validate a Illegal Entry"
+                            "message" : "Successfully validate a Illegal Entry"
                         ]
                         self.receiver.senderFunction(jsonObject: jsonObject)
                         QmVhdm9uUmFuZ2luZw.mqttValidationEnd = Date().inMiliSeconds()
@@ -580,7 +590,7 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
         }
         else{
             let jsonObject: [String: Any] = [
-                "Message" : "No Internet Connection"
+                "message" : "No Internet Connection"
             ]
             self.receiver.senderFunction(jsonObject: jsonObject)
         }
@@ -642,7 +652,7 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                             if success {
                                 let jsonObject: [String: Any] = [
                                     "TicketId" : "\(ticketId)",
-                                    "Message" : "Your Ticket Validated Successfully"
+                                    "message" : "Your Ticket Validated Successfully"
                                 ]
                                 self.receiver.senderFunction(jsonObject: jsonObject)
                                 
@@ -721,7 +731,7 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
         }
         else{
             let jsonObject: [String: Any] = [
-                "Message" : "No Internet Connection"
+                "message" : "No Internet Connection"
             ]
             self.receiver.senderFunction(jsonObject: jsonObject)
         }
@@ -778,7 +788,7 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                             if success {
                                 let jsonObject: [String: Any] = [
                                     "TicketId" : "\(ticketId)",
-                                    "Message" : "Your Ticket Validated Successfully"
+                                    "message" : "Your Ticket Validated Successfully"
                                 ]
                                 self.receiver.senderFunction(jsonObject: jsonObject)
                                 QmVhdm9uUmFuZ2luZw.mqttValidationEnd = Date().inMiliSeconds()
@@ -850,7 +860,7 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
         }
         else{
             let jsonObject: [String: Any] = [
-                "Message" : "No Internet Connection"
+                "message" : "No Internet Connection"
             ]
             self.receiver.senderFunction(jsonObject: jsonObject)
         }
@@ -891,7 +901,7 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
         }
         else{
             let jsonObject: [String: Any] = [
-                "Message" : "No Internet Connection"
+                "message" : "No Internet Connection"
             ]
             self.receiver.senderFunction(jsonObject: jsonObject)
         }

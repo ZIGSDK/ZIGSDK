@@ -19,8 +19,10 @@ class GetFareClass : GetFareDelegate{
                                 if let transactionData = response?.list {
                                     var formattedResponse: [[String: Any]] = []
                                     for fare in transactionData {
-                                        print("FareList----->",fare)
+                                     //   print("FareList----->",fare)
                                         let fareDictionary: [String: Any] = [
+                                            "statusCode": 3002,
+                                            "message": "OK",
                                             "FareId": fare.AgencyId as Any,
                                             "FareAmount": fare.FareAmount as Any,
                                             "CategoryId": fare.CategoryId as Any,
@@ -55,24 +57,29 @@ class GetFareClass : GetFareDelegate{
                                     completion(true,formattedResponse)
                                 }
                                 else{
-                                    completion(false,[["Message": "Failed to get fare list"]])
+                                    completion(false,[["statusCode" : 3001,
+                                        "message": "ZIGSDK - Failed to get fare list"]])
                                 }
                             }else{
-                                completion(false,[["Message": "Fare List not found"]])
+                                completion(false,[["statusCode" : 3001,
+                                    "message": "ZIGSDK - Fare List not found"]])
                             }
                         }
                         else{
-                            completion(false,[["Message": "\(response?.Message ?? "")"]])
+                            completion(false,[["statusCode" : 3003,
+                                "message": "ZIGSDK - \(response?.Message ?? "")"]])
                         }
                     }
                 }
                 else{
-                    completion(false,[["Message": "Failed to Get Fare"]])
+                    completion(false,[["statusCode" : 3001,
+                        "message": "ZIGSDK - Failed to Get Fare"]])
                 }
             }
         }
         else{
-            completion(false,[["Message": "No internet Connection"]])
+            completion(false,[[ "statusCode" : 2001,
+                                "message": "ZIGSDK - No internet Connection"]])
         }
     }
 }

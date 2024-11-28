@@ -7,7 +7,7 @@ class paymentViewController: UIViewController, UITextFieldDelegate, UIPickerView
     var windowUIvi: UIWindow?
     @IBOutlet weak var carddetailsview: UIView!
     @IBOutlet var customerName: UITextField!
-    @IBOutlet var customerCardno: UITextField!
+    @IBOutlet var customerCardno: UITextField! 
     @IBOutlet var expireDate: UITextField!
     @IBOutlet var cvvnumber: UITextField!
     @IBOutlet var closeButton: UIButton!
@@ -62,7 +62,7 @@ var countGlobalMutableArray = NSMutableArray()
     
     var UnqiueNumber = String()
     override func viewDidDisappear(_ animated: Bool) {
-        //print(countGlobalMutableArray)
+       // print(countGlobalMutableArray)
       //  ConfigFile.brewageArray = countGlobalMutableArray
     }
 
@@ -562,7 +562,7 @@ var countGlobalMutableArray = NSMutableArray()
             textField.text = formattedText
             if customerName.text?.isEmpty == false && textField.text?.isEmpty == false && expireDate.text?.isEmpty == false && cvvnumber.text?.isEmpty == false && stateAddress.text?.isEmpty == false && zipCode.text?.isEmpty == false && state.text?.isEmpty == false && city.text?.isEmpty == false
                 {
-                print("PaymentSystem---->",customerCardno)
+              //  print("PaymentSystem---->",customerCardno)
                 makePaymentButton.backgroundColor = UIColor.red
                 makePaymentButton.isUserInteractionEnabled = true
             }
@@ -595,7 +595,7 @@ var countGlobalMutableArray = NSMutableArray()
             }
             if customerName.text?.isEmpty == false && customerCardno.text?.isEmpty == false && textField.text?.isEmpty == false && cvvnumber.text?.isEmpty == false && stateAddress.text?.isEmpty == false && zipCode.text?.isEmpty == false && state.text?.isEmpty == false && city.text?.isEmpty == false
                 {
-                print("PaymentSystem---->",customerCardno)
+             //   print("PaymentSystem---->",customerCardno)
                 makePaymentButton.backgroundColor = UIColor.red
                 makePaymentButton.isUserInteractionEnabled = true
             }
@@ -747,7 +747,7 @@ var countGlobalMutableArray = NSMutableArray()
             {
                 customerExpireString = removeSpecialCharsFromString(text: expireDate.text!)
             }
-           // print("PaymentGateway----->",customerExpireString)
+         //   print("PaymentGateway----->",customerExpireString)
             let AmountCent = Int(paymentViewController.amount * 100)
             let mercentId = LoaderUtility.shared.generateRandom17DigitNumber()
             let amountValue = String.init(format: "%.2f", paymentViewController.amount)
@@ -775,7 +775,8 @@ var countGlobalMutableArray = NSMutableArray()
                                     "paymentStatus": false
                                 ]
                             }
-                            CustomUserDefaults.shared.set(userData, forKey: "savedCardDetails")
+                            LoaderUtility.shared.saveToUserDefaults(dictionary: userData, forKey: "savedCardDetails")
+                        //    print("Cardknox integration------->",LoaderUtility.shared.retrieveSavedCardDetails(forKey: "savedCardDetails"))
                         }
                         ReferanceViewModel.sharedInstance.addReferance(Amount: AmountCent, Transcationtype: "Card", Currency: "USD", Txn_id: respose?.xRefNum ?? "", Correlation_id: respose?.xStatus ?? "", Bankmessage: "", Txnstatus: "true", Gatewayrespcode: "", Retrival_ref_no: "", Specialpayment: "iOS Payment", CardType: respose?.xCardType ?? "", MaskedCardNumber: respose?.xMaskedCardNumber ?? "", Txntag: "\(mercentId)", EmailID: userDetails.emailId, Phone: "", UserName: userDetails.userName, Userid: "\(userDetails.UserId)", Txn_ref_no: mercentId, Error_code: respose?.xErrorCode ?? "", Error_description: respose?.xError ?? "", Status_code: respose?.xAuthCode ?? "", Fareid: "0", Wallet: true, AuthKey: userDetails.AuthKey) { responses, success in
                             if success{
@@ -787,7 +788,8 @@ var countGlobalMutableArray = NSMutableArray()
                                                 self.dismiss(animated: true)
                                                 let balanceAmount = String.init(format: "%.2f", response?.walletBalanceAmount ?? 0.0)
                                                 let jsonObject: [String: Any] = [
-                                                    "Message" : "\(response?.Message ?? "")",
+                                                    "statusCode" : 4001,
+                                                    "message" : "\(response?.Message ?? "")",
                                                     "userId" : "\(response?.userId ?? 0)",
                                                     "userName" : "\(response?.userName ?? "")",
                                                     "BalanceAmount" : "\(balanceAmount)"
@@ -802,7 +804,8 @@ var countGlobalMutableArray = NSMutableArray()
                                                     self.dismiss(animated: true, completion: nil)
                                                 }
                                                 let jsonObject: [String: Any] = [
-                                                    "Message" : "ZIGSDK-Payment Failed \(respose?.xErrorCode ?? "") - \(respose?.xError ?? "")"
+                                                    "statusCode" : 4002,
+                                                    "message" : "ZIGSDK-Payment Failed \(respose?.xErrorCode ?? "") - \(respose?.xError ?? "")"
                                                 ]
                                                 self.failureHandler?(false,jsonObject)
                                             }
@@ -813,7 +816,8 @@ var countGlobalMutableArray = NSMutableArray()
                                                 self.dismiss(animated: true, completion: nil)
                                             }
                                             let jsonObject: [String: Any] = [
-                                                "Message" : "ZIGSDK-Payment Failed \(respose?.xErrorCode ?? "") - \(respose?.xError ?? "")"
+                                                "statusCode" : 4002,
+                                                "message" : "ZIGSDK-Payment Failed \(respose?.xErrorCode ?? "") - \(respose?.xError ?? "")"
                                             ]
                                             self.failureHandler?(false,jsonObject)
                                         }
@@ -825,7 +829,8 @@ var countGlobalMutableArray = NSMutableArray()
                                         self.dismiss(animated: true, completion: nil)
                                     }
                                     let jsonObject: [String: Any] = [
-                                        "Message" : "ZIGSDK-Payment Failed \(respose?.xErrorCode ?? "") - \(respose?.xError ?? "")"
+                                        "statusCode" : 4002,
+                                        "message" : "ZIGSDK-Payment Failed \(respose?.xErrorCode ?? "") - \(respose?.xError ?? "")"
                                     ]
                                     self.failureHandler?(false,jsonObject)
                                 }
@@ -836,7 +841,8 @@ var countGlobalMutableArray = NSMutableArray()
                                     self.dismiss(animated: true, completion: nil)
                                 }
                                 let jsonObject: [String: Any] = [
-                                    "Message" : "ZIGSDK-Payment Failed \(respose?.xErrorCode ?? "") - \(respose?.xError ?? "")"
+                                    "statusCode" : 4002,
+                                    "message" : "ZIGSDK-Payment Failed \(respose?.xErrorCode ?? "") - \(respose?.xError ?? "")"
                                 ]
                                 self.failureHandler?(false,jsonObject)
                             }
@@ -848,7 +854,8 @@ var countGlobalMutableArray = NSMutableArray()
                             self.dismiss(animated: true, completion: nil)
                         }
                         let jsonObject: [String: Any] = [
-                            "Message" : "ZIGSDK-Payment Failed \(respose?.xErrorCode ?? "") - \(respose?.xError ?? "")"
+                            "statusCode" : 4002,
+                            "message" : "ZIGSDK-Payment Failed \(respose?.xErrorCode ?? "") - \(respose?.xError ?? "")"
                         ]
                         self.failureHandler?(false,jsonObject)
                     }
@@ -861,7 +868,8 @@ var countGlobalMutableArray = NSMutableArray()
                                 self.dismiss(animated: true, completion: nil)
                             }
                             let jsonObject: [String: Any] = [
-                                "Message" : "ZIGSDK-Payment Failed \(respose?.xErrorCode ?? "") - \(respose?.xError ?? "")"
+                                "statusCode" : 4002,
+                                "message" : "ZIGSDK-Payment Failed \(respose?.xErrorCode ?? "") - \(respose?.xError ?? "")"
                             ]
                             self.failureHandler?(false,jsonObject)
                         }
@@ -871,7 +879,8 @@ var countGlobalMutableArray = NSMutableArray()
                                 self.dismiss(animated: true, completion: nil)
                             }
                             let jsonObject: [String: Any] = [
-                                "Message" : "ZIGSDK-Payment Failed \(respose?.xErrorCode ?? "") - \(respose?.xError ?? "")"
+                                "statusCode" : 4002,
+                                "message" : "ZIGSDK-Payment Failed \(respose?.xErrorCode ?? "") - \(respose?.xError ?? "")"
                             ]
                             self.failureHandler?(false,jsonObject)
                         }
@@ -881,7 +890,8 @@ var countGlobalMutableArray = NSMutableArray()
         }
         else{
             let jsonObject: [String: Any] = [
-                "Message" : "ZIGSDK-No internet connection"
+                "statusCode" : 2001,
+                "message" : "ZIGSDK-No internet connection"
             ]
             self.failureHandler?(false,jsonObject)
         }

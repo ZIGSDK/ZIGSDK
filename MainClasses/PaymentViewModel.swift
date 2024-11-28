@@ -45,7 +45,7 @@ class PaymentViewModel: NSObject{
             "xDBA": appName
             
         ]
-       // print("PaymentGateway----->",parameter)
+      //  print("PaymentGateway----->",parameter)
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: parameter, options: [])
             var request = URLRequest(url: url)
@@ -97,11 +97,11 @@ class PaymentViewModel: NSObject{
             "xDescription":"Ticket Take in IOS App",
             "xDBA": appName
         ]
-        print("Paymentgateway----->",parameter)
+       // print("Paymentgateway----->",parameter)
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: parameter, options: [])
             var request = URLRequest(url: url)
-            print("Paymentgateway----->",request)
+         //   print("Paymentgateway----->",request)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = jsonData
