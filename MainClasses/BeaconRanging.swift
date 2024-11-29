@@ -339,11 +339,11 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                         if major == 102{
                             beaconLogData.macaddress = list.mqttMac
                         }
-                        else if major == 100{
-                            if major == list.major && Minor == list.minor{
-                                beaconLogData.macaddress = list.mqttMac
-                                ticketCounter()
-                            }
+                        else if major == list.major && Minor == list.minor{
+                            beaconLogData.macaddress = list.mqttMac
+                            ticketCounter()
+                        }
+                        else{
                         }
                     }
                 }
@@ -354,11 +354,11 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                         if major == 102{
                             beaconLogData.macaddress = list.mqttMac
                         }
-                        else if major == 100{
-                            if major == list.major && Minor == list.minor{
-                                beaconLogData.macaddress = list.mqttMac
-                                ticketCounter()
-                            }
+                        else if major == list.major && Minor == list.minor{
+                            beaconLogData.macaddress = list.mqttMac
+                            ticketCounter()
+                        }
+                        else{
                         }
                     }
                 }
