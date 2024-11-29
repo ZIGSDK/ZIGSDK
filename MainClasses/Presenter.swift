@@ -136,8 +136,8 @@ public class ZIGSDK {
             completion(success,Message)
         }
     }
-    public func zigTripplanner(sourceLat: Double, sourceLong: Double, destinationLat: Double, destinationLong: Double, sourceAddress: String, destinationAddress: String, currentTimeType: Time, vehicleMode: vehicleMode, routePreference: RoutePreferance, apiKey: String,dateTime: String, completion: @escaping (Bool, [[String : Any]]) -> Void){
-        tripPlanner.zigTripPlanner(sourceLat: sourceLat, sourceLong: sourceLong, destinationLat: destinationLat, destinationLong: destinationLong, sourceAddress: sourceAddress, destinationAddress: destinationAddress, currentTimeType: currentTimeType, vehicleMode: vehicleMode, routePreference: routePreference, apiKey: apiKey,dateTime: dateTime) { success, message in
+    public func zigTripplanner(sourceLat: Double, sourceLong: Double, destinationLat: Double, destinationLong: Double, sourceAddress: String, destinationAddress: String, currentTimeType: Time, vehicleMode: vehicleMode, routePreference: RoutePreferance, authKey: String,dateTime: String, completion: @escaping (Bool, [[String : Any]]) -> Void){
+        tripPlanner.zigTripPlanner(sourceLat: sourceLat, sourceLong: sourceLong, destinationLat: destinationLat, destinationLong: destinationLong, sourceAddress: sourceAddress, destinationAddress: destinationAddress, currentTimeType: currentTimeType, vehicleMode: vehicleMode, routePreference: routePreference, apiKey: authKey,dateTime: dateTime) { success, message in
             completion(success,message)
         }
     }

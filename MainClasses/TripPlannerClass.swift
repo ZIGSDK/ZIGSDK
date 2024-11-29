@@ -42,21 +42,29 @@ class tripPlannerClass : TripPlannerDelegate{
             else if routePreference == .leastWalking {
                 routePreferanceData = "least walking"
             }
-            TripPlannerViewModel.sharedInstance.tripPlannerViewModel(SourceLat: sourceLat, SourceLong: sourceLong, DestinationLat: destinationLat, DestinationLong: destinationLong, SourceAddress: sourceAddress, DestinationAddress: destinationAddress, CurrentTimeType: CurrentTimeType, vehicleMode: vechicleModeData, RoutePreferance: routePreferanceData, ClientId: userDetails.clientId, ApiKey: apiKey, DateTime: dateTime) { response, success in
-                if success, let responseData = response {
-                    do {
-                        if let json = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any],
-                           let routes = json["routes"] as? [[String: Any]] {
-                            completion(true, routes)
+            SDKViewModel.sharedInstance.configApi(authKey: apiKey) { response, success in
+                if success{
+                    TripPlannerViewModel.sharedInstance.tripPlannerViewModel(SourceLat: sourceLat, SourceLong: sourceLong, DestinationLat: destinationLat, DestinationLong: destinationLong, SourceAddress: sourceAddress, DestinationAddress: destinationAddress, CurrentTimeType: CurrentTimeType, vehicleMode: vechicleModeData, RoutePreferance: routePreferanceData, ClientId: response?.clientId ?? 0, ApiKey: apiKey, DateTime: dateTime) { response, success in
+                        if success, let responseData = response {
+                            do {
+                                if let json = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any],
+                                   let routes = json["routes"] as? [[String: Any]] {
+                                    completion(true, routes)
+                                } else {
+                                    completion(false, [["statusCode" : 7001,
+                                                        "message": "ZIGSDK - No routes found for the given details."]])
+                                }
+                            } catch {
+                                completion(false, [["statusCode" : 7002,
+                                                    "message": "ZIGSDK - Something went wrong. Please check your input and try again."]])
+                            }
                         } else {
-                            completion(false, [["statusCode" : 7001,
-                                                "message": "ZIGSDK - No routes found for the given details."]])
+                            completion(false, [["statusCode" : 7003,
+                                                "message": "ZIGSDK - Unable to get the trip details."]])
                         }
-                    } catch {
-                        completion(false, [["statusCode" : 7002,
-                                            "message": "ZIGSDK - Something went wrong. Please check your input and try again."]])
                     }
-                } else {
+                }
+                else{
                     completion(false, [["statusCode" : 7003,
                                         "message": "ZIGSDK - Unable to get the trip details."]])
                 }
