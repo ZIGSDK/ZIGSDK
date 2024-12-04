@@ -49,8 +49,8 @@ class ReferanceViewModel: NSObject{
             "Wallet": Wallet,
             "AuthKey": AuthKey
         ]
-      //  print("Add-Referance----->",parameter)
-     //   print("Add-Referance----->",url)
+//        print("Add-Referance----->",parameter)
+//        print("Add-Referance----->",url)
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: parameter, options: [])
             var request = URLRequest(url: url)

@@ -79,19 +79,19 @@ class TicketViewModel : NSObject{
         task.resume()
     }
     
-    func ZigGetTicket(userId:Int,agencyId:Int,completion:@escaping(_ response: GetTicket?, _ success: Bool) -> Void){
+    func ZigGetTicket(userId:Int,agencyId:Int,completion:@escaping(_ response: GetTicket?, _ success: Bool,_ response: Data?) -> Void){
         let urlString = "\(apiBaseUrl.baseURL)Zigsmartandroid/api/Ticket/GetTicketsNEW?UserID=\(userId)&agencyId=\(agencyId)&count=0"
       //  print("AddTicket---->",urlString)
         guard let url = URL(string: urlString) else {
           
-            completion(nil, false)
+            completion(nil, false,nil)
             return
         }
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
             //    print("AddTicket---->",response,error)
                 DispatchQueue.main.async {
-                    completion(nil, false)
+                    completion(nil, false, nil)
                 }
                 return
             }
@@ -99,7 +99,7 @@ class TicketViewModel : NSObject{
             guard let data = data else {
              //   print("AddTicket---->",response,data)
                 DispatchQueue.main.async {
-                    completion(nil, false)
+                    completion(nil, false, nil)
                 }
                 return
             }
@@ -107,12 +107,12 @@ class TicketViewModel : NSObject{
             do {
                 let json = try JSONDecoder().decode(GetTicket.self, from: data)
                 DispatchQueue.main.async {
-                    completion(json, true)
+                    completion(json, true, data)
                 }
             } catch let decodingError {
           //      print("AddTicket---->",response,decodingError)
                 DispatchQueue.main.async {
-                    completion(nil, false)
+                    completion(nil, false, nil)
                 }
             }
         }

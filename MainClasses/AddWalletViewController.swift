@@ -505,7 +505,7 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
     }
     
     @IBAction func removeCardaction(_ sender: Any) {
-        let alert = UIAlertController(title: "Delete Card details", message: "Do you want delete details", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Delete Card details", message: "Do you want to delete the card details?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { _ in
         }))
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in

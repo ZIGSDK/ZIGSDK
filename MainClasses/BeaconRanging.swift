@@ -91,7 +91,7 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                                     // beacon details
                                     TicketMethods.sharedInstance.deleteAllTickets { success, responce in
                                         if success{
-                                            TicketMethods.sharedInstance.GetTicket { success, responsevalue in
+                                            TicketMethods.sharedInstance.GetTicket { success, responsevalue,statusCode,message  in
                                                 if success{
                                                     
                                                 }

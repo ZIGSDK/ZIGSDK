@@ -7,5 +7,5 @@
 
 import Foundation
 public protocol GetFareDelegate {
-    func getFare(authkey: String, completion: @escaping(Bool,[[String:Any]])->Void)
+    func getFare(authkey: String, completion: @escaping(Bool,[[String:Any]],Int,String)->Void)
 }

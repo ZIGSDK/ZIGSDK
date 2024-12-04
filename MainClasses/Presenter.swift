@@ -70,19 +70,19 @@ public class ZIGSDK {
         }
     }
     
-    public func zigAddTicket(TotalAmount: Double, TicketDetails: [[String: Any]], completion: @escaping(Bool,[String : Any]) -> Void) {
-        TicketImpl.addTickets(TotalAmount: TotalAmount, TicketDetails: TicketDetails) { success, message in
-            completion(success, message)
+    public func zigAddTicket(TotalAmount: Double, TicketDetails: [[String: Any]], completion: @escaping(Bool,Int,String) -> Void) {
+        TicketImpl.addTickets(TotalAmount: TotalAmount, TicketDetails: TicketDetails) { success, statusCode,message in
+            completion(success,statusCode,message)
         }
     }
-    public func zigGetTicket(completion:@escaping(Bool,[[String: Any]])->Void){
-        TicketImpl.GetTicket { success, message in
-            completion(success,message)
+    public func zigGetTicket(completion:@escaping(Bool,[[String: Any]],Int,String)->Void){
+        TicketImpl.GetTicket { success, response, statusCode, message in
+            completion(success,response,statusCode,message)
         }
     }
-    public func zigActivateTicket(ticketId:Int,completion:@escaping(Bool,[[String: Any]])->Void){
-        TicketImpl.ActivateTicket(ticketId: ticketId) { success, message in
-            completion(success,message)
+    public func zigActivateTicket(ticketId:Int,completion:@escaping(Bool,[[String: Any]],Int,String)->Void){
+        TicketImpl.ActivateTicket(ticketId: ticketId) { success, response, statusCode,message in
+            completion(success,response,statusCode,message)
         }
     }
     public func zigInit(authKey : String,enableLog : Bool = true,completion: @escaping (Bool, [String : Any]?) -> Void){
@@ -126,14 +126,14 @@ public class ZIGSDK {
             completion(Success,Message)
         }
     }
-    public func zigTransaction(userId: Int,completion: @escaping (Bool,([[String: Any]])) -> Void){
-        transAction.zigTransaction(userId: userId) { success, message in
-            completion(success,message)
+    public func zigTransaction(userId: Int,completion: @escaping (Bool,([[String: Any]]),Int,String) -> Void){
+        transAction.zigTransaction(userId: userId) { success, response, statusCode, message in
+            completion(success,response,statusCode,message)
         }
     }
-    public func zigGetFare(authKey: String,completion: @escaping (Bool,([[String: Any]]))-> Void){
-        getFare.getFare(authkey: authKey) { success, Message in
-            completion(success,Message)
+    public func zigGetFare(authKey: String,completion: @escaping (Bool,([[String: Any]]),Int,String)-> Void){
+        getFare.getFare(authkey: authKey) { success, response, statusCode, message in
+            completion(success,response,statusCode,message)
         }
     }
     public func zigTripplanner(sourceLat: Double, sourceLong: Double, destinationLat: Double, destinationLong: Double, sourceAddress: String, destinationAddress: String, currentTimeType: Time, vehicleMode: vehicleMode, routePreference: RoutePreferance, authKey: String,dateTime: String, completion: @escaping (Bool, [[String : Any]]) -> Void){

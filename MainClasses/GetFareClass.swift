@@ -8,78 +8,47 @@
 import Foundation
 
 class GetFareClass : GetFareDelegate{
-    func getFare(authkey: String, completion: @escaping(Bool,[[String:Any]])->Void){
+    func getFare(authkey: String, completion: @escaping(Bool,[[String:Any]],Int,String)->Void){
         if isReachable(){
             SDKViewModel.sharedInstance.configApi(authKey: authkey) { response, success in
                 if success{
                     let clientId = response?.clientId ?? 0
-                    GetFareViewModel.sharedInstance.getFare(authKey: authkey, clientId: clientId) { response, success in
+                    GetFareViewModel.sharedInstance.getFare(authKey: authkey, clientId: clientId) { response, success, data  in
                         if response?.Message == "Ok"{
                             if response?.list.count ?? 0 > 0 {
                                 if let transactionData = response?.list {
-                                    var formattedResponse: [[String: Any]] = []
-                                    for fare in transactionData {
-                                     //   print("FareList----->",fare)
-                                        let fareDictionary: [String: Any] = [
-                                            "statusCode": 3002,
-                                            "message": "OK",
-                                            "FareId": fare.AgencyId as Any,
-                                            "FareAmount": fare.FareAmount as Any,
-                                            "CategoryId": fare.CategoryId as Any,
-                                            "RouteName": fare.RouteName as Any,
-                                            "isActive": fare.isActive as Any,
-                                            "ValidTill": fare.ValidTill as Any,
-                                            "CreatedDate": fare.CreatedDate as Any,
-                                            "createdby": fare.createdby as Any,
-                                            "LastUpdatedDate": fare.LastUpdatedDate as Any,
-                                            "LastUpdatedBy": fare.LastUpdatedBy as Any,
-                                            "AgencyId": fare.AgencyId as Any,
-                                            "serverdate": fare.serverdate as Any,
-                                            "Type": fare.Type as Any,
-                                            "ExpiryTime": fare.ExpiryTime as Any,
-                                            "ZoneId": fare.ZoneId as Any,
-                                            "Farename": fare.Farename as Any,
-                                            "MaxCount": fare.MaxCount as Any,
-                                            "ProductDescription": fare.ProductDescription as Any,
-                                            "ProductMiscDescription": fare.ProductDescription as Any,
-                                            "VerificationStatus": fare.VerificationStatus as Any,
-                                            "PaymentMode": fare.PaymentMode as Any,
-                                            "ProductName": fare.ProductName as Any,
-                                            "ProductCost": fare.ProductCost as Any,
-                                            "ProductVegCategory": fare.ProductVegCategory as Any,
-                                            "ProductImageURL": fare.ProductImageURL as Any,
-                                            "Category": fare.Category as Any,
-                                            "CategoryImage": fare.CategoryImage as Any,
-                                            "BannerImage": fare.BannerImage as Any
-                                        ]
-                                        formattedResponse.append(fareDictionary)
+                                    if let responseData = data {
+                                        do {
+                                            if let json = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any],
+                                               let routes = json["list"] as? [[String: Any]] {
+                                                completion(true, routes,3002,"OK")
+                                            } else {
+                                                completion(false, [[:]],3001,"ZIGSDK - Failed to get fare list")
+                                            }
+                                        } catch {
+                                            completion(false, [[:]],3001,"ZIGSDK - Failed to get fare list")
+                                        }
                                     }
-                                    completion(true,formattedResponse)
                                 }
                                 else{
-                                    completion(false,[["statusCode" : 3001,
-                                        "message": "ZIGSDK - Failed to get fare list"]])
+                                    completion(false, [[:]],3001,"ZIGSDK - Failed to get fare list")
                                 }
                             }else{
-                                completion(false,[["statusCode" : 3001,
-                                    "message": "ZIGSDK - Fare List not found"]])
+                                completion(false, [[:]],3001,"ZIGSDK - Failed to get fare list")
                             }
                         }
                         else{
-                            completion(false,[["statusCode" : 3003,
-                                "message": "ZIGSDK - \(response?.Message ?? "")"]])
+                            completion(false, [[:]],3001,"ZIGSDK - Failed to get fare list")
                         }
                     }
                 }
                 else{
-                    completion(false,[["statusCode" : 3001,
-                        "message": "ZIGSDK - Failed to Get Fare"]])
+                    completion(false, [[:]],3001,"ZIGSDK - Failed to get fare list")
                 }
             }
         }
         else{
-            completion(false,[[ "statusCode" : 2001,
-                                "message": "ZIGSDK - No internet Connection"]])
+            completion(false, [[:]],2001,"ZIGSDK - No internet Connection")
         }
     }
 }

@@ -7,6 +7,6 @@
 
 import Foundation
 public protocol TransactionDelegate {
-    func zigTransaction(userId: Int,completion: @escaping (Bool, [[String: Any]]) -> Void)
+    func zigTransaction(userId: Int,completion: @escaping (Bool, [[String: Any]],Int,String) -> Void)
 }
 

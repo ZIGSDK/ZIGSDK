@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 public protocol TicketValidationDelegate {
-    func addTickets(TotalAmount: Double, TicketDetails: [[String: Any]], completion: @escaping(Bool,[String : Any]) -> Void)
-    func GetTicket(completion: @escaping(Bool,[[String: Any]])->Void)
-    func ActivateTicket(ticketId : Int,completion: @escaping(Bool,[[String: Any]]) -> Void)
+    func addTickets(TotalAmount: Double, TicketDetails: [[String: Any]], completion: @escaping(Bool,Int,String) -> Void)
+    func GetTicket(completion: @escaping(Bool,[[String: Any]],Int,String)->Void)
+    func ActivateTicket(ticketId : Int,completion: @escaping(Bool,[[String: Any]],Int,String) -> Void)
 }
 
 

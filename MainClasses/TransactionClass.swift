@@ -7,47 +7,44 @@
 
 import Foundation
 class TransactionClass: TransactionDelegate {
-    func zigTransaction(userId: Int,completion: @escaping (Bool, [[String: Any]]) -> Void) {
+    func zigTransaction(userId: Int,completion: @escaping (Bool, [[String: Any]],Int,String) -> Void) {
         if isReachable(){
-            TransactionViewModel.sharedInstance.getTransAction(userId: userId, clientId: userDetails.clientId) { response, success in
+            TransactionViewModel.sharedInstance.getTransAction(userId: userId, clientId: userDetails.clientId) { response, success, data in
                 if success{
                     if response?.Message == "Ok"{
                         if let transactionData = response?.TransactionsData {
-                            let formattedResponse: [[String: Any]] = transactionData.map {
-                                return [
-                                    "message": "ok",
-                                    "statusCode" : 5004,
-                                    "transactionid": $0.transactionid ?? "",
-                                    "amount": $0.amount ?? "0.0",
-                                    "transactiondate": $0.transactiondate ?? ""
-                                ]
+                            if let responseData = data {
+                                do {
+                                    if let json = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any],
+                                       let routes = json["TransactionsData"] as? [[String: Any]] {
+                                        completion(true, routes,5004,"OK")
+                                    } else {
+                                        completion(false, [[:]],5003,"ZIGSDK - Failed to get Transaction details")
+                                    }
+                                } catch {
+                                    completion(false, [[:]],5003,"ZIGSDK - Failed to get Transaction details")
+                                }
                             }
-                            completion(true, formattedResponse)
                         } else {
-                            completion(false, [["statusCode" : 5001,
-                                                "message": "No transactions found."]])
+                            completion(false, [[:]],5001,"ZIGSDK - No transactions found.")
                         }
                     }
                     else{
                         if ((response?.Message.contains("invlid")) != nil) {
-                            completion(false,[["statusCode" : 5002,
-                                               "message": "ZIGSDK - Invalid UserId or AuthKey"]])
+                            completion(false, [[:]],5002,"ZIGSDK - Invalid UserId or AuthKey")
                         }
                         else{
-                            completion(false,[["statusCode" : 5003,
-                                               "message": "ZIGSDK - Failed to get Transaction details"]])
+                            completion(false, [[:]],5003,"ZIGSDK - Failed to get Transaction details")
                         }
                     }
                 }
                 else{
-                    completion(false,[["statusCode" : 5003,
-                                       "message": "ZIGSDK - Failed to get Transaction details"]])
+                    completion(false, [[:]],5003,"ZIGSDK - Failed to get Transaction details")
                 }
             }
         }
         else{
-            completion(false,[["statusCode" : 2001,
-                               "message": "No internet Connection"]])
+            completion(false, [[:]],2001,"ZIGSDK - No internet Connection")
         }
     }
 }
