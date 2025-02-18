@@ -7,6 +7,7 @@
 
 import UIKit
 class OnboardingViewController: UIViewController {
+    @IBOutlet weak var onboardingView: UIView!
     var completionHandler: ((Bool, String?) -> Void)?
     var cancelButtonAction: ((Bool, String?) -> Void)?
     @IBOutlet weak var canclebtn: UIButton!
@@ -41,6 +42,7 @@ class OnboardingViewController: UIViewController {
         sendBtn.setTitle(OnboardingViewController.sendButtonTitle, for: .normal)
         Sublable.text = OnboardingViewController.subtitle
         view.backgroundColor = UIColor(hex:OnboardingViewController.backgroundColor)
+        onboardingView.backgroundColor = UIColor(hex: OnboardingViewController.backgroundColor)
         sendBtn.setTitleColor(UIColor(hex:OnboardingViewController.textColor), for: .normal)
         canclebtn.setTitleColor(UIColor(hex: OnboardingViewController.textColor), for: .normal)
         titleLable.textColor = UIColor(hex: OnboardingViewController.textColor)
