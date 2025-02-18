@@ -34,7 +34,7 @@ class OnboardingViewController: UIViewController {
         OnboardingViewController.sendButtonTitle = OnboardingViewController.sendButtonTitle.isEmpty ? "Send Request" : OnboardingViewController.sendButtonTitle
         OnboardingViewController.cancleButtonTitle = OnboardingViewController.cancleButtonTitle.isEmpty ? "Cancle" : OnboardingViewController.cancleButtonTitle
         OnboardingViewController.textColor =  OnboardingViewController.textColor.isEmpty ? "#FFFFFF" : OnboardingViewController.textColor
-        OnboardingViewController.backgroundColor = OnboardingViewController.backgroundColor.isEmpty ? "#FF3B30" : OnboardingViewController.backgroundColor
+        OnboardingViewController.backgroundColor = OnboardingViewController.backgroundColor.isEmpty ? "#0A79BE" : OnboardingViewController.backgroundColor
         OnboardingViewController.imgUrl = OnboardingViewController.imgUrl.isEmpty ? "https://www.zed.digital/img/app/onbord.png" : OnboardingViewController.imgUrl
         
         canclebtn.setTitle(OnboardingViewController.cancleButtonTitle, for: .normal)
