@@ -685,8 +685,8 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                                         QRViewController.ticketStatus = "VALIDATE"
                                         QRViewController.ticketId = ticketId
                                         QRViewController.ticketExpiry = "#03-20-2024 16:50"
-                                        QRViewController.startColor = "#96e6a1"
-                                        QRViewController.endColor = "#009688"
+                                        QRViewController.startColor = "#0A79BE"
+                                        QRViewController.endColor = "#0A79BE"
                                         QRViewController.textColor = "#E53638"
                                         QRViewController.totalCount = "\(ticketCount)"
                                         QRViewController.agencyName = agencyName
@@ -812,8 +812,8 @@ class QmVhdm9uUmFuZ2luZw:NSObject, bearonRangingDelegate, CLLocationManagerDeleg
                                         QRViewController.ticketStatus = "VALIDATE"
                                         QRViewController.ticketId = ticketId
                                         QRViewController.ticketExpiry = "#03-20-2024 16:50"
-                                        QRViewController.startColor = "#96e6a1"
-                                        QRViewController.endColor = "#009688"
+                                        QRViewController.startColor = "#0A79BE"
+                                        QRViewController.endColor = "#0A79BE"
                                         QRViewController.textColor = "#E53638"
                                         QRViewController.totalCount = "\(ticketCount)"
                                         QRViewController.agencyName = agencyName

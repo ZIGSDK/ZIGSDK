@@ -39,7 +39,7 @@ class ReduceWalletAmount: UIViewController {
             self.showLoader()
             cancelButton.layer.cornerRadius = 10
             buyButton.layer.cornerRadius = 10
-            ReduceWalletAmount.setBrandColour = ReduceWalletAmount.setBrandColour.isEmpty ? "#E00F12" : ReduceWalletAmount.setBrandColour
+            ReduceWalletAmount.setBrandColour = ReduceWalletAmount.setBrandColour.isEmpty ? "#0A79BE" : ReduceWalletAmount.setBrandColour
             WalletViewModel.sharedInstance.walletBalanceCheck(clientId: MqttValidationData.userid, userId: ReduceWalletAmount.userId) { response, success in
                 if success{
                     self.hideLoader()

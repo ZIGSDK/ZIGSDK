@@ -58,7 +58,7 @@ class SOSViewController: UIViewController,CLLocationManagerDelegate,AVSpeechSynt
         SOSViewController.title = SOSViewController.title.isEmpty ? "SOS Request" : SOSViewController.title
         SOSViewController.subtitle = SOSViewController.subtitle.isEmpty ? "Your SOS request has been delivered to the driver" : SOSViewController.subtitle
         SOSViewController.textColor = SOSViewController.textColor.isEmpty ? "#FFFFFF" : SOSViewController.textColor
-        SOSViewController.backroundColor = SOSViewController.backroundColor.isEmpty ? "#FF0000" : SOSViewController.backroundColor
+        SOSViewController.backroundColor = SOSViewController.backroundColor.isEmpty ? "#0A79BE" : SOSViewController.backroundColor
         SOSViewController.mainImage = "SosRequest"
         SOSViewController.imageUrl = SOSViewController.imageUrl.isEmpty ? "https://www.zed.digital/img/app/sos.png" : SOSViewController.imageUrl
         sosTitle.text = SOSViewController.title

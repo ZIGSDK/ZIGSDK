@@ -64,8 +64,8 @@ public class ZIGSDK {
             completion(success, message)
         }
     }
-    public func needPermission(title: String = "", subtitle: String = "", description: String = "", noteTitle : String = "",noteDescription : String = "", permissionList: [PermissionItem] = [],completion: @escaping (Bool, String?) -> Void){
-        needPermission.needPermisson(Title: title, subTitle: subtitle, description: description, noteTitle: noteTitle, noteDescription : noteDescription,permissionList: permissionList) { success, message in
+    public func needPermission(title: String = "", subtitle: String = "", description: String = "", noteTitle : String = "",noteDescription : String = "", permissionList: [PermissionItem] = [],setBrandColor: String = "",completion: @escaping (Bool, String?) -> Void){
+        needPermission.needPermisson(Title: title, subTitle: subtitle, description: description, noteTitle: noteTitle, noteDescription : noteDescription,permissionList: permissionList, setBrandColor: setBrandColor) { success, message in
             completion(success,message)
         }
     }

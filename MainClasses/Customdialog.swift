@@ -120,7 +120,7 @@ class StopRequestpresenter : StopViewController,StopRequestDelegate {
         StopViewController.titleTextColor = titleTextColor
         StopViewController.subtitleTitleColor = subtitleTextColor
         if QmVhdm9uUmFuZ2luZw.userLimitBool{
-          //  if QmVhdm9uUmFuZ2luZw.beaconBool{
+            if QmVhdm9uUmFuZ2luZw.beaconBool{
                 if StopViewController.beaconMessage == "STOP"{
                     titleName = "Stop Request"
                     subTitleName = "Click to request to stop at the upcomming bus stop"
@@ -132,8 +132,8 @@ class StopRequestpresenter : StopViewController,StopRequestDelegate {
                     buttonName = "SOS"
                 }
                 
-//                PresenterImpl().showAlert(title: titleName, message: subTitleName,buttonName: buttonName) { success in
-//                    if success{
+                PresenterImpl().showAlert(title: titleName, message: subTitleName,buttonName: buttonName) { success in
+                    if success{
                         QmVhdm9uUmFuZ2luZw.mqttValidationStart = 0
                         QmVhdm9uUmFuZ2luZw.mqttValidationEnd = 0
                         QmVhdm9uUmFuZ2luZw.mqttValidationStart = Date().inMiliSeconds()
@@ -151,13 +151,13 @@ class StopRequestpresenter : StopViewController,StopRequestDelegate {
                         }
                         stopViewConroller.modalPresentationStyle = .fullScreen
                         rootViewController.present(stopViewConroller, animated: true, completion: nil)
-               //     }
-              //  }
-//            }
-//            else{
-//                completion(false, "No device was found")
-//                PresenterImpl().showAlert(title: "No device was found")
-//            }
+                    }
+                }
+            }
+            else{
+                completion(false, "No device was found")
+                PresenterImpl().showAlert(title: "No device was found")
+            }
         }
         else{
             PresenterImpl().showAlert(title: "Your limit has been exceeded. Please contact the admin")
@@ -216,7 +216,7 @@ class NeedPermisson: NSObject, needPermissionDelegate, CBCentralManagerDelegate 
         manager.delegate = self
     }
     var notificationBool = false
-    func needPermisson(Title: String = "", subTitle: String = "", description: String = "", noteTitle: String = "", noteDescription : String = "",permissionList: [PermissionItem] = [], completion: @escaping (Bool, String?) -> Void) {
+    func needPermisson(Title: String = "", subTitle: String = "", description: String = "", noteTitle: String = "", noteDescription : String = "",permissionList: [PermissionItem] = [],setBrandColor : String, completion: @escaping (Bool, String?) -> Void) {
         let emptyList = [PermissionItem(description: "Please set the location access to 'Allow all the time' for scanning nearby beacons.", keywordHighlight: "Allow all the time", permissionType: .location, title: "Location", image: "location.fill.viewfinder"),PermissionItem(description: "Allow Bluetooth permission to detect nearby beacons.", keywordHighlight: "Bluetooth permission", permissionType: .bluetooth, title: "Bluetooth", image: "location.fill.viewfinder"),PermissionItem(description: "Allow the Notification Permission to display a message to the user after validation.", keywordHighlight: "Notification Permission", permissionType: .notification, title: "Notification", image: "location.fill.viewfinder"),PermissionItem(description: "Allow camera permission to prevent fake tickets, enables secure verification for drivers.", keywordHighlight: "camera permission", permissionType: .camera, title: "Camera", image: "location.fill.viewfinder")]
         checkNotificationAuthorization { success in
             self.notificationBool = success
@@ -225,6 +225,7 @@ class NeedPermisson: NSObject, needPermissionDelegate, CBCentralManagerDelegate 
         NeedPermissionViewController.titleValue = Title
         NeedPermissionViewController.subTitleValue = subTitle
         NeedPermissionViewController.descriptionValue = description
+        NeedPermissionViewController.setBrandColor = setBrandColor
         let locationBool = checkLocationServices()
         let cameraBool = checkCameraAuthorization()
         if permissionList.count > 0 {

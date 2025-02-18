@@ -23,6 +23,7 @@ class NeedPermissionViewController: UIViewController, UITableViewDataSource, UIT
     static var cameraStatus = false
     static var blutoothStatus = false
     static var notificationList = [PermissionItem]()
+    static var setBrandColor = ""
     private let rowHeight: CGFloat = 50.0
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +39,11 @@ class NeedPermissionViewController: UIViewController, UITableViewDataSource, UIT
         NeedPermissionViewController.titleValue = NeedPermissionViewController.titleValue.isEmpty ? "Need Permissions" : NeedPermissionViewController.titleValue
         NeedPermissionViewController.subTitleValue = NeedPermissionViewController.subTitleValue.isEmpty ? "In order for you use certain features of this app,you need to give permissions.See description for each permission." : NeedPermissionViewController.subTitleValue
         NeedPermissionViewController.descriptionValue = NeedPermissionViewController.descriptionValue.isEmpty ? "Permission are necessary for all the features and functions to work properly. If not allowed,you have to enable permissions in settings." : NeedPermissionViewController.descriptionValue
+        NeedPermissionViewController.setBrandColor = NeedPermissionViewController.setBrandColor.isEmpty ? "#0A79BE" : NeedPermissionViewController.setBrandColor
         closeimg.tintColor = UIColor.darkGray
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         closeimg.addGestureRecognizer(tapGesture)
-        
+        titleLable.textColor =  UIColor(hex: NeedPermissionViewController.setBrandColor)
         titleLable.text = NeedPermissionViewController.titleValue
         subTitleLable.text = NeedPermissionViewController.subTitleValue
         descriptionLable.text = NeedPermissionViewController.descriptionValue
@@ -66,7 +68,6 @@ class NeedPermissionViewController: UIViewController, UITableViewDataSource, UIT
             highlightedText.addAttribute(.foregroundColor, value: highlightColor , range: nsRange)
         }
         cell.subTitle.attributedText = highlightedText
-    
 // Permisson Bool Check
         if data.permissionType == .location{
             if NeedPermissionViewController.locationStatus == false{

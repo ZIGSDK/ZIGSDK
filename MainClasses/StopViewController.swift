@@ -49,7 +49,7 @@ class StopViewController: UIViewController,CLLocationManagerDelegate,UNUserNotif
     static var subtitleTitleColor = ""
     static var textToVoiceMessage = ""
     
-    var startColorHex = "#E00F12" // Green
+    var startColorHex = "#0A79BE" // Green
     var endColorHex = "#ed4c4e"
     var blePermissionValue = "false"
     var locationPermissionValue = "false"
@@ -82,7 +82,7 @@ class StopViewController: UIViewController,CLLocationManagerDelegate,UNUserNotif
         StopViewController.subtitle = StopViewController.subtitle.isEmpty ? "Your Stop request has been delivered to the driver" : StopViewController.subtitle
         StopViewController.titleTextColor = StopViewController.titleTextColor.isEmpty ? "#FFFFFF" : StopViewController.titleTextColor
         StopViewController.subtitleTitleColor = StopViewController.subtitleTitleColor.isEmpty ? "#FFFFFF" : StopViewController.subtitleTitleColor
-        StopViewController.backroundColor = StopViewController.backroundColor.isEmpty ? "#FF0000" : StopViewController.backroundColor
+        StopViewController.backroundColor = StopViewController.backroundColor.isEmpty ? "#0A79BE" : StopViewController.backroundColor
         StopViewController.mainImage = "StopRequest"
         StopViewController.imgUrl = StopViewController.imgUrl.isEmpty ? "https://www.zed.digital/img/app/stop.png" : StopViewController.imgUrl
         Title_name.text = StopViewController.title

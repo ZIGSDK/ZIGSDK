@@ -30,6 +30,7 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
     
     
     
+    @IBOutlet weak var proceedToPay: UIButton!
     @IBOutlet weak var paybtn: UIButton!
     @IBOutlet weak var cancelImg: UIImageView!
     @IBOutlet weak var fieldView: UIView!
@@ -69,7 +70,7 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
     func setUpUI(){
         AddWalletViewController.brandTitle = AddWalletViewController.brandTitle.isEmpty ? "Add funds to SuperWallet" :  AddWalletViewController.brandTitle
         AddWalletViewController.payTitle = AddWalletViewController.payTitle.isEmpty ? "Pay" : AddWalletViewController.payTitle
-        AddWalletViewController.setBrandColour = AddWalletViewController.setBrandColour.isEmpty ? "#E00F12" : AddWalletViewController.setBrandColour
+        AddWalletViewController.setBrandColour = AddWalletViewController.setBrandColour.isEmpty ? "#0A79BE" : AddWalletViewController.setBrandColour
         
         fieldView.layer.borderWidth = 2
         fieldView.layer.borderColor = UIColor.black.cgColor
@@ -86,6 +87,9 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
         cancelImg.addGestureRecognizer(tapGesture)
         
         paybtn.layer.cornerRadius = paybtn.frame.height/2
+        brandTitle.textColor = UIColor(hex: AddWalletViewController.setBrandColour)
+        paybtn.titleLabel?.backgroundColor = UIColor(hex: AddWalletViewController.setBrandColour)
+        proceedToPay.backgroundColor =  UIColor(hex: AddWalletViewController.setBrandColour)
         let bundle = Bundle(for: ZIGSDK.self)
         let image = UIImage(named: "checkbox_in", in: bundle, compatibleWith: nil)
         checkBoxBtn.setImage(image, for: .normal)
@@ -153,6 +157,7 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
                         if let amountText = amountField.text?.replacingOccurrences(of: "$", with: "").trimmingCharacters(in: .whitespaces),
                            let creditAmount = Double(amountText) {
                             paymentViewController.amount = creditAmount
+                            paymentViewController.setBandColors = AddWalletViewController.setBrandColour
                         } else {
                             // print("Failed to convert the string to a Double")
                         }
@@ -173,6 +178,7 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
                     if let amountText = amountField.text?.replacingOccurrences(of: "$", with: "").trimmingCharacters(in: .whitespaces),
                        let creditAmount = Double(amountText) {
                         paymentViewController.amount = creditAmount
+                        paymentViewController.setBandColors = AddWalletViewController.setBrandColour
                     } else {
                     }
                     addWalletScreen.modalPresentationStyle = .fullScreen
@@ -269,6 +275,7 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
                 if let amountText = amountField.text?.replacingOccurrences(of: "$", with: "").trimmingCharacters(in: .whitespaces),
                    let creditAmount = Double(amountText) {
                     paymentViewController.amount = creditAmount
+                    paymentViewController.setBandColors = AddWalletViewController.setBrandColour
                 } else {
                 }
                 addWalletScreen.modalPresentationStyle = .fullScreen
@@ -470,6 +477,7 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddWalletCollectionViewCell", for: indexPath) as! AddWalletCollectionViewCell
         cell.listedAmount.text = "$ \(amountArray[indexPath.row])"
+        cell.listedAmount.backgroundColor = UIColor(hex: AddWalletViewController.setBrandColour)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -538,6 +546,7 @@ class AddWalletViewController: UIViewController,UICollectionViewDelegate,UIColle
         if let amountText = amountField.text?.replacingOccurrences(of: "$", with: "").trimmingCharacters(in: .whitespaces),
            let creditAmount = Double(amountText) {
             paymentViewController.amount = creditAmount
+            paymentViewController.setBandColors = AddWalletViewController.setBrandColour
         } else {
         }
         addWalletScreen.modalPresentationStyle = .fullScreen

@@ -12,6 +12,7 @@ class paymentViewController: UIViewController, UITextFieldDelegate, UIPickerView
     @IBOutlet var cvvnumber: UITextField!
     @IBOutlet var closeButton: UIButton!
   
+    @IBOutlet weak var paymentTitle: UILabel!
     @IBOutlet weak var alertOk: UIButton!
     @IBOutlet weak var alertCancel: UIButton!
     @IBOutlet weak var alertView: UIView!
@@ -57,6 +58,7 @@ var countGlobalMutableArray = NSMutableArray()
     var savePaymentBool = true
     var timerEmail: Timer?
     static var amount = 0.0
+    static var setBandColors = ""
     var myPickerView: UIPickerView!
     var pickerData = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
     
@@ -167,7 +169,7 @@ var countGlobalMutableArray = NSMutableArray()
 
         makePaymentButton.layer.cornerRadius = 5
         makePaymentButton.layer.masksToBounds = true
-        makePaymentButton.backgroundColor = UIColor.red.withAlphaComponent(0.6)
+        makePaymentButton.backgroundColor = UIColor(hex: paymentViewController.setBandColors).withAlphaComponent(0.6)
         makePaymentButton.isUserInteractionEnabled = false
         
         backgroundView.isHidden = true
@@ -175,7 +177,9 @@ var countGlobalMutableArray = NSMutableArray()
         alertView.isHidden = true
         alertOk.layer.cornerRadius = 20
         alertCancel.layer.cornerRadius = 20
-        
+        alertOk.backgroundColor = UIColor(hex: paymentViewController.setBandColors)
+        paymentTitle.textColor = UIColor(hex: paymentViewController.setBandColors)
+        makePaymentButton.backgroundColor = UIColor(hex: paymentViewController.setBandColors)
         alertTitle.text = "This transaction will appear in your bank statement as \(userDetails.clientName)"
         savePaymentBool = true
         savePaymentButton.addTarget(self, action: #selector(savePaymentAction), for: .touchUpInside)
@@ -333,12 +337,12 @@ var countGlobalMutableArray = NSMutableArray()
         }
         if customerName.text?.isEmpty == false && customerCardno.text?.isEmpty == false && expireDate.text?.isEmpty == false && cvvnumber.text?.isEmpty == false && stateAddress.text?.isEmpty == false && zipCode.text?.isEmpty == false && state.text?.isEmpty == false && city.text?.isEmpty == false
             {
-            makePaymentButton.backgroundColor = UIColor.red
+            makePaymentButton.backgroundColor = UIColor(hex: paymentViewController.setBandColors)
             makePaymentButton.isUserInteractionEnabled = true
         }
         else
         {
-            makePaymentButton.backgroundColor = UIColor.red.withAlphaComponent(0.6)
+            makePaymentButton.backgroundColor = UIColor(hex: paymentViewController.setBandColors).withAlphaComponent(0.6)
             makePaymentButton.isUserInteractionEnabled = false
         }
     }
@@ -563,12 +567,12 @@ var countGlobalMutableArray = NSMutableArray()
             if customerName.text?.isEmpty == false && textField.text?.isEmpty == false && expireDate.text?.isEmpty == false && cvvnumber.text?.isEmpty == false && stateAddress.text?.isEmpty == false && zipCode.text?.isEmpty == false && state.text?.isEmpty == false && city.text?.isEmpty == false
                 {
               //  print("PaymentSystem---->",customerCardno)
-                makePaymentButton.backgroundColor = UIColor.red
+                makePaymentButton.backgroundColor = UIColor(hex: paymentViewController.setBandColors)
                 makePaymentButton.isUserInteractionEnabled = true
             }
             else
             {
-                makePaymentButton.backgroundColor = UIColor.red.withAlphaComponent(0.6)
+                makePaymentButton.backgroundColor = UIColor(hex: paymentViewController.setBandColors).withAlphaComponent(0.6)
                 makePaymentButton.isUserInteractionEnabled = false
             }
             return false
@@ -596,12 +600,12 @@ var countGlobalMutableArray = NSMutableArray()
             if customerName.text?.isEmpty == false && customerCardno.text?.isEmpty == false && textField.text?.isEmpty == false && cvvnumber.text?.isEmpty == false && stateAddress.text?.isEmpty == false && zipCode.text?.isEmpty == false && state.text?.isEmpty == false && city.text?.isEmpty == false
                 {
              //   print("PaymentSystem---->",customerCardno)
-                makePaymentButton.backgroundColor = UIColor.red
+                makePaymentButton.backgroundColor = UIColor(hex: paymentViewController.setBandColors)
                 makePaymentButton.isUserInteractionEnabled = true
             }
             else
             {
-                makePaymentButton.backgroundColor = UIColor.red.withAlphaComponent(0.6)
+                makePaymentButton.backgroundColor = UIColor(hex: paymentViewController.setBandColors).withAlphaComponent(0.6)
                 makePaymentButton.isUserInteractionEnabled = false
             }
             

@@ -8,5 +8,5 @@
 import Foundation
 import UIKit
 public protocol needPermissionDelegate {
-    func needPermisson(Title : String, subTitle : String, description : String, noteTitle : String, noteDescription : String, permissionList: [PermissionItem],completion: @escaping (Bool, String?) -> Void)
+    func needPermisson(Title : String, subTitle : String, description : String, noteTitle : String, noteDescription : String, permissionList: [PermissionItem],setBrandColor : String,completion: @escaping (Bool, String?) -> Void)
 }

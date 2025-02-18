@@ -32,6 +32,7 @@ class IllegalViewController: UIViewController {
         firstView.layer.shadowColor = UIColor.lightGray.cgColor
         firstView.layer.shadowOffset = CGSize(width: 2, height: 2)
         firstView.layer.shadowRadius = 1
+        self.view.backgroundColor = UIColor(hex: "#0A79BE")
     }
     func camerasetup(){
         self.imageVC = UIImagePickerController()

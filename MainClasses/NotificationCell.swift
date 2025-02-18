@@ -21,6 +21,7 @@ class NotificationCell: UITableViewCell {
         allowBtn.layer.cornerRadius = allowBtn.frame.height/2
         allowBtn.backgroundColor = UIColor.black
         allowBtn.tintColor = UIColor.white
+        subTitle.textColor = UIColor(hex: NeedPermissionViewController.setBrandColor)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
