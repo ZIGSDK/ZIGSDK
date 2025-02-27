@@ -1,3 +1,0 @@
-// CustomDialogBox.swift
-
-import UIKit

@@ -1,0 +1,6 @@
+framework module ZIGSDK {
+  umbrella header "ZIGSDK.h"
+  export *
+
+  module * { export * }
+}

@@ -1,0 +1,498 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name ZIGSDK
+import AVFoundation
+import CommonCrypto
+import CoreBluetooth
+import CoreData
+import CoreLocation
+import DeveloperToolsSupport
+import Foundation
+import LocalAuthentication
+import Security
+import Swift
+import SwiftUI
+import SystemConfiguration
+import UIKit
+import UserNotifications
+@_exported import ZIGSDK
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct returnData {
+  public var statusCode: Swift.Int
+  public var message: Swift.String
+  public var status: Swift.Bool
+  public init(statusCode: Swift.Int, message: Swift.String, status: Swift.Bool)
+}
+public struct ReturnData1 {
+  public var statusCode: Swift.Int?
+  public var message: Swift.String?
+  public var status: Swift.Bool?
+  public init(statusCode: Swift.Int? = nil, message: Swift.String? = nil, status: Swift.Bool? = nil)
+}
+public struct QRModel {
+  public var ticketId: Swift.String?
+  public var agencyName: Swift.String?
+  public var ticketStatus: Swift.Int?
+  public var expriedDate: Swift.String?
+  public var ticketCount: Swift.Int?
+  public init(ticketId: Swift.String? = nil, agencyName: Swift.String? = nil, ticketStatus: Swift.Int? = nil, expriedDate: Swift.String? = nil, ticketCount: Swift.Int? = nil)
+}
+public struct getCardTransaction : Swift.Codable {
+  public var ListTransaction: [ZIGSDK.ListTransaction]?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ListTransaction : Swift.Codable {
+  public var TransactionDate: Swift.String?
+  public var RefNum: Swift.String?
+  public var Status: Swift.String?
+  public var Amount: Swift.Int?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct getWalletTransactionData : Swift.Codable {
+  public var WalletTransactions: [ZIGSDK.WalletTransactions]?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct WalletTransactions : Swift.Codable {
+  public var TransactionDate: Swift.String?
+  public var RefNum: Swift.String?
+  public var Status: Swift.String?
+  public var Amount: Swift.Int?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct getWalletModel : Swift.Codable {
+  public var Message: Swift.String?
+  public var walletBalanceAmount: Swift.Double?
+  public var RefNum: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct deleteCardModel : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct getFaredata : Swift.Codable {
+  public var list: [ZIGSDK.ListData]?
+  public var ClientID: Swift.Int?
+  public var ClientName: Swift.String?
+  public var ClientDesc: Swift.String?
+  public var ClientSubDesc: Swift.String?
+  public var ClientPrimaryColorcode: Swift.String?
+  public var ClientSecondaryaryColorcode: Swift.String?
+  public var Message: Swift.String?
+  public var Faremessage: Swift.String?
+  public var Miscfee: Swift.String?
+  public var FarepageTitle: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ListData : Swift.Codable {
+  public var FareId: Swift.Int?
+  public var FareAmount: Swift.Int?
+  public var CategoryId: Swift.Int?
+  public var RouteName: Swift.String?
+  public var isActive: Swift.Bool
+  public var ValidTill: Swift.String?
+  public var CreatedDate: Swift.String?
+  public var createdby: Swift.String?
+  public var LastUpdatedDate: Swift.String?
+  public var LastUpdatedBy: Swift.String?
+  public var AgencyId: Swift.Int?
+  public var serverdate: Swift.String?
+  public var `Type`: Swift.String?
+  public var ExpiryTime: Swift.String?
+  public var ZoneId: Swift.Int?
+  public var Farename: Swift.String?
+  public var MaxCount: Swift.Int?
+  public var ProductDescription: Swift.String?
+  public var ProductMiscDescription: Swift.String?
+  public var VerificationStatus: Swift.Int?
+  public var PaymentMode: Swift.Int?
+  public var ProductName: Swift.String?
+  public var ProductCost: Swift.Int?
+  public var ProductVegCategory: Swift.Int?
+  public var ProductImageURL: Swift.String?
+  public var Category: Swift.String?
+  public var CategoryImage: Swift.String?
+  public var BannerImage: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct GetTicket : Swift.Codable {
+  public var Message: Swift.String?
+  public var Count: Swift.Int?
+  public var ID_Count_User: Swift.Int?
+  public var Total_Ticket_Count: Swift.Int?
+  public var Tickets: [ZIGSDK.Ticket]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Ticket : Swift.Codable {
+  public var TransactionDate: Swift.String?
+  public var status: Swift.Int?
+  public var serverdate: Swift.String?
+  public var Username: Swift.String?
+  public var UserId: Swift.Int?
+  public var Amount: Swift.Double?
+  public var FromAddress: Swift.String?
+  public var DestinationAddress: Swift.String?
+  public var MasterTransactionid: Swift.Int?
+  public var Subsets: [ZIGSDK.subset?]
+  public var TransactionId: Swift.String?
+  public var Ticketcount: Swift.Int?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct subset : Swift.Codable {
+  public var Expirydate: Swift.String?
+  public var Activateddate: Swift.String?
+  public var Validateddate: Swift.String?
+  public var FromAddress: Swift.String?
+  public var status: Swift.Int?
+  public var isActive: Swift.Bool?
+  public var isValid: Swift.Bool?
+  public var AgencyId: Swift.Int?
+  public var TicketId: Swift.Int?
+  public var RemainingTime: Swift.Int?
+  public var TripId: Swift.String?
+  public var Fareid: Swift.Int?
+  public var Amount: Swift.Double?
+  public var DestinationAddress: Swift.String?
+  public var RouteId: Swift.String?
+  public var EmailId: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ActivateTicket : Swift.Codable {
+  public var Message: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct MqttModel : Swift.Codable {
+  public var message: Swift.String?
+  public var success: Swift.Bool?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AddTicketResponse : Swift.Codable {
+  public var Message: Swift.String?
+  public var TicketId: [Swift.Int]?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ticketListModel {
+  public var FromAddress: Swift.String?
+  public var DestinationAddress: Swift.String?
+  public var Amount: Swift.String?
+  public var Fareid: Swift.Int?
+  public var RouteId: Swift.String?
+  public init(FromAddress: Swift.String? = nil, DestinationAddress: Swift.String? = nil, Amount: Swift.String? = nil, fareid: Swift.Int? = nil, RouteId: Swift.String? = nil)
+}
+public struct TicketDataModel : Swift.Codable {
+  public var emailID: Swift.String?
+  public var opt1: Swift.String?
+  public var accessToken: Swift.String?
+  public var clientId: Swift.Int32
+  public var opt2: Swift.Int32
+  public var opt3: Swift.Bool
+  public var routeId: Swift.String?
+  public var status: Swift.Int32
+  public var ticketId: Swift.Int32
+  public var tripId: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum deviceMessage {
+  case SOS
+  case STOP
+  public static func == (a: ZIGSDK.deviceMessage, b: ZIGSDK.deviceMessage) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct PermissionItem {
+  public init(description: Swift.String, keywordHighlight: Swift.String, permissionType: ZIGSDK.PermissionType, title: Swift.String, image: Swift.String)
+}
+public enum PermissionType {
+  case location
+  case bluetooth
+  case notification
+  case camera
+  public static func == (a: ZIGSDK.PermissionType, b: ZIGSDK.PermissionType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum vehicleMode {
+  case driving
+  case walking
+  case bus
+  public static func == (a: ZIGSDK.vehicleMode, b: ZIGSDK.vehicleMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum RoutePreferance {
+  case leastWalking
+  case bestRoute
+  case fewestTransfer
+  public static func == (a: ZIGSDK.RoutePreferance, b: ZIGSDK.RoutePreferance) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum Time {
+  case departNow
+  case departAt
+  case arriveAt
+  public static func == (a: ZIGSDK.Time, b: ZIGSDK.Time) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct routes : Swift.Codable {
+  public var bounds: ZIGSDK.bounds?
+  public var legs: [ZIGSDK.legs]?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct legs : Swift.Codable {
+  public var arrival_time: ZIGSDK.arrival_time?
+  public var departure_time: ZIGSDK.arrival_time?
+  public var distance: ZIGSDK.distance?
+  public var duration: ZIGSDK.distance?
+  public var start_address: Swift.String?
+  public var end_address: Swift.String?
+  public var start_location: ZIGSDK.latlng?
+  public var end_location: ZIGSDK.latlng?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct walkStep : Swift.Codable {
+  public var distance: ZIGSDK.distance?
+  public var duration: ZIGSDK.distance?
+  public var start_location: ZIGSDK.latlng?
+  public var end_location: ZIGSDK.latlng?
+  public var html_instructions: Swift.String?
+  public var polyline: ZIGSDK.polyline
+  public var steps: Swift.String?
+  public var transit_details: Swift.String?
+  public var travel_mode: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct polyline : Swift.Codable {
+  public var points: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct distance : Swift.Codable {
+  public var text: Swift.String?
+  public var value: Swift.Int?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct arrival_time : Swift.Codable {
+  public var text: Swift.String?
+  public var time_zone: Swift.String?
+  public var value: Swift.Int?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct bounds : Swift.Codable {
+  public var northeast: ZIGSDK.latlng?
+  public var southwest: ZIGSDK.latlng?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct latlng : Swift.Codable {
+  public var lat: Swift.Double?
+  public var lng: Swift.Double?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class APiWrapper {
+  @objc deinit
+}
+extension Swift.Collection {
+  public func chunk(n: Swift.Int) -> [Self.SubSequence]
+}
+@_hasMissingDesignatedInitializers public class apiUrl {
+  public static let shared: ZIGSDK.apiUrl
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class ZIGSDKMethod {
+  public static let shared: ZIGSDK.ZIGSDKMethod
+  final public func zigInit(authKey: Swift.String, completion: @escaping (ZIGSDK.returnData) -> Swift.Void)
+  final public func zigAddUserInfo(emailId: Swift.String, firstName: Swift.String, lastName: Swift.String, completion: @escaping (ZIGSDK.returnData) -> Swift.Void)
+  final public func zigCreditWallet(walletTitle: Swift.String = "", buttonText: Swift.String = "", setBrandColour: Swift.String = "", completion: @escaping (ZIGSDK.returnData) -> Swift.Void)
+  final public func zigDebitWallet(walletTitle: Swift.String = "", buttonText: Swift.String = "", debitAmount: Swift.Double, purpose: Swift.String, setBrandColour: Swift.String = "", completion: @escaping (ZIGSDK.returnData) -> Swift.Void)
+  final public func zigCardTransaction(completion: @escaping (_ res: ZIGSDK.getCardTransaction?, _ err: (any Swift.Error)?) -> Swift.Void)
+  final public func zigWalletTransaction(completion: @escaping (_ res: ZIGSDK.getWalletTransactionData?, _ err: (any Swift.Error)?) -> Swift.Void)
+  final public func zigGetWallet(completion: @escaping (_ res: ZIGSDK.getWalletModel?, _ err: (any Swift.Error)?) -> Swift.Void)
+  final public func zigGetFare(completion: @escaping (_ res: [ZIGSDK.ListData]?, _ err: (any Swift.Error)?) -> Swift.Void)
+  final public func zigGetTicket(completion: @escaping (_ res: [ZIGSDK.Ticket]?, _ err: (any Swift.Error)?) -> Swift.Void)
+  final public func zigActivateTicket(ticketId: Swift.Int, completion: @escaping (_ res: ZIGSDK.ActivateTicket?, _ err: (any Swift.Error)?) -> Swift.Void)
+  final public func zigAddTicket(ticketData: [ZIGSDK.ticketListModel], sourceAddress: Swift.String, destinationAddress: Swift.String, completion: @escaping (_ res: ZIGSDK.AddTicketResponse?, _ err: (any Swift.Error)?) -> Swift.Void)
+  final public func sendRequest(title: Swift.String = "", description: Swift.String = "", textColor: Swift.String = "", backgroundColor: Swift.String = "", imageURL: Swift.String = "", deviceSendMessage: ZIGSDK.deviceMessage)
+  final public func needPermisson(Title: Swift.String = "", subTitle: Swift.String = "", description: Swift.String = "", noteTitle: Swift.String = "", noteDescription: Swift.String = "", permissionList: [ZIGSDK.PermissionItem] = [], setBrandColor: Swift.String = "", completion: @escaping (ZIGSDK.returnData) -> Swift.Void)
+  final public func zigTripPlanner(sourceLat: Swift.Double, sourceLong: Swift.Double, destinationLat: Swift.Double, destinationLong: Swift.Double, sourceAddress: Swift.String, destinationAddress: Swift.String, currentTimeType: ZIGSDK.Time, vehicleMode: ZIGSDK.vehicleMode, routePreference: ZIGSDK.RoutePreferance, apiKey: Swift.String, dateTime: Swift.String, completion: @escaping (_ res: [ZIGSDK.routes]?, _ err: (any Swift.Error)?) -> Swift.Void)
+  final public func QRGeneration(ticketStatus: Swift.String, ticketId: Swift.String, expiryDate: Swift.String, totalCount: Swift.String, backgroundColour: Swift.String, textColorHex: Swift.String, agencyName: Swift.String, completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
+  final public func Onboarding(title: Swift.String = "", subtitle: Swift.String = "", buttonAcceptText: Swift.String = "", buttonCancelText: Swift.String = "", textColor: Swift.String = "", backgroundColors: Swift.String = "", completion: @escaping (Swift.Bool, Swift.String) -> Swift.Void)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class AuthorizationViewModel {
+  public static let shared: ZIGSDK.AuthorizationViewModel
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class CommonDataVM {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class configDataValue {
+  public static let shared: ZIGSDK.configDataValue
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class configViewModel {
+  public static let shared: ZIGSDK.configViewModel
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class SyncData {
+  public static let shared: ZIGSDK.SyncData
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class NeedpermissionVM : ObjectiveC.NSObject, CoreBluetooth.CBCentralManagerDelegate {
+  public static let shared: ZIGSDK.NeedpermissionVM
+  @objc public func centralManagerDidUpdateState(_ central: CoreBluetooth.CBCentralManager)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class OnboardingVM {
+  public static let shared: ZIGSDK.OnboardingVM
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ActivateTicketVM {
+  public static let shared: ZIGSDK.ActivateTicketVM
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class AddTicketVM {
+  public static let shared: ZIGSDK.AddTicketVM
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class GetFareVM {
+  public static let shared: ZIGSDK.GetFareVM
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class GetTicketVM {
+  public static let shared: ZIGSDK.GetTicketVM
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DirectionVM {
+  public static let shared: ZIGSDK.DirectionVM
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class BeaconOutVM {
+  public static let shared: ZIGSDK.BeaconOutVM
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class LimitChangeVM {
+  public static let shared: ZIGSDK.LimitChangeVM
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class MqttVM {
+  public static let shared: ZIGSDK.MqttVM
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class OutDataVM {
+  public static let shared: ZIGSDK.OutDataVM
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class QRcodeGenerator {
+  public static let shared: ZIGSDK.QRcodeGenerator
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class SendRequestViewModel {
+  public static let shares: ZIGSDK.SendRequestViewModel
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class NotificationManager : ObjectiveC.NSObject, UserNotifications.UNUserNotificationCenterDelegate {
+  public static let shared: ZIGSDK.NotificationManager
+  public func requestNotificationPermission()
+  public func scheduleLocalNotification(_ title: Swift.String, _ body: Swift.String)
+  @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, willPresent notification: UserNotifications.UNNotification, withCompletionHandler completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
+  public func configureNotificationDelegate()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ValidationVM {
+  public static let shared: ZIGSDK.ValidationVM
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class CardTransactionVM {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class CreateUserViewModel {
+  public static let shared: ZIGSDK.CreateUserViewModel
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class CreditPaymentVM {
+  public static let shared: ZIGSDK.CreditPaymentVM
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class CreditWalletAmountVM {
+  public static let shared: ZIGSDK.CreditWalletAmountVM
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class CreditWalletVM {
+  public static let shared: ZIGSDK.CreditWalletVM
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DebitWalletVM {
+  public static let shared: ZIGSDK.DebitWalletVM
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DeleteSavedCard {
+  public static let shared: ZIGSDK.DeleteSavedCard
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class GetWalletVM {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class savedCardDataValue {
+  public static let shared: ZIGSDK.savedCardDataValue
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class SavedCardDetails {
+  public static let shared: ZIGSDK.SavedCardDetails
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class WalletTransactionVM {
+  public static let shared: ZIGSDK.WalletTransactionVM
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class commonfunction {
+  public static var shared: ZIGSDK.commonfunction
+  public func showConfirmationAlert(in viewController: UIKit.UIViewController, title: Swift.String, message: Swift.String?, positive: Swift.String, negative: Swift.String? = nil, onConfirm: (() -> Swift.Void)? = nil, onCancel: (() -> Swift.Void)? = nil)
+  @objc deinit
+}
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor @preconcurrency public static let modelName: Swift.String
+  @_Concurrency.MainActor @preconcurrency public static let iOSVersion: Swift.String
+}
+extension ZIGSDK.deviceMessage : Swift.Equatable {}
+extension ZIGSDK.deviceMessage : Swift.Hashable {}
+extension ZIGSDK.PermissionType : Swift.Equatable {}
+extension ZIGSDK.PermissionType : Swift.Hashable {}
+extension ZIGSDK.vehicleMode : Swift.Equatable {}
+extension ZIGSDK.vehicleMode : Swift.Hashable {}
+extension ZIGSDK.RoutePreferance : Swift.Equatable {}
+extension ZIGSDK.RoutePreferance : Swift.Hashable {}
+extension ZIGSDK.Time : Swift.Equatable {}
+extension ZIGSDK.Time : Swift.Hashable {}
