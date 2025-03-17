@@ -19817,6 +19817,295 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "PaymentChoosing",
+        "printedName": "PaymentChoosing",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "cardPayment",
+            "printedName": "cardPayment",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ZIGSDK.PaymentChoosing.Type) -> ZIGSDK.PaymentChoosing",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PaymentChoosing",
+                    "printedName": "ZIGSDK.PaymentChoosing",
+                    "usr": "s:6ZIGSDK15PaymentChoosingO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ZIGSDK.PaymentChoosing.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PaymentChoosing",
+                        "printedName": "ZIGSDK.PaymentChoosing",
+                        "usr": "s:6ZIGSDK15PaymentChoosingO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:6ZIGSDK15PaymentChoosingO04cardB0yA2CmF",
+            "mangledName": "$s6ZIGSDK15PaymentChoosingO04cardB0yA2CmF",
+            "moduleName": "ZIGSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "cashAppPayment",
+            "printedName": "cashAppPayment",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ZIGSDK.PaymentChoosing.Type) -> ZIGSDK.PaymentChoosing",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PaymentChoosing",
+                    "printedName": "ZIGSDK.PaymentChoosing",
+                    "usr": "s:6ZIGSDK15PaymentChoosingO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ZIGSDK.PaymentChoosing.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PaymentChoosing",
+                        "printedName": "ZIGSDK.PaymentChoosing",
+                        "usr": "s:6ZIGSDK15PaymentChoosingO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:6ZIGSDK15PaymentChoosingO07cashAppB0yA2CmF",
+            "mangledName": "$s6ZIGSDK15PaymentChoosingO07cashAppB0yA2CmF",
+            "moduleName": "ZIGSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "payPalPayment",
+            "printedName": "payPalPayment",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ZIGSDK.PaymentChoosing.Type) -> ZIGSDK.PaymentChoosing",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PaymentChoosing",
+                    "printedName": "ZIGSDK.PaymentChoosing",
+                    "usr": "s:6ZIGSDK15PaymentChoosingO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ZIGSDK.PaymentChoosing.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PaymentChoosing",
+                        "printedName": "ZIGSDK.PaymentChoosing",
+                        "usr": "s:6ZIGSDK15PaymentChoosingO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:6ZIGSDK15PaymentChoosingO06payPalB0yA2CmF",
+            "mangledName": "$s6ZIGSDK15PaymentChoosingO06payPalB0yA2CmF",
+            "moduleName": "ZIGSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "none",
+            "printedName": "none",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ZIGSDK.PaymentChoosing.Type) -> ZIGSDK.PaymentChoosing",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PaymentChoosing",
+                    "printedName": "ZIGSDK.PaymentChoosing",
+                    "usr": "s:6ZIGSDK15PaymentChoosingO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ZIGSDK.PaymentChoosing.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PaymentChoosing",
+                        "printedName": "ZIGSDK.PaymentChoosing",
+                        "usr": "s:6ZIGSDK15PaymentChoosingO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:6ZIGSDK15PaymentChoosingO4noneyA2CmF",
+            "mangledName": "$s6ZIGSDK15PaymentChoosingO4noneyA2CmF",
+            "moduleName": "ZIGSDK"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PaymentChoosing",
+                "printedName": "ZIGSDK.PaymentChoosing",
+                "usr": "s:6ZIGSDK15PaymentChoosingO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PaymentChoosing",
+                "printedName": "ZIGSDK.PaymentChoosing",
+                "usr": "s:6ZIGSDK15PaymentChoosingO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:6ZIGSDK15PaymentChoosingO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s6ZIGSDK15PaymentChoosingO2eeoiySbAC_ACtFZ",
+            "moduleName": "ZIGSDK",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:6ZIGSDK15PaymentChoosingO9hashValueSivp",
+            "mangledName": "$s6ZIGSDK15PaymentChoosingO9hashValueSivp",
+            "moduleName": "ZIGSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:6ZIGSDK15PaymentChoosingO9hashValueSivg",
+                "mangledName": "$s6ZIGSDK15PaymentChoosingO9hashValueSivg",
+                "moduleName": "ZIGSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:6ZIGSDK15PaymentChoosingO4hash4intoys6HasherVz_tF",
+            "mangledName": "$s6ZIGSDK15PaymentChoosingO4hash4intoys6HasherVz_tF",
+            "moduleName": "ZIGSDK",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:6ZIGSDK15PaymentChoosingO",
+        "mangledName": "$s6ZIGSDK15PaymentChoosingO",
+        "moduleName": "ZIGSDK",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -20224,7 +20513,7 @@
           {
             "kind": "Function",
             "name": "zigCreditWallet",
-            "printedName": "zigCreditWallet(walletTitle:buttonText:setBrandColour:completion:)",
+            "printedName": "zigCreditWallet(walletTitle:buttonText:setBrandColour:returnURL:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -20253,6 +20542,12 @@
                 "usr": "s:SS"
               },
               {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
                 "kind": "TypeFunc",
                 "name": "Function",
                 "printedName": "(ZIGSDK.returnData) -> ()",
@@ -20272,8 +20567,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:6ZIGSDK12ZIGSDKMethodC15zigCreditWallet11walletTitle10buttonText14setBrandColour10completionySS_S2SyAA10returnDataVctF",
-            "mangledName": "$s6ZIGSDK12ZIGSDKMethodC15zigCreditWallet11walletTitle10buttonText14setBrandColour10completionySS_S2SyAA10returnDataVctF",
+            "usr": "s:6ZIGSDK12ZIGSDKMethodC15zigCreditWallet11walletTitle10buttonText14setBrandColour9returnURL10completionySS_S3SyAA0M4DataVctF",
+            "mangledName": "$s6ZIGSDK12ZIGSDKMethodC15zigCreditWallet11walletTitle10buttonText14setBrandColour9returnURL10completionySS_S3SyAA0M4DataVctF",
             "moduleName": "ZIGSDK",
             "declAttributes": [
               "Final",
@@ -21409,6 +21704,314 @@
         "declAttributes": [
           "RawDocComment"
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ZIGSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ZIGSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "CommonCrypto",
+        "printedName": "CommonCrypto",
+        "declKind": "Import",
+        "moduleName": "ZIGSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ZIGSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "commonfunction",
+        "printedName": "commonfunction",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "commonfunction",
+                "printedName": "ZIGSDK.commonfunction",
+                "usr": "s:6ZIGSDK14commonfunctionC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:6ZIGSDK14commonfunctionC6sharedACvpZ",
+            "mangledName": "$s6ZIGSDK14commonfunctionC6sharedACvpZ",
+            "moduleName": "ZIGSDK",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "commonfunction",
+                    "printedName": "ZIGSDK.commonfunction",
+                    "usr": "s:6ZIGSDK14commonfunctionC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:6ZIGSDK14commonfunctionC6sharedACvgZ",
+                "mangledName": "$s6ZIGSDK14commonfunctionC6sharedACvgZ",
+                "moduleName": "ZIGSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "commonfunction",
+                    "printedName": "ZIGSDK.commonfunction",
+                    "usr": "s:6ZIGSDK14commonfunctionC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:6ZIGSDK14commonfunctionC6sharedACvsZ",
+                "mangledName": "$s6ZIGSDK14commonfunctionC6sharedACvsZ",
+                "moduleName": "ZIGSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:6ZIGSDK14commonfunctionC6sharedACvMZ",
+                "mangledName": "$s6ZIGSDK14commonfunctionC6sharedACvMZ",
+                "moduleName": "ZIGSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "showConfirmationAlert",
+            "printedName": "showConfirmationAlert(in:title:message:positive:negative:onConfirm:onCancel:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:6ZIGSDK14commonfunctionC21showConfirmationAlert2in5title7message8positive8negative9onConfirm0K6CancelySo16UIViewControllerC_S2SSgSSANyycSgAOtF",
+            "mangledName": "$s6ZIGSDK14commonfunctionC21showConfirmationAlert2in5title7message8positive8negative9onConfirm0K6CancelySo16UIViewControllerC_S2SSgSSANyycSgAOtF",
+            "moduleName": "ZIGSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:6ZIGSDK14commonfunctionC",
+        "mangledName": "$s6ZIGSDK14commonfunctionC",
+        "moduleName": "ZIGSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ZIGSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "ZIGSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "AVFoundation",
+        "printedName": "AVFoundation",
+        "declKind": "Import",
+        "moduleName": "ZIGSDK"
       },
       {
         "kind": "Import",
@@ -23179,6 +23782,105 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ZIGSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ValidationVM",
+        "printedName": "ValidationVM",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ValidationVM",
+                "printedName": "ZIGSDK.ValidationVM",
+                "usr": "s:6ZIGSDK12ValidationVMC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:6ZIGSDK12ValidationVMC6sharedACvpZ",
+            "mangledName": "$s6ZIGSDK12ValidationVMC6sharedACvpZ",
+            "moduleName": "ZIGSDK",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ValidationVM",
+                    "printedName": "ZIGSDK.ValidationVM",
+                    "usr": "s:6ZIGSDK12ValidationVMC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:6ZIGSDK12ValidationVMC6sharedACvgZ",
+                "mangledName": "$s6ZIGSDK12ValidationVMC6sharedACvgZ",
+                "moduleName": "ZIGSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:6ZIGSDK12ValidationVMC",
+        "mangledName": "$s6ZIGSDK12ValidationVMC",
+        "moduleName": "ZIGSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ZIGSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "CoreData",
         "printedName": "CoreData",
         "declKind": "Import",
@@ -23488,6 +24190,46 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ZIGSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Stripe",
+        "printedName": "Stripe",
+        "declKind": "Import",
+        "moduleName": "ZIGSDK",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "StripePaymentSheet",
+        "printedName": "StripePaymentSheet",
+        "declKind": "Import",
+        "moduleName": "ZIGSDK",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Braintree",
+        "printedName": "Braintree",
+        "declKind": "Import",
+        "moduleName": "ZIGSDK",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -23497,72 +24239,12 @@
         ]
       },
       {
-        "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "ZIGSDK"
-      },
-      {
         "kind": "TypeDecl",
-        "name": "ValidationVM",
-        "printedName": "ValidationVM",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "shared",
-            "printedName": "shared",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "ValidationVM",
-                "printedName": "ZIGSDK.ValidationVM",
-                "usr": "s:6ZIGSDK12ValidationVMC"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:6ZIGSDK12ValidationVMC6sharedACvpZ",
-            "mangledName": "$s6ZIGSDK12ValidationVMC6sharedACvpZ",
-            "moduleName": "ZIGSDK",
-            "static": true,
-            "declAttributes": [
-              "HasInitialValue",
-              "Final",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ValidationVM",
-                    "printedName": "ZIGSDK.ValidationVM",
-                    "usr": "s:6ZIGSDK12ValidationVMC"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:6ZIGSDK12ValidationVMC6sharedACvgZ",
-                "mangledName": "$s6ZIGSDK12ValidationVMC6sharedACvgZ",
-                "moduleName": "ZIGSDK",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          }
-        ],
+        "name": "CardTransactionVM",
+        "printedName": "CardTransactionVM",
         "declKind": "Class",
-        "usr": "s:6ZIGSDK12ValidationVMC",
-        "mangledName": "$s6ZIGSDK12ValidationVMC",
+        "usr": "s:6ZIGSDK17CardTransactionVMC",
+        "mangledName": "$s6ZIGSDK17CardTransactionVMC",
         "moduleName": "ZIGSDK",
         "declAttributes": [
           "AccessControl"
@@ -23597,11 +24279,64 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "CardTransactionVM",
-        "printedName": "CardTransactionVM",
+        "name": "CashAppVM",
+        "printedName": "CashAppVM",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CashAppVM",
+                "printedName": "ZIGSDK.CashAppVM",
+                "usr": "s:6ZIGSDK9CashAppVMC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:6ZIGSDK9CashAppVMC6sharedACvpZ",
+            "mangledName": "$s6ZIGSDK9CashAppVMC6sharedACvpZ",
+            "moduleName": "ZIGSDK",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CashAppVM",
+                    "printedName": "ZIGSDK.CashAppVM",
+                    "usr": "s:6ZIGSDK9CashAppVMC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:6ZIGSDK9CashAppVMC6sharedACvgZ",
+                "mangledName": "$s6ZIGSDK9CashAppVMC6sharedACvgZ",
+                "moduleName": "ZIGSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
         "declKind": "Class",
-        "usr": "s:6ZIGSDK17CardTransactionVMC",
-        "mangledName": "$s6ZIGSDK17CardTransactionVMC",
+        "usr": "s:6ZIGSDK9CashAppVMC",
+        "mangledName": "$s6ZIGSDK9CashAppVMC",
         "moduleName": "ZIGSDK",
         "declAttributes": [
           "AccessControl"
@@ -24241,6 +24976,190 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "PayPalVM",
+        "printedName": "PayPalVM",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PayPalVM",
+                "printedName": "ZIGSDK.PayPalVM",
+                "usr": "s:6ZIGSDK8PayPalVMC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:6ZIGSDK8PayPalVMC6sharedACvpZ",
+            "mangledName": "$s6ZIGSDK8PayPalVMC6sharedACvpZ",
+            "moduleName": "ZIGSDK",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PayPalVM",
+                    "printedName": "ZIGSDK.PayPalVM",
+                    "usr": "s:6ZIGSDK8PayPalVMC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:6ZIGSDK8PayPalVMC6sharedACvgZ",
+                "mangledName": "$s6ZIGSDK8PayPalVMC6sharedACvgZ",
+                "moduleName": "ZIGSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:6ZIGSDK8PayPalVMC",
+        "mangledName": "$s6ZIGSDK8PayPalVMC",
+        "moduleName": "ZIGSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ZIGSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ReferanceVM",
+        "printedName": "ReferanceVM",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ReferanceVM",
+                "printedName": "ZIGSDK.ReferanceVM",
+                "usr": "s:6ZIGSDK11ReferanceVMC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:6ZIGSDK11ReferanceVMC6sharedACvpZ",
+            "mangledName": "$s6ZIGSDK11ReferanceVMC6sharedACvpZ",
+            "moduleName": "ZIGSDK",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ReferanceVM",
+                    "printedName": "ZIGSDK.ReferanceVM",
+                    "usr": "s:6ZIGSDK11ReferanceVMC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:6ZIGSDK11ReferanceVMC6sharedACvgZ",
+                "mangledName": "$s6ZIGSDK11ReferanceVMC6sharedACvgZ",
+                "moduleName": "ZIGSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:6ZIGSDK11ReferanceVMC",
+        "mangledName": "$s6ZIGSDK11ReferanceVMC",
+        "moduleName": "ZIGSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ZIGSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "savedCardDataValue",
         "printedName": "savedCardDataValue",
         "children": [
@@ -24494,304 +25413,6 @@
             "mangledName": "$ss9EscapableP"
           }
         ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "ZIGSDK",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "CommonCrypto",
-        "printedName": "CommonCrypto",
-        "declKind": "Import",
-        "moduleName": "ZIGSDK"
-      },
-      {
-        "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "ZIGSDK"
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "commonfunction",
-        "printedName": "commonfunction",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "shared",
-            "printedName": "shared",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "commonfunction",
-                "printedName": "ZIGSDK.commonfunction",
-                "usr": "s:6ZIGSDK14commonfunctionC"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:6ZIGSDK14commonfunctionC6sharedACvpZ",
-            "mangledName": "$s6ZIGSDK14commonfunctionC6sharedACvpZ",
-            "moduleName": "ZIGSDK",
-            "static": true,
-            "declAttributes": [
-              "HasInitialValue",
-              "Final",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "commonfunction",
-                    "printedName": "ZIGSDK.commonfunction",
-                    "usr": "s:6ZIGSDK14commonfunctionC"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:6ZIGSDK14commonfunctionC6sharedACvgZ",
-                "mangledName": "$s6ZIGSDK14commonfunctionC6sharedACvgZ",
-                "moduleName": "ZIGSDK",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "commonfunction",
-                    "printedName": "ZIGSDK.commonfunction",
-                    "usr": "s:6ZIGSDK14commonfunctionC"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:6ZIGSDK14commonfunctionC6sharedACvsZ",
-                "mangledName": "$s6ZIGSDK14commonfunctionC6sharedACvsZ",
-                "moduleName": "ZIGSDK",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:6ZIGSDK14commonfunctionC6sharedACvMZ",
-                "mangledName": "$s6ZIGSDK14commonfunctionC6sharedACvMZ",
-                "moduleName": "ZIGSDK",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Function",
-            "name": "showConfirmationAlert",
-            "printedName": "showConfirmationAlert(in:title:message:positive:negative:onConfirm:onCancel:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "UIViewController",
-                "printedName": "UIKit.UIViewController",
-                "usr": "c:objc(cs)UIViewController"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "(() -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "() -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "(() -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "() -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:6ZIGSDK14commonfunctionC21showConfirmationAlert2in5title7message8positive8negative9onConfirm0K6CancelySo16UIViewControllerC_S2SSgSSANyycSgAOtF",
-            "mangledName": "$s6ZIGSDK14commonfunctionC21showConfirmationAlert2in5title7message8positive8negative9onConfirm0K6CancelySo16UIViewControllerC_S2SSgSSANyycSgAOtF",
-            "moduleName": "ZIGSDK",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Class",
-        "usr": "s:6ZIGSDK14commonfunctionC",
-        "mangledName": "$s6ZIGSDK14commonfunctionC",
-        "moduleName": "ZIGSDK",
-        "declAttributes": [
-          "AccessControl"
-        ],
-        "hasMissingDesignatedInitializers": true,
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          }
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "ZIGSDK",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "CoreLocation",
-        "printedName": "CoreLocation",
-        "declKind": "Import",
-        "moduleName": "ZIGSDK"
-      },
-      {
-        "kind": "Import",
-        "name": "AVFoundation",
-        "printedName": "AVFoundation",
-        "declKind": "Import",
-        "moduleName": "ZIGSDK"
       },
       {
         "kind": "Import",
@@ -25100,2515 +25721,2718 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3908,
+      "offset": 2856,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
-      "kind": "StringLiteral",
-      "offset": 9180,
-      "length": 9,
-      "value": "\"Unknown\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
-      "kind": "StringLiteral",
-      "offset": 9215,
-      "length": 9,
-      "value": "\"Unknown\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9288,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9313,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 9337,
+      "offset": 4200,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9400,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9429,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9932,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9956,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9989,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 10023,
+      "offset": 9472,
+      "length": 9,
+      "value": "\"Unknown\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "StringLiteral",
+      "offset": 9507,
+      "length": 9,
+      "value": "\"Unknown\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9580,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9605,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9629,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9692,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9721,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10224,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10248,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10281,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "StringLiteral",
+      "offset": 10315,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 10053,
+      "offset": 10345,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 10269,
+      "offset": 10561,
       "length": 5,
       "value": "\"iOS\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 10304,
+      "offset": 10596,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 10340,
+      "offset": 10632,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 10427,
+      "offset": 10719,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 10468,
+      "offset": 10760,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 10496,
+      "offset": 10788,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 10531,
+      "offset": 10823,
       "length": 13,
       "value": "\"SOS Request\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 10579,
+      "offset": 10871,
       "length": 51,
       "value": "\"Your SOS request has been delivered to the driver\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 10660,
+      "offset": 10952,
       "length": 9,
       "value": "\"#FFFFFF\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 10764,
+      "offset": 11056,
       "length": 12,
       "value": "\"SosRequest\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 10805,
+      "offset": 11097,
       "length": 41,
       "value": "\"https:\/\/www.zed.digital\/img\/app\/sos.png\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 10881,
+      "offset": 11173,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 10913,
+      "offset": 11205,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 10944,
+      "offset": 11236,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 10976,
+      "offset": 11268,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 11006,
+      "offset": 11298,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 11047,
+      "offset": 11339,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 11094,
+      "offset": 11386,
       "length": 17,
       "value": "\"Need Permission\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 11154,
+      "offset": 11446,
       "length": 117,
       "value": "\"In order for you use certain features of this app,you need to give permissions.See description for each permission.\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 11316,
+      "offset": 11608,
       "length": 138,
       "value": "\"Permission are necessary for all the features and functions to work properly. If not allowed,you have to enable permissions in settings.\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 11566,
+      "offset": 11858,
       "length": 14,
       "value": "\"STOP Request\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 11616,
+      "offset": 11908,
       "length": 107,
       "value": "\"Stop is a feature is available  on our buses. Click to request the driver to stop the upcomming bus stop.\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 11761,
+      "offset": 12053,
       "length": 14,
       "value": "\"Send Request\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 11808,
+      "offset": 12100,
       "length": 8,
       "value": "\"Cancel\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 11853,
+      "offset": 12145,
       "length": 9,
       "value": "\"#FFFFFF\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 11971,
+      "offset": 12263,
       "length": 44,
       "value": "\"https:\/\/www.zed.digital\/img\/app\/onbord.png\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 12119,
+      "offset": 12436,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 12586,
-      "length": 9,
-      "value": "\"#0A79BE\""
+      "offset": 12468,
+      "length": 2,
+      "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "StringLiteral",
+      "offset": 12500,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "StringLiteral",
+      "offset": 12525,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "StringLiteral",
+      "offset": 12560,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "StringLiteral",
+      "offset": 12587,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "StringLiteral",
+      "offset": 12613,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "StringLiteral",
+      "offset": 12642,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 12688,
+      "offset": 12671,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 12728,
+      "offset": 12780,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
       "kind": "StringLiteral",
-      "offset": 12762,
+      "offset": 13247,
+      "length": 9,
+      "value": "\"#0A79BE\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13349,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "StringLiteral",
+      "offset": 13389,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/OnboardingViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "StringLiteral",
+      "offset": 13423,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 17072,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "StringLiteral",
+      "offset": 17783,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "StringLiteral",
+      "offset": 17819,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "StringLiteral",
+      "offset": 17859,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "StringLiteral",
+      "offset": 17903,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "StringLiteral",
+      "offset": 17947,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "StringLiteral",
+      "offset": 17977,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "StringLiteral",
+      "offset": 18014,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "StringLiteral",
+      "offset": 18046,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ConfigModel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 18074,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/OnboardingViewController.swift",
       "kind": "StringLiteral",
       "offset": 595,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/OnboardingViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/OnboardingViewController.swift",
       "kind": "StringLiteral",
       "offset": 624,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/OnboardingViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/OnboardingViewController.swift",
       "kind": "StringLiteral",
       "offset": 660,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/OnboardingViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/OnboardingViewController.swift",
       "kind": "StringLiteral",
       "offset": 698,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/OnboardingViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/OnboardingViewController.swift",
       "kind": "StringLiteral",
       "offset": 725,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/OnboardingViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/OnboardingViewController.swift",
       "kind": "StringLiteral",
       "offset": 761,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/OnboardingViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/OnboardingViewController.swift",
       "kind": "StringLiteral",
       "offset": 791,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
       "kind": "Array",
       "offset": 1539,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 2233,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
       "kind": "FloatLiteral",
       "offset": 2289,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
       "kind": "StringLiteral",
       "offset": 2325,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
       "kind": "Array",
       "offset": 2385,
       "length": 306,
       "value": "[\"AL\", \"AK\", \"AZ\", \"AR\", \"CA\", \"CO\", \"CT\", \"DC\", \"DE\", \"FL\", \"GA\", \"HI\", \"ID\", \"IL\", \"IN\", \"IA\", \"KS\", \"KY\", \"LA\", \"ME\", \"MD\", \"MA\", \"MI\", \"MN\", \"MS\", \"MO\", \"MT\", \"NE\", \"NV\", \"NH\", \"NJ\", \"NM\", \"NY\", \"NC\", \"ND\", \"OH\", \"OK\", \"OR\", \"PA\", \"RI\", \"SC\", \"SD\", \"TN\", \"TX\", \"UT\", \"VT\", \"VA\", \"WA\", \"WV\", \"WI\", \"WY\"]"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 32707,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
       "kind": "StringLiteral",
       "offset": 32755,
       "length": 3,
       "value": "\"-\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 32965,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
       "kind": "StringLiteral",
       "offset": 33013,
       "length": 3,
       "value": "\"\/\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 33589,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/paymentViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 33647,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/NeedPermissionViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/NeedPermissionViewController.swift",
       "kind": "StringLiteral",
       "offset": 680,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/NeedPermissionViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/NeedPermissionViewController.swift",
       "kind": "StringLiteral",
       "offset": 714,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/NeedPermissionViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/NeedPermissionViewController.swift",
       "kind": "StringLiteral",
       "offset": 751,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/NeedPermissionViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/NeedPermissionViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 786,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/NeedPermissionViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/NeedPermissionViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 828,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/NeedPermissionViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/NeedPermissionViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 864,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/NeedPermissionViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/NeedPermissionViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 902,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/NeedPermissionViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/NeedPermissionViewController.swift",
       "kind": "StringLiteral",
       "offset": 992,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/NeedPermissionViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/NeedPermissionViewController.swift",
       "kind": "FloatLiteral",
       "offset": 1032,
       "length": 4,
       "value": "50.0"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ApiService\/UrlData.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ApiService\/UrlData.swift",
       "kind": "StringLiteral",
       "offset": 203,
       "length": 32,
       "value": "\"https:\/\/zig-sdk.zed-admin.com\/\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ApiService\/UrlData.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ApiService\/UrlData.swift",
       "kind": "StringLiteral",
       "offset": 256,
       "length": 35,
       "value": "\"https:\/\/zig-sdk-v2.zed-admin.com\/\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/QRViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/QRViewController.swift",
       "kind": "StringLiteral",
       "offset": 949,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/QRViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/QRViewController.swift",
       "kind": "StringLiteral",
       "offset": 978,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/QRViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/QRViewController.swift",
       "kind": "StringLiteral",
       "offset": 1011,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/QRViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/QRViewController.swift",
       "kind": "StringLiteral",
       "offset": 1042,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/QRViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/QRViewController.swift",
       "kind": "StringLiteral",
       "offset": 1073,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/QRViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/QRViewController.swift",
       "kind": "StringLiteral",
       "offset": 1102,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/QRViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/QRViewController.swift",
       "kind": "StringLiteral",
       "offset": 1132,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/QRViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/QRViewController.swift",
       "kind": "StringLiteral",
       "offset": 1163,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/AddWalletNewViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/AddWalletNewViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 665,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/AddWalletNewViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/AddWalletNewViewController.swift",
       "kind": "StringLiteral",
       "offset": 727,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/AddWalletNewViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/AddWalletNewViewController.swift",
       "kind": "StringLiteral",
       "offset": 758,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/AddWalletNewViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/AddWalletNewViewController.swift",
       "kind": "StringLiteral",
       "offset": 787,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/AddWalletNewViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/AddWalletNewViewController.swift",
       "kind": "StringLiteral",
       "offset": 823,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/AddWalletNewViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/AddWalletNewViewController.swift",
       "kind": "Array",
       "offset": 873,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/AddWalletNewViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/AddWalletNewViewController.swift",
       "kind": "Array",
       "offset": 898,
       "length": 52,
       "value": "[\"10.00\", \"15.00\", \"20.00\", \"50.00\", \"100.00\", \"1000.00\"]"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
       "offset": 796,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
       "offset": 820,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
       "offset": 849,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 1152,
+      "offset": 1191,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 1176,
+      "offset": 1215,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 1242,
+      "offset": 1281,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 6270,
+      "offset": 6309,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 6294,
+      "offset": 6333,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 6323,
+      "offset": 6362,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 6588,
+      "offset": 6668,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 6612,
+      "offset": 6692,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 6678,
+      "offset": 6758,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 8484,
+      "offset": 8564,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 8509,
+      "offset": 8589,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 8533,
+      "offset": 8613,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 8563,
+      "offset": 8643,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 8585,
+      "offset": 8665,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 8839,
+      "offset": 8919,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 8862,
+      "offset": 8942,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 8888,
+      "offset": 8968,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 8912,
+      "offset": 8992,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 8943,
+      "offset": 9023,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "Array",
-      "offset": 8981,
+      "offset": 9061,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 9009,
+      "offset": 9089,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 10563,
+      "offset": 10643,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 10585,
+      "offset": 10665,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 10615,
+      "offset": 10695,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 10645,
+      "offset": 10725,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 10668,
+      "offset": 10748,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/CommonFile.swift",
       "kind": "StringLiteral",
-      "offset": 10699,
+      "offset": 10779,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/DebitWalletAmountController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/DebitWalletAmountController.swift",
       "kind": "IntegerLiteral",
       "offset": 869,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/DebitWalletAmountController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/DebitWalletAmountController.swift",
       "kind": "IntegerLiteral",
       "offset": 895,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/DebitWalletAmountController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/DebitWalletAmountController.swift",
       "kind": "FloatLiteral",
       "offset": 926,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/DebitWalletAmountController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/DebitWalletAmountController.swift",
       "kind": "StringLiteral",
       "offset": 955,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/DebitWalletAmountController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/DebitWalletAmountController.swift",
       "kind": "StringLiteral",
       "offset": 984,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/DebitWalletAmountController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/DebitWalletAmountController.swift",
       "kind": "StringLiteral",
       "offset": 1016,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/DebitWalletAmountController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/DebitWalletAmountController.swift",
       "kind": "StringLiteral",
       "offset": 1045,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/DebitWalletAmountController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/DebitWalletAmountController.swift",
       "kind": "StringLiteral",
       "offset": 1080,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/DebitWalletAmountController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/DebitWalletAmountController.swift",
       "kind": "FloatLiteral",
       "offset": 1106,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
-      "kind": "BooleanLiteral",
-      "offset": 295,
-      "length": 4,
-      "value": "true"
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/PaymentChooseTableView.swift",
+      "kind": "StringLiteral",
+      "offset": 1013,
+      "length": 2,
+      "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/PaymentChooseTableView.swift",
       "kind": "BooleanLiteral",
-      "offset": 327,
+      "offset": 1046,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
-      "kind": "StringLiteral",
-      "offset": 418,
-      "length": 85,
-      "value": "\"Please set the location access to 'Allow all the time' for scanning nearby beacons.\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
-      "kind": "StringLiteral",
-      "offset": 523,
-      "length": 20,
-      "value": "\"Allow all the time\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
-      "kind": "StringLiteral",
-      "offset": 579,
-      "length": 10,
-      "value": "\"Location\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
-      "kind": "StringLiteral",
-      "offset": 598,
-      "length": 26,
-      "value": "\"location.fill.viewfinder\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
-      "kind": "StringLiteral",
-      "offset": 654,
-      "length": 54,
-      "value": "\"Allow Bluetooth permission to detect nearby beacons.\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
-      "kind": "StringLiteral",
-      "offset": 728,
-      "length": 22,
-      "value": "\"Bluetooth permission\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
-      "kind": "StringLiteral",
-      "offset": 787,
-      "length": 11,
-      "value": "\"Bluetooth\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
-      "kind": "StringLiteral",
-      "offset": 807,
-      "length": 26,
-      "value": "\"location.fill.viewfinder\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
-      "kind": "StringLiteral",
-      "offset": 863,
-      "length": 86,
-      "value": "\"Allow the Notification Permission to display a message to the user after validation.\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
-      "kind": "StringLiteral",
-      "offset": 969,
-      "length": 25,
-      "value": "\"Notification Permission\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
-      "kind": "StringLiteral",
-      "offset": 1034,
-      "length": 14,
-      "value": "\"Notification\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
-      "kind": "StringLiteral",
-      "offset": 1057,
-      "length": 26,
-      "value": "\"location.fill.viewfinder\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
-      "kind": "StringLiteral",
-      "offset": 1113,
-      "length": 91,
-      "value": "\"Allow camera permission to prevent fake tickets, enables secure verification for drivers.\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
-      "kind": "StringLiteral",
-      "offset": 1224,
-      "length": 19,
-      "value": "\"camera permission\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
-      "kind": "StringLiteral",
-      "offset": 1277,
-      "length": 8,
-      "value": "\"Camera\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
-      "kind": "StringLiteral",
-      "offset": 1294,
-      "length": 26,
-      "value": "\"location.fill.viewfinder\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/BeaconVM.swift",
-      "kind": "Array",
-      "offset": 281,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/QRcodeGenerator.swift",
-      "kind": "StringLiteral",
-      "offset": 369,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Utilities\/DatabaseManager.swift",
-      "kind": "StringLiteral",
-      "offset": 371,
-      "length": 13,
-      "value": "\"TicketModel\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Utilities\/DatabaseManager.swift",
-      "kind": "StringLiteral",
-      "offset": 401,
-      "length": 6,
-      "value": "\"momd\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Utilities\/DatabaseManager.swift",
-      "kind": "StringLiteral",
-      "offset": 439,
-      "length": 34,
-      "value": "\"Failed to locate Core Data model\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Utilities\/DatabaseManager.swift",
-      "kind": "StringLiteral",
-      "offset": 606,
-      "length": 32,
-      "value": "\"Failed to load Core Data model\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Utilities\/DatabaseManager.swift",
-      "kind": "StringLiteral",
-      "offset": 703,
-      "length": 11,
-      "value": "\"YourModel\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Utilities\/DatabaseManager.swift",
-      "kind": "StringLiteral",
-      "offset": 871,
-      "length": 27,
-      "value": "\"Unresolved error \""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Utilities\/DatabaseManager.swift",
-      "kind": "StringLiteral",
-      "offset": 897,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/ValidationVM.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/PaymentChooseTableView.swift",
       "kind": "IntegerLiteral",
-      "offset": 288,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/ValidationVM.swift",
-      "kind": "IntegerLiteral",
-      "offset": 315,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/ValidationVM.swift",
-      "kind": "IntegerLiteral",
-      "offset": 340,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/ValidationVM.swift",
-      "kind": "IntegerLiteral",
-      "offset": 372,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/ValidationVM.swift",
-      "kind": "StringLiteral",
-      "offset": 401,
+      "offset": 7790,
       "length": 2,
-      "value": "\"\""
+      "value": "50"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/ValidationVM.swift",
-      "kind": "StringLiteral",
-      "offset": 433,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/ValidationVM.swift",
-      "kind": "Array",
-      "offset": 483,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/ValidationVM.swift",
-      "kind": "BooleanLiteral",
-      "offset": 516,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/WalletFeatureMethod\/CreditWalletVM.swift",
-      "kind": "StringLiteral",
-      "offset": 263,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/WalletFeatureMethod\/CreditWalletVM.swift",
-      "kind": "StringLiteral",
-      "offset": 287,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/WalletFeatureMethod\/CreditWalletVM.swift",
-      "kind": "StringLiteral",
-      "offset": 316,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 8887,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "IntegerLiteral",
       "offset": 8979,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9261,
       "length": 9,
       "value": "\"iPod9,1\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9311,
       "length": 29,
       "value": "\"iPod touch (7th generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9358,
       "length": 11,
       "value": "\"iPhone8,1\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9408,
       "length": 11,
       "value": "\"iPhone 6s\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9437,
       "length": 11,
       "value": "\"iPhone8,2\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9487,
       "length": 16,
       "value": "\"iPhone 6s Plus\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9521,
       "length": 11,
       "value": "\"iPhone9,1\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9534,
       "length": 11,
       "value": "\"iPhone9,3\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9571,
       "length": 10,
       "value": "\"iPhone 7\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9599,
       "length": 11,
       "value": "\"iPhone9,2\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9612,
       "length": 11,
       "value": "\"iPhone9,4\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9649,
       "length": 15,
       "value": "\"iPhone 7 Plus\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9682,
       "length": 12,
       "value": "\"iPhone10,1\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9696,
       "length": 12,
       "value": "\"iPhone10,4\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9732,
       "length": 10,
       "value": "\"iPhone 8\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9760,
       "length": 12,
       "value": "\"iPhone10,2\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9774,
       "length": 12,
       "value": "\"iPhone10,5\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9810,
       "length": 15,
       "value": "\"iPhone 8 Plus\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9843,
       "length": 12,
       "value": "\"iPhone10,3\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9857,
       "length": 12,
       "value": "\"iPhone10,6\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9893,
       "length": 10,
       "value": "\"iPhone X\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9921,
       "length": 12,
       "value": "\"iPhone11,2\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 9971,
       "length": 11,
       "value": "\"iPhone XS\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10000,
       "length": 12,
       "value": "\"iPhone11,4\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10014,
       "length": 12,
       "value": "\"iPhone11,6\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10050,
       "length": 15,
       "value": "\"iPhone XS Max\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10083,
       "length": 12,
       "value": "\"iPhone11,8\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10133,
       "length": 11,
       "value": "\"iPhone XR\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10162,
       "length": 12,
       "value": "\"iPhone12,1\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10212,
       "length": 11,
       "value": "\"iPhone 11\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10241,
       "length": 12,
       "value": "\"iPhone12,3\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10291,
       "length": 15,
       "value": "\"iPhone 11 Pro\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10324,
       "length": 12,
       "value": "\"iPhone12,5\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10374,
       "length": 19,
       "value": "\"iPhone 11 Pro Max\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10411,
       "length": 12,
       "value": "\"iPhone13,1\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10461,
       "length": 16,
       "value": "\"iPhone 12 mini\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10495,
       "length": 12,
       "value": "\"iPhone13,2\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10545,
       "length": 11,
       "value": "\"iPhone 12\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10574,
       "length": 12,
       "value": "\"iPhone13,3\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10624,
       "length": 15,
       "value": "\"iPhone 12 Pro\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10657,
       "length": 12,
       "value": "\"iPhone13,4\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10707,
       "length": 19,
       "value": "\"iPhone 12 Pro Max\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10744,
       "length": 12,
       "value": "\"iPhone14,4\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10794,
       "length": 16,
       "value": "\"iPhone 13 mini\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10828,
       "length": 12,
       "value": "\"iPhone14,5\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10878,
       "length": 11,
       "value": "\"iPhone 13\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10907,
       "length": 12,
       "value": "\"iPhone14,2\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10957,
       "length": 15,
       "value": "\"iPhone 13 Pro\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 10990,
       "length": 12,
       "value": "\"iPhone14,3\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11040,
       "length": 19,
       "value": "\"iPhone 13 Pro Max\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11077,
       "length": 11,
       "value": "\"iPhone8,4\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11127,
       "length": 28,
       "value": "\"iPhone SE (1st generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11173,
       "length": 12,
       "value": "\"iPhone12,8\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11223,
       "length": 28,
       "value": "\"iPhone SE (2nd generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11269,
       "length": 12,
       "value": "\"iPhone14,6\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11319,
       "length": 28,
       "value": "\"iPhone SE (3rd generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11365,
       "length": 12,
       "value": "\"iPhone15,2\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11415,
       "length": 15,
       "value": "\"iPhone 14 Pro\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11448,
       "length": 12,
       "value": "\"iPhone15,3\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11498,
       "length": 19,
       "value": "\"iPhone 14 Pro Max\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11535,
       "length": 12,
       "value": "\"iPhone14,7\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11585,
       "length": 11,
       "value": "\"iPhone 14\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11614,
       "length": 12,
       "value": "\"iPhone14,8\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11664,
       "length": 16,
       "value": "\"iPhone 14 Plus\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11698,
       "length": 10,
       "value": "\"iPad6,11\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11710,
       "length": 10,
       "value": "\"iPad6,12\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11748,
       "length": 23,
       "value": "\"iPad (5th generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11789,
       "length": 9,
       "value": "\"iPad7,5\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11800,
       "length": 9,
       "value": "\"iPad7,6\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11839,
       "length": 23,
       "value": "\"iPad (6th generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11880,
       "length": 10,
       "value": "\"iPad7,11\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11892,
       "length": 10,
       "value": "\"iPad7,12\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11930,
       "length": 23,
       "value": "\"iPad (7th generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11971,
       "length": 10,
       "value": "\"iPad11,6\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 11983,
       "length": 10,
       "value": "\"iPad11,7\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12021,
       "length": 23,
       "value": "\"iPad (8th generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12062,
       "length": 10,
       "value": "\"iPad12,1\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12074,
       "length": 10,
       "value": "\"iPad12,2\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12112,
       "length": 23,
       "value": "\"iPad (9th generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12153,
       "length": 11,
       "value": "\"iPad13,18\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12166,
       "length": 11,
       "value": "\"iPad13,19\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12203,
       "length": 24,
       "value": "\"iPad (10th generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12245,
       "length": 9,
       "value": "\"iPad6,3\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12256,
       "length": 9,
       "value": "\"iPad6,4\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12295,
       "length": 21,
       "value": "\"iPad Pro (9.7-inch)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12334,
       "length": 9,
       "value": "\"iPad7,3\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12345,
       "length": 9,
       "value": "\"iPad7,4\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12384,
       "length": 22,
       "value": "\"iPad Pro (10.5-inch)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12424,
       "length": 9,
       "value": "\"iPad8,1\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12435,
       "length": 9,
       "value": "\"iPad8,2\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12446,
       "length": 9,
       "value": "\"iPad8,3\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12457,
       "length": 9,
       "value": "\"iPad8,4\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12475,
       "length": 37,
       "value": "\"iPad Pro (11-inch) (1st generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12530,
       "length": 9,
       "value": "\"iPad8,9\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12541,
       "length": 10,
       "value": "\"iPad8,10\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12580,
       "length": 37,
       "value": "\"iPad Pro (11-inch) (2nd generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12635,
       "length": 10,
       "value": "\"iPad13,4\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12647,
       "length": 10,
       "value": "\"iPad13,5\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12659,
       "length": 10,
       "value": "\"iPad13,6\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12671,
       "length": 10,
       "value": "\"iPad13,7\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12690,
       "length": 37,
       "value": "\"iPad Pro (11-inch) (3rd generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12745,
       "length": 10,
       "value": "\"iPad14,3\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12757,
       "length": 10,
       "value": "\"iPad14,4\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12795,
       "length": 37,
       "value": "\"iPad Pro (11-inch) (4th generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12850,
       "length": 9,
       "value": "\"iPad6,7\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12861,
       "length": 9,
       "value": "\"iPad6,8\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12900,
       "length": 39,
       "value": "\"iPad Pro (12.9-inch) (1st generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12957,
       "length": 9,
       "value": "\"iPad7,1\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 12968,
       "length": 9,
       "value": "\"iPad7,2\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13007,
       "length": 39,
       "value": "\"iPad Pro (12.9-inch) (2nd generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13064,
       "length": 9,
       "value": "\"iPad8,5\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13075,
       "length": 9,
       "value": "\"iPad8,6\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13086,
       "length": 9,
       "value": "\"iPad8,7\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13097,
       "length": 9,
       "value": "\"iPad8,8\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13115,
       "length": 39,
       "value": "\"iPad Pro (12.9-inch) (3rd generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13172,
       "length": 10,
       "value": "\"iPad8,11\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13184,
       "length": 10,
       "value": "\"iPad8,12\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13222,
       "length": 39,
       "value": "\"iPad Pro (12.9-inch) (4th generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13279,
       "length": 10,
       "value": "\"iPad13,8\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13291,
       "length": 10,
       "value": "\"iPad13,9\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13303,
       "length": 11,
       "value": "\"iPad13,10\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13316,
       "length": 11,
       "value": "\"iPad13,11\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13336,
       "length": 39,
       "value": "\"iPad Pro (12.9-inch) (5th generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13393,
       "length": 10,
       "value": "\"iPad14,5\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13405,
       "length": 10,
       "value": "\"iPad14,6\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13443,
       "length": 39,
       "value": "\"iPad Pro (12.9-inch) (6th generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13500,
       "length": 9,
       "value": "\"iPad7,9\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13511,
       "length": 10,
       "value": "\"iPad7,10\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13550,
       "length": 40,
       "value": "\"iPad Pro 2nd Gen (12.9-inch, Cellular)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13608,
       "length": 10,
       "value": "\"iPad11,1\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13620,
       "length": 10,
       "value": "\"iPad11,2\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13658,
       "length": 28,
       "value": "\"iPad mini (5th generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13704,
       "length": 10,
       "value": "\"iPad14,1\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13716,
       "length": 10,
       "value": "\"iPad14,2\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13754,
       "length": 28,
       "value": "\"iPad mini (6th generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13800,
       "length": 10,
       "value": "\"iPad11,3\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13812,
       "length": 10,
       "value": "\"iPad11,4\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13850,
       "length": 27,
       "value": "\"iPad Air (3rd generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13895,
       "length": 10,
       "value": "\"iPad13,1\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13907,
       "length": 10,
       "value": "\"iPad13,2\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13945,
       "length": 27,
       "value": "\"iPad Air (4th generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 13990,
       "length": 11,
       "value": "\"iPad13,16\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 14003,
       "length": 11,
       "value": "\"iPad13,17\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 14040,
       "length": 27,
       "value": "\"iPad Air (5th generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 14085,
       "length": 12,
       "value": "\"AppleTV5,3\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 14135,
       "length": 10,
       "value": "\"Apple TV\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 14163,
       "length": 12,
       "value": "\"AppleTV6,2\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 14213,
       "length": 13,
       "value": "\"Apple TV 4K\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 14244,
       "length": 13,
       "value": "\"AppleTV11,1\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 14294,
       "length": 30,
       "value": "\"Apple TV 4K (2nd generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 14342,
       "length": 13,
       "value": "\"AppleTV14,1\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 14392,
       "length": 30,
       "value": "\"Apple TV 4K (3rd generation)\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 14440,
       "length": 19,
       "value": "\"AudioAccessory1,1\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 14490,
       "length": 9,
       "value": "\"HomePod\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 14517,
       "length": 19,
       "value": "\"AudioAccessory5,1\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 14567,
       "length": 14,
       "value": "\"HomePod mini\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 14599,
       "length": 6,
       "value": "\"i386\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 14607,
       "length": 8,
       "value": "\"x86_64\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 14617,
       "length": 7,
       "value": "\"arm64\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Commonfunction.swift",
       "kind": "StringLiteral",
       "offset": 14649,
       "length": 11,
       "value": "\"Simulator\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
       "kind": "StringLiteral",
       "offset": 657,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
       "kind": "StringLiteral",
       "offset": 686,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
       "kind": "StringLiteral",
       "offset": 716,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
       "kind": "StringLiteral",
       "offset": 751,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
       "kind": "StringLiteral",
       "offset": 785,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
       "kind": "StringLiteral",
       "offset": 815,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 854,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
       "kind": "StringLiteral",
       "offset": 887,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 920,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/ashok\/Desktop\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/SOSViewController.swift",
       "kind": "StringLiteral",
       "offset": 948,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
+      "kind": "BooleanLiteral",
+      "offset": 295,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
+      "kind": "BooleanLiteral",
+      "offset": 327,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
+      "kind": "StringLiteral",
+      "offset": 418,
+      "length": 85,
+      "value": "\"Please set the location access to 'Allow all the time' for scanning nearby beacons.\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
+      "kind": "StringLiteral",
+      "offset": 523,
+      "length": 20,
+      "value": "\"Allow all the time\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
+      "kind": "StringLiteral",
+      "offset": 579,
+      "length": 10,
+      "value": "\"Location\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
+      "kind": "StringLiteral",
+      "offset": 598,
+      "length": 26,
+      "value": "\"location.fill.viewfinder\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
+      "kind": "StringLiteral",
+      "offset": 654,
+      "length": 54,
+      "value": "\"Allow Bluetooth permission to detect nearby beacons.\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
+      "kind": "StringLiteral",
+      "offset": 728,
+      "length": 22,
+      "value": "\"Bluetooth permission\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
+      "kind": "StringLiteral",
+      "offset": 787,
+      "length": 11,
+      "value": "\"Bluetooth\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
+      "kind": "StringLiteral",
+      "offset": 807,
+      "length": 26,
+      "value": "\"location.fill.viewfinder\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
+      "kind": "StringLiteral",
+      "offset": 863,
+      "length": 86,
+      "value": "\"Allow the Notification Permission to display a message to the user after validation.\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
+      "kind": "StringLiteral",
+      "offset": 969,
+      "length": 25,
+      "value": "\"Notification Permission\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
+      "kind": "StringLiteral",
+      "offset": 1034,
+      "length": 14,
+      "value": "\"Notification\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
+      "kind": "StringLiteral",
+      "offset": 1057,
+      "length": 26,
+      "value": "\"location.fill.viewfinder\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
+      "kind": "StringLiteral",
+      "offset": 1113,
+      "length": 91,
+      "value": "\"Allow camera permission to prevent fake tickets, enables secure verification for drivers.\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
+      "kind": "StringLiteral",
+      "offset": 1224,
+      "length": 19,
+      "value": "\"camera permission\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
+      "kind": "StringLiteral",
+      "offset": 1277,
+      "length": 8,
+      "value": "\"Camera\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/NeedPerimisson\/NeedPermissonVM.swift",
+      "kind": "StringLiteral",
+      "offset": 1294,
+      "length": 26,
+      "value": "\"location.fill.viewfinder\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/BeaconVM.swift",
+      "kind": "Array",
+      "offset": 281,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/QRcodeGenerator.swift",
+      "kind": "StringLiteral",
+      "offset": 369,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/ValidationVM.swift",
+      "kind": "IntegerLiteral",
+      "offset": 288,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/ValidationVM.swift",
+      "kind": "IntegerLiteral",
+      "offset": 315,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/ValidationVM.swift",
+      "kind": "IntegerLiteral",
+      "offset": 340,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/ValidationVM.swift",
+      "kind": "IntegerLiteral",
+      "offset": 372,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/ValidationVM.swift",
+      "kind": "StringLiteral",
+      "offset": 401,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/ValidationVM.swift",
+      "kind": "StringLiteral",
+      "offset": 433,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/ValidationVM.swift",
+      "kind": "Array",
+      "offset": 483,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/ValidationMethod\/ValidationVM.swift",
+      "kind": "BooleanLiteral",
+      "offset": 516,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Utilities\/DatabaseManager.swift",
+      "kind": "StringLiteral",
+      "offset": 371,
+      "length": 13,
+      "value": "\"TicketModel\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Utilities\/DatabaseManager.swift",
+      "kind": "StringLiteral",
+      "offset": 401,
+      "length": 6,
+      "value": "\"momd\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Utilities\/DatabaseManager.swift",
+      "kind": "StringLiteral",
+      "offset": 439,
+      "length": 34,
+      "value": "\"Failed to locate Core Data model\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Utilities\/DatabaseManager.swift",
+      "kind": "StringLiteral",
+      "offset": 606,
+      "length": 32,
+      "value": "\"Failed to load Core Data model\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Utilities\/DatabaseManager.swift",
+      "kind": "StringLiteral",
+      "offset": 703,
+      "length": 11,
+      "value": "\"YourModel\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Utilities\/DatabaseManager.swift",
+      "kind": "StringLiteral",
+      "offset": 871,
+      "length": 27,
+      "value": "\"Unresolved error \""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Utilities\/DatabaseManager.swift",
+      "kind": "StringLiteral",
+      "offset": 897,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Utilities\/PaymentChooseViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 736,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/Utilities\/PaymentChooseViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 769,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/WalletFeatureMethod\/CreditWalletVM.swift",
+      "kind": "StringLiteral",
+      "offset": 263,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/WalletFeatureMethod\/CreditWalletVM.swift",
+      "kind": "StringLiteral",
+      "offset": 287,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Desktop\/SDK_OFFICE\/ZIGSDKiOS1\/zig_sdk 2\/ZIGSDKiOS\/ViewModel\/WalletFeatureMethod\/CreditWalletVM.swift",
+      "kind": "StringLiteral",
+      "offset": 316,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 727,
       "length": 9,
       "value": "\"BackImg\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 868,
       "length": 13,
       "value": "\"BlutoothImg\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 1008,
+      "offset": 1013,
+      "length": 13,
+      "value": "\"CardPayment\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 1164,
+      "length": 16,
+      "value": "\"CashAppPayment\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 1310,
+      "length": 12,
+      "value": "\"CircleImge\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 1449,
       "length": 11,
       "value": "\"Close-img\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 1146,
+      "offset": 1587,
       "length": 11,
       "value": "\"Cross_img\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 1298,
+      "offset": 1739,
       "length": 18,
       "value": "\"Current_Location\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 1447,
+      "offset": 1888,
       "length": 13,
       "value": "\"Diners Club\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 1586,
+      "offset": 2027,
       "length": 10,
       "value": "\"Discover\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 1718,
+      "offset": 2159,
       "length": 8,
       "value": "\"Dusbin\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 1857,
+      "offset": 2298,
       "length": 13,
       "value": "\"Illegal_Img\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 1986,
+      "offset": 2427,
       "length": 5,
       "value": "\"JCB\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 2123,
+      "offset": 2568,
+      "length": 15,
+      "value": "\"PaypalPayment\""
+    },
+    {
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 2715,
       "length": 13,
       "value": "\"Placeholder\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 2266,
+      "offset": 2858,
       "length": 12,
       "value": "\"SosRequest\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 2410,
+      "offset": 3002,
       "length": 13,
       "value": "\"StopRequest\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 2572,
+      "offset": 3164,
       "length": 22,
       "value": "\"americanexpress_icon\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 2725,
+      "offset": 3317,
       "length": 13,
       "value": "\"checkbox_in\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 2871,
+      "offset": 3463,
       "length": 14,
       "value": "\"checkbox_out\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 3033,
+      "offset": 3625,
       "length": 22,
       "value": "\"chooser-button-input\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 3194,
+      "offset": 3786,
       "length": 17,
       "value": "\"mastercard_icon\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 3333,
+      "offset": 3925,
       "length": 8,
       "value": "\"onbord\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 3470,
+      "offset": 4062,
       "length": 12,
       "value": "\"sos_images\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 3609,
+      "offset": 4201,
       "length": 11,
       "value": "\"visa_icon\""
     },
     {
-      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-gtydfxhdbfnjpzbrbwmbcgcybwid\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ashok\/Library\/Developer\/Xcode\/DerivedData\/ZIGSDK-garexgmvdxedtvgpsaqiwwlabmch\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ZIGSDK\/IntermediateBuildFilesPath\/ZIGSDK.build\/Release-iphoneos\/ZIGSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 3750,
+      "offset": 4342,
       "length": 12,
       "value": "\"walletIcon\""
     }

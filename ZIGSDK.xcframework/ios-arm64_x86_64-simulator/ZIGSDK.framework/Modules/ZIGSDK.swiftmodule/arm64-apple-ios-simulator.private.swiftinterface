@@ -321,6 +321,17 @@ public struct latlng : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
+public enum PaymentChoosing {
+  case cardPayment
+  case cashAppPayment
+  case payPalPayment
+  case none
+  public static func == (a: ZIGSDK.PaymentChoosing, b: ZIGSDK.PaymentChoosing) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 @_hasMissingDesignatedInitializers final public class APiWrapper {
   @objc deinit
 }
@@ -335,7 +346,7 @@ extension Swift.Collection {
   public static let shared: ZIGSDK.ZIGSDKMethod
   final public func zigInit(authKey: Swift.String, completion: @escaping (ZIGSDK.returnData) -> Swift.Void)
   final public func zigAddUserInfo(emailId: Swift.String, firstName: Swift.String, lastName: Swift.String, completion: @escaping (ZIGSDK.returnData) -> Swift.Void)
-  final public func zigCreditWallet(walletTitle: Swift.String = "", buttonText: Swift.String = "", setBrandColour: Swift.String = "", completion: @escaping (ZIGSDK.returnData) -> Swift.Void)
+  final public func zigCreditWallet(walletTitle: Swift.String = "", buttonText: Swift.String = "", setBrandColour: Swift.String = "", returnURL: Swift.String, completion: @escaping (ZIGSDK.returnData) -> Swift.Void)
   final public func zigDebitWallet(walletTitle: Swift.String = "", buttonText: Swift.String = "", debitAmount: Swift.Double, purpose: Swift.String, setBrandColour: Swift.String = "", completion: @escaping (ZIGSDK.returnData) -> Swift.Void)
   final public func zigCardTransaction(completion: @escaping (_ res: ZIGSDK.getCardTransaction?, _ err: (any Swift.Error)?) -> Swift.Void)
   final public func zigWalletTransaction(completion: @escaping (_ res: ZIGSDK.getWalletTransactionData?, _ err: (any Swift.Error)?) -> Swift.Void)
@@ -350,6 +361,15 @@ extension Swift.Collection {
   final public func QRGeneration(ticketStatus: Swift.String, ticketId: Swift.String, expiryDate: Swift.String, totalCount: Swift.String, backgroundColour: Swift.String, textColorHex: Swift.String, agencyName: Swift.String, completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
   final public func Onboarding(title: Swift.String = "", subtitle: Swift.String = "", buttonAcceptText: Swift.String = "", buttonCancelText: Swift.String = "", textColor: Swift.String = "", backgroundColors: Swift.String = "", completion: @escaping (Swift.Bool, Swift.String) -> Swift.Void)
   @objc deinit
+}
+@_hasMissingDesignatedInitializers public class commonfunction {
+  public static var shared: ZIGSDK.commonfunction
+  public func showConfirmationAlert(in viewController: UIKit.UIViewController, title: Swift.String, message: Swift.String?, positive: Swift.String, negative: Swift.String? = nil, onConfirm: (() -> Swift.Void)? = nil, onCancel: (() -> Swift.Void)? = nil)
+  @objc deinit
+}
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor @preconcurrency public static let modelName: Swift.String
+  @_Concurrency.MainActor @preconcurrency public static let iOSVersion: Swift.String
 }
 @_hasMissingDesignatedInitializers public class AuthorizationViewModel {
   public static let shared: ZIGSDK.AuthorizationViewModel
@@ -423,6 +443,10 @@ extension Swift.Collection {
   public static let shares: ZIGSDK.SendRequestViewModel
   @objc deinit
 }
+@_hasMissingDesignatedInitializers public class ValidationVM {
+  public static let shared: ZIGSDK.ValidationVM
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class NotificationManager : ObjectiveC.NSObject, UserNotifications.UNUserNotificationCenterDelegate {
   public static let shared: ZIGSDK.NotificationManager
   public func requestNotificationPermission()
@@ -431,11 +455,11 @@ extension Swift.Collection {
   public func configureNotificationDelegate()
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class ValidationVM {
-  public static let shared: ZIGSDK.ValidationVM
+@_hasMissingDesignatedInitializers public class CardTransactionVM {
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class CardTransactionVM {
+@_hasMissingDesignatedInitializers public class CashAppVM {
+  public static let shared: ZIGSDK.CashAppVM
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class CreateUserViewModel {
@@ -465,6 +489,14 @@ extension Swift.Collection {
 @_hasMissingDesignatedInitializers public class GetWalletVM {
   @objc deinit
 }
+@_hasMissingDesignatedInitializers public class PayPalVM {
+  public static let shared: ZIGSDK.PayPalVM
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ReferanceVM {
+  public static let shared: ZIGSDK.ReferanceVM
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers public class savedCardDataValue {
   public static let shared: ZIGSDK.savedCardDataValue
   @objc deinit
@@ -477,15 +509,6 @@ extension Swift.Collection {
   public static let shared: ZIGSDK.WalletTransactionVM
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class commonfunction {
-  public static var shared: ZIGSDK.commonfunction
-  public func showConfirmationAlert(in viewController: UIKit.UIViewController, title: Swift.String, message: Swift.String?, positive: Swift.String, negative: Swift.String? = nil, onConfirm: (() -> Swift.Void)? = nil, onCancel: (() -> Swift.Void)? = nil)
-  @objc deinit
-}
-extension UIKit.UIDevice {
-  @_Concurrency.MainActor @preconcurrency public static let modelName: Swift.String
-  @_Concurrency.MainActor @preconcurrency public static let iOSVersion: Swift.String
-}
 extension ZIGSDK.deviceMessage : Swift.Equatable {}
 extension ZIGSDK.deviceMessage : Swift.Hashable {}
 extension ZIGSDK.PermissionType : Swift.Equatable {}
@@ -496,3 +519,5 @@ extension ZIGSDK.RoutePreferance : Swift.Equatable {}
 extension ZIGSDK.RoutePreferance : Swift.Hashable {}
 extension ZIGSDK.Time : Swift.Equatable {}
 extension ZIGSDK.Time : Swift.Hashable {}
+extension ZIGSDK.PaymentChoosing : Swift.Equatable {}
+extension ZIGSDK.PaymentChoosing : Swift.Hashable {}
